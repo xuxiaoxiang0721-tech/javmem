@@ -1,0 +1,5 @@
+# 编的分包规则：主题里有“工资”的进 finance，打 payroll 标记；别的用登记表的 default_domain
+rules:
+  - subject: '工资'
+    domain: [finance]
+    sensitive: [payroll]

@@ -1,0 +1,61 @@
+# 主图：javmem 第 5 步（J5.1）的 Neo4j，正式库的账本投影到这里。和别的 Neo4j 分开：项目名、容器名、端口、数据目录都不一样。
+# 测试库的图另起一个（deploy/graph-test-neo4j/compose.yaml，D37），体检库是第 6 步的（deploy/side-neo4j/compose.yaml）。
+#
+# 起：  JAVMEM_GRAPH_NEO4J_DATA=<仓库外的数据目录> docker compose -f deploy/graph-neo4j/compose.yaml up -d
+# 停：  同样的命令把 up -d 换成 stop。用完就停，不设开机自启。
+#
+# - 镜像用本机已有的，不从网上拉（pull_policy: never）。钉着指纹（U2 甲，D205 ⑩）：三份 compose 和 CI 一字不差
+#   （tests/test_pins.py 钉着），是 5.26.32（10-21 的那一个）。标签 5.26-community 会跟着小版本走，钉了指纹以后只认指纹。
+#   升级：四处一起换指纹，主图整张重建，跑一遍回归（javmem regress）。
+# - 端口只绑 127.0.0.1：7475 网页、7688 bolt（7474、7687 是别人的，7476、7689 是测试图，7477、7690 是体检库）。
+# - 不给 NEO4J_AUTH：给了的话初始密码会存进容器的设置里。第一次起来是默认账号、要先改密码，
+#   javmem graph init --library prod 用 bolt 连上，改成用户级环境变量 JAVMEM_GRAPH_NEO4J_PASSWORD 里的那个。
+#   之后库里只存密码的哈希。要换密码：停了容器、删了数据目录重来（主图是账本的投影，能整张重建）。
+# - Neo4j 自己往外连的都关掉：社区版默认每 24 小时报一次使用数据（dbms.usage_report.enabled），
+#   网页那边也会连外面（client.allow_telemetry）。5.26 认不出的设置不让启动，名字写错当场就知道；
+#   起来以后 javmem graph init 再核一遍。
+# - 内存（D179）：堆 1G、页缓存 512M、所有事务加起来 256M；容器的硬上限 4G。放大到 5,000 包的那份（66.7 万条事实）
+#   装到一成时，Neo4j 自己占的（堆、页缓存、JVM 别的开销）就到了 2.4 GiB，原来 2G 的上限被系统按内存杀掉了；
+#   4G 时 docker stats 最高 2.5 GiB，另有读向量文件的缓存（系统收得回）最多 1.2 GiB；整张重建一遍（2 小时 48 分）
+#   最高 2.7 GiB。都没顶到上限。
+#   两个图同时开要 8 GB 左右，平时只开一个。
+# - JVM 加 --add-modules=jdk.incubator.vector（D179）：Lucene 算向量时用上 JDK 自带的向量指令（不用下载东西），
+#   全文、向量索引一起建快约两成（快在向量那一块），写入一样快。不加的话 Neo4j 的日志里提示 Java vector incubator module is not readable。
+# - 停的时候最多等 120 秒（stop_grace_period）：Neo4j 停之前要做一次检查点。量的时候刚写完一批就停，30 秒没做完，
+#   Docker 就直接把它杀掉（退出码 137）；整张重建完了再停是 13.5 秒。数据不丢（下次起来照事务日志补上），只是起来慢，
+#   所以多给些时间。
+# - 不预先给文件占地方（D193）：db.store.files.preallocate、db.tx_log.preallocate 关掉。数据目录挂的是本机目录，Neo4j 在
+#   这上面预先占地方很慢：开着时事务日志每换一个文件（256 MiB）要等 21 秒上下，存储文件每加长一段要等几秒到几分钟，
+#   起图也要近一分钟。同样装 5 万条事实，开着 715.7 秒、关着 242.6 秒，卡住的提交从 15 次变成 0 次，内存一样。
+#   关掉以后不先占着地方，盘满了要写到那儿才知道。
+# - 全文索引默认用 cjk 分析器（中文按两个字一组），建索引时 javmem 也在索引自己的设置里写明 cjk。
+# - 事务日志只留最近的一个文件：默认留两天，整张重建一次就多一份图里全部内容的拷贝留在磁盘上，主图用不着。
+name: javmem-graph
+
+services:
+  neo4j:
+    image: public.ecr.aws/docker/library/neo4j:5.26-community@sha256:eaee4488d580749ce332bd028f5be3917edf91f562d76c5443a51c08ec347b1f
+    pull_policy: never
+    container_name: javmem-graph-neo4j
+    restart: "no"
+    ports:
+      - "127.0.0.1:7475:7474"
+      - "127.0.0.1:7688:7687"
+    volumes:
+      - ${JAVMEM_GRAPH_NEO4J_DATA:?要设 JAVMEM_GRAPH_NEO4J_DATA（仓库外的数据目录）}/data:/data
+      - ${JAVMEM_GRAPH_NEO4J_DATA:?要设 JAVMEM_GRAPH_NEO4J_DATA（仓库外的数据目录）}/logs:/logs
+    environment:
+      NEO4J_server_memory_heap_initial__size: "1G"
+      NEO4J_server_memory_heap_max__size: "1G"
+      NEO4J_server_memory_pagecache_size: "512M"
+      NEO4J_dbms_memory_transaction_total_max: "256M"
+      NEO4J_dbms_usage__report_enabled: "false"
+      NEO4J_client_allow__telemetry: "false"
+      NEO4J_db_index_fulltext_default__analyzer: "cjk"
+      NEO4J_db_tx__log_rotation_retention__policy: "1 files"
+      NEO4J_server_jvm_additional: "--add-modules=jdk.incubator.vector"
+      NEO4J_db_store_files_preallocate: "false"
+      NEO4J_db_tx__log_preallocate: "false"
+    mem_limit: 4g
+    memswap_limit: 4g
+    stop_grace_period: 120s

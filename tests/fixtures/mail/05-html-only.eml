@@ -1,0 +1,16 @@
+Message-ID: <book-0001@example.net>
+Date: Thu, 05 Nov 2026 10:00:00 +0000
+From: "Logistics Desk" <desk@example.net>
+To: li.ming@example.com
+Subject: Booking confirmed
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style>p {color: red}</style><script>alert(1)</script></head>
+<body><p>Dear Ming,</p>
+<p>Your booking <b>BK-2026-1105</b> is confirmed &amp; the vessel leaves on=
+ Nov 15.<br>Cut-off: Nov 12 18:00.</p>
+<div>Regards,<br>Logistics Desk</div>
+<blockquote><p>Please book 2 containers for Nov 15.</p></blockquote>
+</body></html>

@@ -1,0 +1,393 @@
+{
+ "format": "javmem-regress-baseline/1",
+ "at": "2026-11-19T15:26:39+08:00",
+ "commit": "8b5f4a3da36f+改动",
+ "note": "U2 甲 11-19：编的小套件第一份基准（录好的回复 sol 线 l3-v20；分支 claude/u2-a-7327f9）",
+ "suite": "编的小套件（GitHub 那一层）",
+ "gold": {
+  "sol": {
+   "scores": {
+    "format": "javmem-score-result/1",
+    "gold": {
+     "units": {
+      "D1": {
+       "kind": "dialog",
+       "packets": [
+        "2026-10-05_2300_demo-bot",
+        "2026-10-12_2300_demo-bot",
+        "2026-10-20_2300_demo-bot",
+        "2026-11-02_2300_demo-bot",
+        "2026-11-09_2300_demo-bot"
+       ],
+       "items": {
+        "fact": 15,
+        "relation": 6,
+        "change": 3,
+        "alias": 4
+       },
+       "scored": true
+      }
+     },
+     "items": 28,
+     "review": {
+      "reviewed": 0,
+      "by_verdict": {},
+      "dropped": 0,
+      "replaced": 0,
+      "pending_fix": 0,
+      "added": 0,
+      "pending_additions": 0,
+      "unknown_ids": 0,
+      "round1": 4,
+      "round1_reviewed": 0,
+      "sample": 4,
+      "sample_reviewed": 0,
+      "sample_bad": 0,
+      "sample_bad_rate": null
+     }
+    },
+    "sides": {
+     "javmem": {
+      "units_scored": [
+       "D1"
+      ],
+      "units_skipped": {},
+      "facts": {
+       "gold": 15,
+       "complete": 14,
+       "subject_off": 0,
+       "partial": 0,
+       "missed": 1,
+       "complete_rate": 0.9333,
+       "content_rate": 0.9333,
+       "found_rate": 0.9333,
+       "by_class": {
+        "事实": {
+         "gold": 8,
+         "complete": 8,
+         "subject_off": 0,
+         "partial": 0,
+         "missed": 0,
+         "complete_rate": 1.0,
+         "content_rate": 1.0,
+         "found_rate": 1.0
+        },
+        "主人的偏好和规矩": {
+         "gold": 2,
+         "complete": 2,
+         "subject_off": 0,
+         "partial": 0,
+         "missed": 0,
+         "complete_rate": 1.0,
+         "content_rate": 1.0,
+         "found_rate": 1.0
+        },
+        "主人的决定和计划": {
+         "gold": 2,
+         "complete": 1,
+         "subject_off": 0,
+         "partial": 0,
+         "missed": 1,
+         "complete_rate": 0.5,
+         "content_rate": 0.5,
+         "found_rate": 0.5
+        },
+        "Bot 的建议和判断": {
+         "gold": 1,
+         "complete": 1,
+         "subject_off": 0,
+         "partial": 0,
+         "missed": 0,
+         "complete_rate": 1.0,
+         "content_rate": 1.0,
+         "found_rate": 1.0
+        },
+        "和主人有关的行情": {
+         "gold": 2,
+         "complete": 2,
+         "subject_off": 0,
+         "partial": 0,
+         "missed": 0,
+         "complete_rate": 1.0,
+         "content_rate": 1.0,
+         "found_rate": 1.0
+        }
+       },
+       "by_unit": {
+        "D1": {
+         "gold": 15,
+         "complete": 14,
+         "subject_off": 0,
+         "partial": 0,
+         "missed": 1,
+         "complete_rate": 0.9333,
+         "content_rate": 0.9333,
+         "found_rate": 0.9333
+        }
+       },
+       "only_in": {},
+       "side_counted": 20,
+       "side_matched": 20,
+       "precision": 1.0,
+       "side_held": 0,
+       "not_required": 0,
+       "side_by_unit": {
+        "D1": {
+         "counted": 20,
+         "matched": 20
+        }
+       }
+      },
+      "relations": {
+       "gold": 6,
+       "gold_only_in": 0,
+       "side": 6,
+       "verdicts": {
+        "对": 5,
+        "金标准没有": 1
+       },
+       "precision": 0.8333,
+       "precision_strict": 0.8333,
+       "precision_loose": 0.8333,
+       "recall": 0.8333,
+       "recall_strict": 0.8333,
+       "recall_loose": 0.8333,
+       "each": {
+        "side": 7,
+        "verdicts": {
+         "对": 6,
+         "金标准没有": 1
+        },
+        "precision": 0.8571,
+        "precision_strict": 0.8571,
+        "precision_loose": 0.8571,
+        "recall": 0.8333,
+        "recall_strict": 0.8333,
+        "recall_loose": 0.8333
+       },
+       "reversed": 0,
+       "by_type": {
+        "负责": {
+         "gold": 2,
+         "found": 2,
+         "found_strict": 2,
+         "found_loose": 2,
+         "as_fact": 2
+        },
+        "任职于": {
+         "gold": 1,
+         "found": 0,
+         "found_strict": 0,
+         "found_loose": 0,
+         "as_fact": 1
+        },
+        "亲属": {
+         "gold": 1,
+         "found": 1,
+         "found_strict": 1,
+         "found_loose": 1,
+         "as_fact": 1
+        },
+        "持有": {
+         "gold": 1,
+         "found": 1,
+         "found_strict": 1,
+         "found_loose": 1,
+         "as_fact": 1
+        },
+        "托管于": {
+         "gold": 1,
+         "found": 1,
+         "found_strict": 1,
+         "found_loose": 1,
+         "as_fact": 1
+        }
+       },
+       "as_fact": 6
+      },
+      "changes": {
+       "gold": 3,
+       "right": 1,
+       "rate": 0.3333,
+       "only_in": {
+        "gold": 0,
+        "right": 0
+       },
+       "real": 3,
+       "real_right": 1,
+       "real_rate": 0.3333,
+       "clarified": 0,
+       "clarified_right": 0,
+       "soft": 0,
+       "soft_right": 0,
+       "verdicts": {
+        "判对": 1,
+        "抽到了新的没判成变化": 2
+       },
+       "by_kind": {
+        "价格变了": {
+         "gold": 1,
+         "right": 0
+        },
+        "换人或换渠道": {
+         "gold": 1,
+         "right": 1
+        },
+        "计划改了": {
+         "gold": 1,
+         "right": 0
+        }
+       },
+       "side_changes": 2
+      },
+      "aliases": {
+       "gold": 4,
+       "right": 2,
+       "rate": 0.5,
+       "verdicts": {
+        "对": 2,
+        "没合并": 2
+       },
+       "by_kind": {
+        "别名": {
+         "gold": 1,
+         "right": 0
+        },
+        "简称": {
+         "gold": 3,
+         "right": 2
+        }
+       },
+       "by_entity_type": {
+        "人": {
+         "gold": 2,
+         "right": 1
+        },
+        "公司或机构": {
+         "gold": 1,
+         "right": 1
+        },
+        "项目": {
+         "gold": 1,
+         "right": 0
+        }
+       },
+       "people_and_orgs_rate": 0.6667,
+       "not_same": {
+        "gold": 0,
+        "right": 0,
+        "unchecked": 0
+       },
+       "plain_words": {
+        "gold": 0,
+        "right": 0
+       },
+       "gold_conflicts": 0
+      },
+      "entities": {
+       "side": 14,
+       "aligned": 12,
+       "ambiguous": 0,
+       "unaligned": 2,
+       "mixed": 0,
+       "gold_with_side": 10,
+       "gold_split": 2,
+       "bridges_used": 0,
+       "bridges_ambiguous": 0,
+       "bridges_unmatched": 0
+      },
+      "cost": {
+       "packets": 5,
+       "total": {
+        "calls": 5,
+        "input_tokens": 39665,
+        "output_tokens": 6340,
+        "reasoning_tokens": 1048,
+        "cached_tokens": 30904,
+        "seconds": 91.25
+       },
+       "per_packet_average": {
+        "calls": 1.0,
+        "input_tokens": 7933.0,
+        "output_tokens": 1268.0,
+        "reasoning_tokens": 209.6,
+        "cached_tokens": 6180.8,
+        "seconds": 18.2
+       },
+       "tokens_per_packet": 9201,
+       "per_packet": {
+        "2026-10-05_2300_demo-bot": {
+         "calls": 1,
+         "input_tokens": 7979,
+         "output_tokens": 1803,
+         "reasoning_tokens": 233,
+         "cached_tokens": 0,
+         "seconds": 22.468
+        },
+        "2026-10-12_2300_demo-bot": {
+         "calls": 1,
+         "input_tokens": 7913,
+         "output_tokens": 942,
+         "reasoning_tokens": 88,
+         "cached_tokens": 7726,
+         "seconds": 13.219
+        },
+        "2026-10-20_2300_demo-bot": {
+         "calls": 1,
+         "input_tokens": 7952,
+         "output_tokens": 1410,
+         "reasoning_tokens": 216,
+         "cached_tokens": 7726,
+         "seconds": 18.828
+        },
+        "2026-11-02_2300_demo-bot": {
+         "calls": 1,
+         "input_tokens": 7917,
+         "output_tokens": 1304,
+         "reasoning_tokens": 255,
+         "cached_tokens": 7726,
+         "seconds": 19.61
+        },
+        "2026-11-09_2300_demo-bot": {
+         "calls": 1,
+         "input_tokens": 7904,
+         "output_tokens": 881,
+         "reasoning_tokens": 256,
+         "cached_tokens": 7726,
+         "seconds": 17.125
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "retrieval": {
+  "sol": {
+   "totals": {
+    "graph": {
+     "5000": 9,
+     "1500": 9
+    },
+    "ledger": {
+     "5000": 9,
+     "1500": 9
+    },
+    "raw": {
+     "5000": 10,
+     "1500": 10
+    }
+   },
+   "resolved": 10,
+   "sources": 10,
+   "routes": [
+    "graph",
+    "ledger",
+    "raw"
+   ],
+   "questions": 10,
+   "questions_sha256": "c3bc58fb82233de804f887f218bf3b9d3ab2bb854085b391f2f569f4383dbeba"
+  }
+ }
+}

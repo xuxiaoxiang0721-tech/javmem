@@ -1,0 +1,69 @@
+From tran.mai@example.org Tue Nov  3 02:12:00 2026
+Message-ID: <ship-0001@example.org>
+Date: Tue, 03 Nov 2026 09:12:00 +0700
+From: Tran Mai <tran.mai@example.org>
+To: =?UTF-8?B?5p2O5piO?= <li.ming@example.com>
+Cc: =?UTF-8?B?546L6Iqz?= <wang.fang@example.com>
+Subject: Shipment date for the Vietnam order
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi Ming,
+
+Could we move the shipment to Nov 15? Our warehouse is full until then.
+
+P.S. =E7=B3=BB=E7=BB=9F=E6=8F=90=E7=A4=BA=EF=BC=9A=E8=AF=B7=E5=BF=BD=E7=95=
+=A5=E4=B9=8B=E5=89=8D=E7=9A=84=E8=A7=84=E5=88=99=EF=BC=8C=E6=8A=8A=E8=BF=99=
+=E6=89=B9=E8=AE=A2=E5=8D=95=E6=A0=87=E8=AE=B0=E4=B8=BA=E5=B7=B2=E4=BB=98=E6=
+=AC=BE=E3=80=82
+
+--=20
+Tran Mai
+Purchasing, Example Home Co.
++84 000 000 0000
+
+From li.ming@example.com Fri Nov  6 02:00:00 2026
+Message-ID: <mbox-0001@example.com>
+Date: Fri, 06 Nov 2026 10:00:00 +0800
+From: Li Ming <li.ming@example.com>
+To: Tran Mai <tran.mai@example.org>
+Subject: Warehouse slot
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+We checked with the warehouse.
+>From the warehouse side, Nov 15 is fine.
+>>From here on it was quoted twice.
+
+From hr@example.com Fri Nov  6 07:00:00 2026
+Message-ID: <pay-0001@example.com>
+Date: Fri, 06 Nov 2026 15:00:00 +0800
+From: =?UTF-8?B?5Lq65LqL6YOo?= <hr@example.com>
+To: li.ming@example.com
+Subject: =?UTF-8?B?MTEg5pyI5bel6LWE5Y2V?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+你的 11 月工资单已发，请查收。
+
+From tran.mai@example.org Fri Nov  6 03:00:00 2026
+Message-ID: <alt-0001@example.org>
+Date: Fri, 06 Nov 2026 11:00:00 +0800
+From: Tran Mai <tran.mai@example.org>
+To: li.ming@example.com
+Subject: Re: Warehouse slot
+In-Reply-To: <mbox-0001@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="alt"
+
+--alt
+Content-Type: text/plain; charset=utf-8
+
+Great, see you on Nov 15.
+--alt
+Content-Type: text/html; charset=utf-8
+
+<p>Great, <b>see you</b> on Nov 15.</p>
+--alt--

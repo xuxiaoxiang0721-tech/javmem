@@ -1,0 +1,24 @@
+{
+  "format": "javmem-demo/1",
+  "note": "javmem demo（U3）用的：问哪几句、撤回哪个包。数据就是这个目录里 GitHub 那一层回归的编的小套件；回归的套件不读这个文件。",
+  "caller": "mini-owner",
+  "timezone": "+08:00",
+  "line_env": {"JAVMEM_L3_PROMPT": "l3-v20", "JAVMEM_LLM_MODEL": "gpt-6.1-sol"},
+  "ask": [
+    {"tool": "memory_search", "arguments": {"query": "梧桐路展厅项目现在谁负责？"}, "say": "现在谁负责梧桐路展厅项目（11-02 换了人）"},
+    {"tool": "relation_at", "arguments": {"entity": "梧桐路展厅项目", "relation": "负责", "at": "2026-10-10", "role": "object"},
+     "say": "问某一天谁负责（那天还没换人）"},
+    {"tool": "entity_card", "arguments": {"entity": "南岭"}, "say": "按简称“南岭”查这家公司"},
+    {"tool": "timeline", "arguments": {"entity": "梧桐路展厅项目", "time_from": "2026-10-01T00:00:00+08:00"},
+     "say": "梧桐路展厅项目 10 月以来"},
+    {"tool": "raw_search", "arguments": {"query": "报价单"}, "say": "原文里搜“报价单”"}
+  ],
+  "withdraw": {
+    "packet": "2026-11-02_2300_demo-bot",
+    "say": "撤回 11-02 那一包（说换负责人的那一包）",
+    "ask": [
+      {"tool": "memory_search", "arguments": {"query": "梧桐路展厅项目现在谁负责？"}, "say": "再问现在谁负责"},
+      {"tool": "raw_search", "arguments": {"query": "田甜接手"}, "say": "原文里搜那一句", "expect_none": true}
+    ]
+  }
+}

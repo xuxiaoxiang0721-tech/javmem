@@ -1,0 +1,10 @@
+# 编的小套件（U2 甲，GitHub 那一层）用的来源登记表：只有一个编的 Bot，只投测试目录。
+domains: [business, finance, investment, research, dev, personal]
+sources:
+  demo-bot:
+    note: 编的小套件用的 Bot
+    framework: demo-chat
+    env: test
+    channel: chat
+    default_domain: [business]
+    may_carry: []

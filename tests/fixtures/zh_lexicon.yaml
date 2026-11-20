@@ -1,0 +1,5 @@
+# J2.14 测试用的别名表和词典（名字都是编的）。真实的那份在仓库外，环境变量 JAVMEM_LEXICON_FILE 指过去。
+aliases:
+  - {type: 公司或机构, names: [RVT, 河谷, 河谷车行]}
+  - {type: 人, names: [沈禾苗, 苗苗]}
+words: [阮绯, 韩东林, 乔一川, Brennick, 青桐小学]

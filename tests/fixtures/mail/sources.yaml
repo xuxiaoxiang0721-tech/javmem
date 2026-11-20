@@ -1,0 +1,17 @@
+# 邮件导入测试用的登记表，都是编的。mail-sales-a 能带 payroll，用来测按规则分包
+sources:
+  mail-sales-a:
+    note: 业务员 A 的邮箱
+    framework: mail-import
+    env: test
+    channel: email
+    mailbox: li.ming@example.com
+    default_domain: [business]
+    may_carry: [payroll]
+  desk-bot:
+    note: 对话来源，导邮件要拒绝
+    framework: demo-chat
+    env: prod
+    channel: chat
+    default_domain: [business]
+    may_carry: []

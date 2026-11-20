@@ -1,0 +1,179 @@
+# J2.14 第 3 类：数字和单位。句子、名字和数都是编的，从头写的；source: report 的是任务说明里给的例句。
+# 成对：同一句原文，一条事实写对了（换了写法）、一条写错了（数变了），该拦的要 G2 拦（by）。
+# search 那几组按原文检索的统一写法（D77）：写法不同的金额要查到，数不查到更长的数里。
+category: 数字和单位
+groups:
+  - id: N01
+    kind: l4
+    source: made
+    why: 带空格的“万”，事实写成千分位
+    lines: ["desk-bot：众筹已经到账约 260 万，离目标还差一点。"]
+    cases:
+      - {text: "众筹到账约 2,600,000", quote: "众筹已经到账约 260 万", expect: pass}
+      - {text: "众筹到账约 2,600 万", quote: "众筹已经到账约 260 万", expect: block, by: [G2]}
+  - id: N02
+    kind: l4
+    source: made
+    why: 主人自己写的“万”不带空格，事实带空格
+    lines: ["我：下午把3600万日元汇给大阪的工作室"]
+    cases:
+      - {text: "主人把 3,600 万日元汇给大阪的工作室", quote: "下午把3600万日元汇给大阪的工作室", expect: pass}
+      - {text: "主人把 360 万日元汇给大阪的工作室", quote: "下午把3600万日元汇给大阪的工作室", expect: block, by: [G2]}
+  - id: N03
+    kind: l4
+    source: made
+    why: 英文的 k 换成中文的万
+    lines: ["desk-bot：新烤箱的报价是 USD 46k，比上一家便宜约 5k。"]
+    cases:
+      - {text: "新烤箱报价约 4.6 万美元", quote: "新烤箱的报价是 USD 46k", expect: pass}
+      - {text: "新烤箱报价约 460 万美元", quote: "新烤箱的报价是 USD 46k", expect: block, by: [G2]}
+  - id: N04
+    kind: l4
+    source: made
+    why: 英文的 m（百万）换成中文的万
+    lines: ["desk-bot：这轮天使投资一共 USD 2.4m，月底到账。"]
+    cases:
+      - {text: "这轮天使投资一共 240 万美元", quote: "这轮天使投资一共 USD 2.4m", expect: pass}
+      - {text: "这轮天使投资一共 2,400 美元", quote: "这轮天使投资一共 USD 2.4m", expect: block, by: [G2]}
+  - id: N05
+    kind: l4
+    source: made
+    why: 口语的 W 挨着币种是万（RMB60W）
+    lines: ["desk-bot：附件是《场地赞助合同-RMB60W-初稿》，第 3 页要你签字。"]
+    cases:
+      - {text: "场地赞助合同 60 万人民币", quote: "场地赞助合同-RMB60W-初稿", expect: pass}
+      - {text: "场地赞助合同 6 万人民币", quote: "场地赞助合同-RMB60W-初稿", expect: block, by: [G2]}
+  - id: N06
+    kind: l4
+    source: made
+    why: W 也可能是瓦：照写 2000W 的放过，写成 2000 万的拦
+    lines: ["desk-bot：这台取暖器是 2000W 的，带三档，售价 S$189。"]
+    cases:
+      - {text: "取暖器功率 2000W，售价 S$189", quote: "这台取暖器是 2000W 的，带三档，售价 S$189", expect: pass}
+      - {text: "取暖器功率 2200W，售价 S$189", quote: "这台取暖器是 2000W 的，带三档，售价 S$189", expect: block, by: [G2]}
+      - {text: "取暖器功率 2000 万，售价 S$189", quote: "这台取暖器是 2000W 的，带三档，售价 S$189", expect: block, by: [G2]}
+  - id: N07
+    kind: l4
+    source: report
+    why: 事实里的 5m 是 5 米，不当五百万
+    lines: ["我：会议室离电梯 5 米。"]
+    cases:
+      - {text: "会议室离电梯 5m", quote: "会议室离电梯 5 米", expect: pass}
+      - {text: "会议室离电梯 50m", quote: "会议室离电梯 5 米", expect: block, by: [G2]}
+  - id: N08
+    kind: l4
+    source: report
+    why: 事实里的 100M 是 100 兆宽带，不是 1 亿
+    lines: ["我：家里宽带是 100 兆的。"]
+    cases:
+      - {text: "主人家里宽带 100M", quote: "家里宽带是 100 兆的", expect: pass}
+      - {text: "主人家里宽带 1000M", quote: "家里宽带是 100 兆的", expect: block, by: [G2]}
+  - id: N09
+    kind: l4
+    source: made
+    why: 口语的“两千五”是 2500，后面紧跟“一条”
+    lines: ["老韩：这批轮胎两千五一条。"]
+    cases:
+      - {text: "这批轮胎单价 2,500 一条", quote: "这批轮胎两千五一条", expect: pass}
+      - {text: "这批轮胎单价 2,005 一条", quote: "这批轮胎两千五一条", expect: block, by: [G2]}
+  - id: N10
+    kind: l4
+    source: made
+    why: 口语的“一万二”是 12000，不是 10002
+    lines: ["我：学费一万二，分两次交。"]
+    cases:
+      - {text: "学费 12,000，分两次交", quote: "学费一万二", expect: pass}
+      - {text: "学费 10,002，分两次交", quote: "学费一万二", expect: block, by: [G2]}
+  - id: N11
+    kind: l4
+    source: made
+    why: “三点五万”是 3.5 万
+    lines: ["我：这趟旅行一共花了三点五万。"]
+    cases:
+      - {text: "这趟旅行一共花了 3.5 万", quote: "这趟旅行一共花了三点五万", expect: pass}
+      - {text: "这趟旅行一共花了 5 万", quote: "这趟旅行一共花了三点五万", expect: block, by: [G2]}
+  - id: N12
+    kind: l4
+    source: made
+    why: “百分之三十”是 30%，单个汉字“三”不能把 3% 放过去
+    lines: ["我：合作社的分成比例是百分之三十。"]
+    cases:
+      - {text: "合作社分成比例 30%", quote: "合作社的分成比例是百分之三十", expect: pass}
+      - {text: "合作社分成比例 3%", quote: "合作社的分成比例是百分之三十", expect: block, by: [G2]}
+  - id: N13
+    kind: l4
+    source: made
+    why: 50bp 就是 0.5 个百分点
+    lines: ["我：房贷利率又降了50bp，月供能少一些"]
+    cases:
+      - {text: "房贷利率降了 0.5%，月供能少一些", quote: "房贷利率又降了50bp，月供能少一些", expect: pass}
+      - {text: "房贷利率降了 5%，月供能少一些", quote: "房贷利率又降了50bp，月供能少一些", expect: block, by: [G2]}
+  - id: N14
+    kind: l4
+    source: made
+    why: “十五块”是 15 元人民币，换了币种要拦
+    lines: ["我：停车费十五块。"]
+    cases:
+      - {text: "停车费 15 元", quote: "停车费十五块", expect: pass}
+      - {text: "停车费 15 美元", quote: "停车费十五块", expect: block, by: [G2]}
+  - id: N15
+    kind: l4
+    source: made
+    why: 件数照抄，千分位不同写法；件数写错了要拦
+    lines: ["desk-bot：仓库盘点完了，小说 615 本、绘本 1372 本，货值合计约 8.4 万。"]
+    cases:
+      - {text: "仓库有小说 615 本、绘本 1,372 本，货值合计约 84,000", quote: "小说 615 本、绘本 1372 本，货值合计约 8.4 万", expect: pass}
+      - {text: "仓库有小说 615 本、绘本 1,327 本，货值合计约 84,000", quote: "小说 615 本、绘本 1372 本，货值合计约 8.4 万", expect: block, by: [G2]}
+  - id: N16
+    kind: merge
+    source: made
+    why: 同一个值，“5 万”和“50000”是同一条事实；“5 千”不是
+    subject: {name: 岱川实业, mention: 岱川实业, type: 公司或机构}
+    attribute: 年费
+    first: {line: "我：岱川实业的年费是 5 万。", text: "岱川实业的年费是 5 万", value: "5 万"}
+    cases:
+      - {line: "我：岱川实业的年费是 5万。", text: "岱川实业的年费是 5万", value: "5万", expect: same}
+      - {line: "我：岱川实业的年费是 50000。", text: "岱川实业的年费是 50000", value: "50000", expect: same}
+      - {line: "我：岱川实业的年费是 5 千。", text: "岱川实业的年费是 5 千", value: "5 千", expect: different}
+  - id: N17
+    kind: merge
+    source: made
+    why: 46k 和 46,000 是同一个值
+    subject: {name: 烤箱采购单, mention: 烤箱采购单, type: 订单或合同}
+    attribute: 金额
+    first: {line: "desk-bot：烤箱采购单的金额是 USD 46k。", text: "烤箱采购单的金额是 46k 美元", value: "USD 46k"}
+    cases:
+      - {line: "desk-bot：烤箱采购单的金额是 USD 46,000。", text: "烤箱采购单的金额是 46,000 美元", value: "USD 46,000", expect: same}
+      - {line: "desk-bot：烤箱采购单的金额是 USD 23k。", text: "烤箱采购单的金额是 23k 美元", value: "USD 23k", expect: different}
+  - id: N18
+    kind: search
+    source: made
+    why: 查金额，“3600万”要查到写成“3600 万”“3,600 万”的，不能查到“13600万”
+    lines:
+      - "我：下午把3600万日元汇给大阪的工作室"
+      - "desk-bot：3600 万日元那笔已经汇出。"
+      - "desk-bot：另一笔 13600万日元下周才汇。"
+      - "desk-bot：3,600 万日元到了大阪，手续费约 2 万。"
+    cases:
+      - {query: "3600万", hit: [1, 2, 4], miss: [3]}
+  - id: N19
+    kind: search
+    source: made
+    why: 查“5万”要查到“5 万”，不能查到“15万”“25 万”
+    lines:
+      - "我：场地费 5万，周五前付。"
+      - "我：灯光 15万，下个月付。"
+      - "我：音响 25 万。"
+      - "我：舞台 5 万，已经付清。"
+    cases:
+      - {query: "5万", hit: [1, 4], miss: [2, 3]}
+  - id: N20
+    kind: search
+    source: made
+    why: 查“260万”的写法不同（带空格的、千分位的）
+    lines:
+      - "desk-bot：众筹已经到账约 260 万，离目标还差一点。"
+      - "我：260万够不够付第一批模具"
+      - "desk-bot：众筹到账约 2,600,000 元。"
+    cases:
+      - {query: "260万", hit: [1, 2, 3]}

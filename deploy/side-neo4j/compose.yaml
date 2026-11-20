@@ -1,0 +1,42 @@
+# 体检库：Graphiti 支线（第 6 步）自己的 Neo4j。和别的 Neo4j 分开：项目名、容器名、端口、数据目录都不一样。
+#
+# 起：  JAVMEM_SIDE_NEO4J_DATA=<仓库外的数据目录> docker compose -f deploy/side-neo4j/compose.yaml up -d
+# 停：  同样的命令把 up -d 换成 stop。用完就停，不设开机自启。
+#
+# - 镜像用本机已有的，不从网上拉（pull_policy: never）。钉着指纹（U2 甲，D205 ⑩）：三份 compose 和 CI 一字不差
+#   （tests/test_pins.py 钉着），是 5.26.32（10-21 的那一个）。标签 5.26-community 会跟着小版本走，钉了指纹以后只认指纹。
+#   升级：四处一起换指纹，主图整张重建，跑一遍回归（javmem regress）。
+# - 端口只绑 127.0.0.1：7477 网页、7690 bolt。
+# - 不给 NEO4J_AUTH：给了的话初始密码会存进容器的设置里。第一次起来是默认账号、要先改密码，
+#   支线的程序（javmem side init）用 bolt 连上，改成用户级环境变量 JAVMEM_SIDE_NEO4J_PASSWORD 里的那个。
+#   之后库里只存密码的哈希。要换密码：停了容器、删了数据目录重来（体检库是派生的，能重建）。
+# - Neo4j 自己往外连的都关掉：社区版默认每 24 小时报一次使用数据（dbms.usage_report.enabled），
+#   网页那边也会连外面（browser.allow_outgoing_connections、client.allow_telemetry）。
+#   Neo4j 5 认不出的设置不让启动，名字写错当场就知道；起来以后 javmem side init 再核一遍。
+# - 内存：堆 1G、页缓存 512M、所有事务加起来 256M；容器另设 2G 的硬上限兜底（JVM 自己还要几百 MB）。
+# - 全文索引默认用 cjk 分析器：中文名字按两个字一组比，Graphiti 去重找候选时比一个字一个字强。
+name: javmem-side
+
+services:
+  neo4j:
+    image: public.ecr.aws/docker/library/neo4j:5.26-community@sha256:eaee4488d580749ce332bd028f5be3917edf91f562d76c5443a51c08ec347b1f
+    pull_policy: never
+    container_name: javmem-side-neo4j
+    restart: "no"
+    ports:
+      - "127.0.0.1:7477:7474"
+      - "127.0.0.1:7690:7687"
+    volumes:
+      - ${JAVMEM_SIDE_NEO4J_DATA:?要设 JAVMEM_SIDE_NEO4J_DATA（仓库外的数据目录）}/data:/data
+      - ${JAVMEM_SIDE_NEO4J_DATA:?要设 JAVMEM_SIDE_NEO4J_DATA（仓库外的数据目录）}/logs:/logs
+    environment:
+      NEO4J_server_memory_heap_initial__size: "1G"
+      NEO4J_server_memory_heap_max__size: "1G"
+      NEO4J_server_memory_pagecache_size: "512M"
+      NEO4J_dbms_memory_transaction_total_max: "256M"
+      NEO4J_dbms_usage__report_enabled: "false"
+      NEO4J_client_allow__telemetry: "false"
+      NEO4J_db_index_fulltext_default__analyzer: "cjk"
+    mem_limit: 2g
+    memswap_limit: 2g
+    stop_grace_period: 30s

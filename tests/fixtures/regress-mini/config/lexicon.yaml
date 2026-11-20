@@ -1,0 +1,6 @@
+# 编的小套件用的别名表和词典（第二版的格式，名字都是编的）。
+format: javmem-lexicon/2
+aliases:
+  - {type: 人, names: [祝明远, 老祝]}
+  - {type: 公司或机构, names: [南岭纸业, 南岭]}
+words: [梧桐路展厅项目, 晨光一号基金, 报价单]

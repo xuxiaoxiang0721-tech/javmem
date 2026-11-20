@@ -1,0 +1,283 @@
+# J2.14 审阅时抓到的误拦、误并。句子和名字都是编的，从头写的；格式和 zh_pairs 一样，tests/test_zh.py 跑。
+groups:
+  # ---- G3 双重否定 ----
+  - id: V01
+    kind: l4
+    why: 照抄的双重否定不拦
+    lines: ["我：这个时间也不是不能调。", "我：组里没有不愿意去的。"]
+    cases:
+      - {text: "这个时间也不是不能调", quote: "这个时间也不是不能调", expect: pass}
+      - {text: "组里没有不愿意去的", quote: "组里没有不愿意去的", expect: pass}
+  - id: V02
+    kind: l4
+    why: 不是双重否定：不良、不适、非……不可入场
+    lines: ["我：非持票人员不可入场。", "我：这位租客无不良记录。", "我：打完针没有不适感。"]
+    cases:
+      - {text: "非持票人员不可入场", quote: "非持票人员不可入场", expect: pass}
+      - {text: "这位租客无不良记录", quote: "这位租客无不良记录", expect: pass}
+      - {text: "打完针没有不适感", quote: "打完针没有不适感", expect: pass}
+  - id: V03
+    kind: l4
+    why: 很短的双重否定写成否定要拦
+    lines: ["老韩：她不会不答应的。"]
+    cases:
+      - {text: "她不会答应", quote: "她不会不答应的", expect: block, by: [G3]}
+      - {text: "她会答应", quote: "她不会不答应的", expect: pass}
+  # ---- G3 只有否定的短回答 ----
+  - id: V04
+    kind: l4
+    why: 肯定的套话不是否定
+    lines: ["desk-bot：周六上午的义卖你能来帮忙吗？", "我：没问题。"]
+    cases:
+      - {text: "主人周六上午能来义卖帮忙", quote: ["周六上午的义卖你能来帮忙吗", "没问题"], expect: pass}
+      - {text: "主人周六上午不能来义卖帮忙", quote: ["周六上午的义卖你能来帮忙吗", "没问题"], expect: block, by: [G3]}
+  - id: V05
+    kind: l4
+    why: 否定的回答后面还有话的不查
+    lines: ["desk-bot：要我帮你叫明早的出租车吗？", "我：不用，我坐地铁去。"]
+    cases:
+      - {text: "主人明早坐地铁去", quote: ["要我帮你叫明早的出租车吗", "不用，我坐地铁去"], expect: pass}
+  # ---- G3 一个字的被否定词 ----
+  - id: V06
+    kind: l4
+    why: “开车”“上班”“下雨”不拆成一个字
+    lines: ["我：今天不开车，开电动车去。", "我：周五不上班，上午去体检。", "老韩：昨天没下雨，我下午去钓鱼了。"]
+    cases:
+      - {text: "主人今天开电动车去", quote: "今天不开车，开电动车去", expect: pass}
+      - {text: "主人周五上午去体检", quote: "周五不上班，上午去体检", expect: pass}
+      - {text: "老韩昨天下午去钓鱼了", quote: "昨天没下雨，我下午去钓鱼了", expect: pass}
+  # ---- G5 软性变化 ----
+  - id: V07
+    kind: l4
+    why: 只看说的是这件事的那一小句
+    lines: ["老韩：周四的培训取消了，改成周六线上讲。", "老韩：周四的火车取消了，改坐周五的大巴。"]
+    cases:
+      - {text: "老韩把培训改到周六线上讲", quote: "周四的培训取消了，改成周六线上讲", expect: pass}
+      - {text: "老韩改坐周五的大巴", quote: "周四的火车取消了，改坐周五的大巴", expect: pass}
+  - id: V08
+    kind: l4
+    why: “不错了”不是说定了
+    lines: ["我：手感不错，剩下的回头再练。"]
+    cases:
+      - {text: "手感已经不错了", quote: "手感不错，剩下的回头再练", expect: pass}
+  - id: V09
+    kind: l4
+    why: “【再定】”是标签，不是暂缓
+    lines: ["我：【老韩再定】这次聚会不去，也不送礼。"]
+    cases:
+      - {text: "主人决定不去这次聚会，也不送礼", quote: "这次聚会不去，也不送礼", expect: pass}
+  # ---- G5 语气 ----
+  - id: V10
+    kind: l4
+    why: 语气词在别的小句、别的日子
+    lines: ["老韩：周四可能下雨，周五一定开工。"]
+    cases:
+      - {text: "老韩说周五一定开工", quote: "周四可能下雨，周五一定开工", expect: pass}
+  - id: V11
+    kind: l4
+    why: 括号里的“可能”说的是另一样东西
+    lines: ["desk-bot：先走东门，西门（可能更近）明天再试。"]
+    cases:
+      - {text: "主人先走东门", quote: "先走东门，西门（可能更近）明天再试", expect: pass}
+  - id: V12
+    kind: l4
+    why: 事实自己写着“是否……要等确认”
+    lines: ["desk-bot：包裹可能已经签收，要等快递公司回电确认。"]
+    cases:
+      - {text: "包裹是否已经签收要等快递公司回电确认", quote: "包裹可能已经签收，要等快递公司回电确认", expect: pass}
+      - {text: "包裹已经签收", quote: "包裹可能已经签收", expect: block, by: [G5]}
+  # ---- G2 ----
+  - id: V13
+    kind: l4
+    why: 一个字母的单位差几个数量级的要拦
+    lines: ["我：活动预算 80 万。", "我：活动预算 80 万美元。", "老韩：运费 6k。", "我：要 12 个。"]
+    cases:
+      - {text: "活动预算 80m", quote: "活动预算 80 万", expect: block, by: [G2]}
+      - {text: "活动预算 USD 80M", quote: "活动预算 80 万美元", expect: block, by: [G2]}
+      - {text: "运费 6m", quote: "运费 6k", expect: block, by: [G2]}
+      - {text: "要 12k 个", quote: "要 12 个", expect: block, by: [G2]}
+  - id: V14
+    kind: l4
+    why: 口语的 w 挨着“块”是万；事实里中文写的时刻不当小数；百分之三十也是 0.3
+    lines: ["我：押金 3w块。", "我：今天下午 16:40 在二楼面试。", "我：分成比例 0.3。"]
+    cases:
+      - {text: "押金 3 万元", quote: "押金 3w块", expect: pass}
+      - {text: "主人今天下午四点四十在二楼面试", quote: "今天下午 16:40 在二楼面试", expect: pass}
+      - {text: "分成比例百分之三十", quote: "分成比例 0.3", expect: pass}
+  # ---- L5 拆名字 ----
+  - id: V15
+    kind: entity
+    why: 括号里是职务的两个人不并
+    type: 人
+    first: {line: "我：赵六（采购经理）周三来。", name: "赵六（采购经理）"}
+    cases:
+      - {line: "我：钱七（采购经理）也来。", name: "钱七（采购经理）", expect: different}
+  - id: V16
+    kind: entity
+    why: 括号里是英文职务的两个人不并
+    type: 人
+    first: {line: "desk-bot：Ivy (CFO) 回了消息。", name: "Ivy (CFO)"}
+    cases:
+      - {line: "desk-bot：Leo (CFO) 也回了。", name: "Leo (CFO)", expect: different}
+  - id: V17
+    kind: entity
+    why: 括号里是分支的两家不并
+    type: 公司或机构
+    first: {line: "desk-bot：Morrow (广州分公司) 发了报价。", name: "Morrow (广州分公司)"}
+    cases:
+      - {line: "desk-bot：Halvorsen (广州分公司) 也发了。", name: "Halvorsen (广州分公司)", expect: different}
+  - id: V18
+    kind: entity
+    why: 括号里是期数的两个项目不并
+    type: 项目
+    first: {line: "我：Harbor Lane (三期) 开工了。", name: "Harbor Lane (三期)"}
+    cases:
+      - {line: "我：Maple Court (三期) 也开工了。", name: "Maple Court (三期)", expect: different}
+  - id: V19
+    kind: entity
+    why: 斜杠两边都是中文的是两个人
+    type: 人
+    first: {line: "我：王五 / 孙八 负责这次布展。", name: "王五 / 孙八"}
+    cases:
+      - {line: "我：孙八今天请假。", name: "孙八", expect: different}
+  - id: V20
+    kind: entity
+    why: 控股和有限公司可能是两家
+    type: 公司或机构
+    first: {line: "我：岱川控股发了年报。", name: "岱川控股"}
+    cases:
+      - {line: "我：岱川有限公司的发票到了。", name: "岱川有限公司", expect: different}
+  - id: V21
+    kind: entity
+    why: 先有中文名的实体，后来写成“英文名（中文名）”的还是它
+    type: 公司或机构
+    first: {line: "我：松岚的新品发布会定在月底。", name: "松岚"}
+    cases:
+      - {line: "我：Corvalis（松岚）的邀请函到了。", name: "Corvalis（松岚）", expect: same}
+  # ---- D78 的“你” ----
+  - id: V22
+    kind: owner
+    why: 外部内容、转发里的“你”不是主人；L3 已经认成具体的人的照名字走
+    lines: ["desk-bot：[外部:网页] 你需要在周五前上传作品。"]
+    cases:
+      - {entity: {name: 你, mention: 你, type: 人}, text: "你需要在周五前上传作品", quote: "你需要在周五前上传作品", expect: not_owner}
+  - id: V23
+    kind: owner
+    why: L3 给的名字是老韩、写法是“你”
+    lines: ["desk-bot：我帮你写好了给老韩的消息：老韩，你后天下午两点去仓库。"]
+    cases:
+      - {entity: {name: 老韩, mention: 你, type: 人}, text: "老韩后天下午两点去仓库", quote: "老韩，你后天下午两点去仓库", expect: not_owner}
+  - id: V24
+    kind: owner
+    why: 转发里的“你”
+    lines: ["desk-bot：[转发 自 小林] 你周一把发票寄给我。"]
+    cases:
+      - {entity: {name: 你, mention: 你, type: 人}, text: "你周一把发票寄给我", quote: "你周一把发票寄给我", expect: not_owner}
+  # ---- L5 值的统一写法 ----
+  - id: V25
+    kind: merge
+    why: 没写年份的日期，同一年里不管哪天说的都是同一个值
+    subject: {name: 琴房租约, mention: 琴房租约, type: 订单或合同}
+    attribute: 到期日期
+    first: {day: "2026-05-17", line: "我：琴房租约的到期日期是 11月18日。", text: "琴房租约的到期日期是 11月18日", value: "11月18日"}
+    cases:
+      - {day: "2026-05-21", line: "我：琴房租约的到期日期是 11月18日。", text: "琴房租约的到期日期是 11月18日", value: "11月18日", expect: same}
+  - id: V26
+    kind: merge
+    why: 属性不像日期的 3/4 是分数，不和 3月4日 并
+    subject: {name: 毕业设计, mention: 毕业设计, type: 项目}
+    attribute: 完成比例
+    first: {line: "我：毕业设计的完成比例是 3/4。", text: "毕业设计的完成比例是 3/4", value: "3/4"}
+    cases:
+      - {line: "我：毕业设计的完成比例是 3月4日。", text: "毕业设计的完成比例是 3月4日", value: "3月4日", expect: different}
+  # ---- 复查时抓到的 ----
+  - id: X01
+    kind: l4
+    why: 句子里的“没关系、没问题、不碍事、不要紧急”是真否定，写反了要拦（只有整条回答是这些时才是肯定的套话）
+    lines: ["我：这次停电跟楼上施工没关系。", "我：物业没事先通知就停了水。", "我：幸好没错过末班车。", "我：这台二手车的车况没问题。", "我：这点擦伤不碍事。", "我：这批样品不要紧急寄。"]
+    cases:
+      - {text: "这次停电跟楼上施工有关系", quote: "这次停电跟楼上施工没关系", expect: block, by: [G3]}
+      - {text: "物业事先通知了才停水", quote: "物业没事先通知就停了水", expect: block, by: [G3]}
+      - {text: "主人错过了末班车", quote: "幸好没错过末班车", expect: block, by: [G3]}
+      - {text: "这台二手车的车况有问题", quote: "这台二手车的车况没问题", expect: block, by: [G3]}
+      - {text: "这点擦伤碍事", quote: "这点擦伤不碍事", expect: block, by: [G3]}
+      - {text: "这批样品要紧急寄", quote: "这批样品不要紧急寄", expect: block, by: [G3]}
+  - id: X02
+    kind: l4
+    why: 否定的短回答后面跟着客气话，照样算
+    lines: ["desk-bot：要不要晚上提醒你收快递？", "我：不用了，谢谢。", "我：不用啦，我记得。"]
+    cases:
+      - {text: "主人要求晚上提醒收快递", quote: ["要不要晚上提醒你收快递", "不用了，谢谢"], expect: block, by: [G3]}
+      - {text: "主人要求晚上提醒收快递", quote: ["要不要晚上提醒你收快递", "不用啦，我记得"], expect: block, by: [G3]}
+  - id: X03
+    kind: l4
+    why: 暂时的说法写在说的那件事前面
+    lines: ["我：先放放吧，学吉他那件事。"]
+    cases:
+      - {text: "学吉他的事取消", quote: "先放放吧，学吉他那件事", expect: block, by: [G5]}
+  - id: X04
+    kind: l4
+    why: 事实把相对的日子换算成了日期，照样看语气
+    lines: ["老韩：可能下周三补货。", "我：样品可能明天寄到。", "我：样品估计月底寄到。"]
+    cases:
+      - {text: "老韩 11/18 补货", quote: "可能下周三补货", expect: block, by: [G5]}
+      - {text: "样品 11/11 寄到", quote: "样品可能明天寄到", expect: block, by: [G5]}
+      - {text: "样品 11/30 寄到", quote: "样品估计月底寄到", expect: block, by: [G5]}
+  - id: X05
+    kind: l4
+    why: “最晚、最早、早晚”的一个字不是上午下午
+    lines: ["我：明天最晚9点前到机场。", "我：明天最早4点到。", "我：每天早晚9点各喂一次猫。"]
+    cases:
+      - {text: "主人明天 09:00 前到机场", quote: "明天最晚9点前到机场", expect: pass}
+      - {text: "主人明天 16:00 到", quote: "明天最早4点到", expect: pass}
+      - {text: "主人每天 09:00 喂一次猫", quote: "每天早晚9点各喂一次猫", expect: pass}
+  - id: X06
+    kind: l4
+    why: 单写的“万”不是原文里的数
+    lines: ["我：万家灯火那家店的报价到了。", "我：要准备几万块学费。"]
+    cases:
+      - {text: "万家灯火报价 1 万", quote: "万家灯火那家店的报价到了", expect: block, by: [G2]}
+      - {text: "要准备 1 万块学费", quote: "要准备几万块学费", expect: block, by: [G2]}
+  - id: X07
+    kind: l4
+    why: 小数写成一个字母的单位
+    lines: ["我：鞋柜离门 0.5 米。", "我：书架离窗 3.0 米。"]
+    cases:
+      - {text: "鞋柜离门 0.5m", quote: "鞋柜离门 0.5 米", expect: pass}
+      - {text: "书架离窗 3m", quote: "书架离窗 3.0 米", expect: pass}
+  - id: X08
+    kind: entity
+    why: 括号里是交易所的两家不并
+    type: 资产
+    first: {line: "desk-bot：Corvalis (NYSE) 今天涨了。", name: "Corvalis (NYSE)"}
+    cases:
+      - {line: "desk-bot：Morrow (NYSE) 今天跌了。", name: "Morrow (NYSE)", expect: different}
+  - id: X09
+    kind: entity
+    why: 括号里是产品类型的两只不并
+    type: 资产
+    first: {line: "desk-bot：KVLT (ETF) 分红了。", name: "KVLT (ETF)"}
+    cases:
+      - {line: "desk-bot：NRDX (ETF) 也分红了。", name: "NRDX (ETF)", expect: different}
+  - id: X10
+    kind: entity
+    why: 括号里是地区的两家不并
+    type: 公司或机构
+    first: {line: "我：Halvorsen (APAC) 发了邮件。", name: "Halvorsen (APAC)"}
+    cases:
+      - {line: "我：Morrow (APAC) 也发了。", name: "Morrow (APAC)", expect: different}
+  - id: X11
+    kind: entity
+    why: 括号里是称谓，后来单写的称谓不并到这个人身上
+    type: 人
+    first: {line: "我：孙八（司机）明早来接。", name: "孙八（司机）"}
+    cases:
+      - {line: "我：司机说路上有点堵。", name: "司机", expect: different}
+  - id: X12
+    kind: merge
+    why: 没写年份的日期，跨年说的也是同一个值
+    subject: {name: 琴房租约, mention: 琴房租约, type: 订单或合同}
+    attribute: 到期日期
+    first: {day: "2026-12-28", line: "我：琴房租约的到期日期是 1月5日。", text: "琴房租约的到期日期是 1月5日", value: "1月5日"}
+    cases:
+      - {day: "2027-01-03", line: "我：琴房租约的到期日期是 1月5日。", text: "琴房租约的到期日期是 1月5日", value: "1月5日", expect: same}

@@ -1,0 +1,18 @@
+# 投毒演练（U2 乙，D205 ⑤）用的来源登记表：一个编的 Bot、一个编的邮箱，都只投测试目录。名字、地址都是编的。
+domains: [business, finance, investment, research, dev, personal]
+sources:
+  poison-bot:
+    note: 投毒演练用的 Bot（编的）
+    framework: demo-chat
+    env: test
+    channel: chat
+    default_domain: [business]
+    may_carry: []
+  poison-mail:
+    note: 投毒演练用的邮箱（编的）
+    framework: mail-import
+    env: test
+    channel: email
+    mailbox: bai.qinglan@lanting-trade.example
+    default_domain: [business]
+    may_carry: []

@@ -1,0 +1,133 @@
+# J2.14 第 5 类：语气和确定性。句子和名字都是编的，从头写的。
+# 原文没说定的，事实写成说定了的（stated）要拦，要 G5 拦（by）；
+# 照留语气词、换了同义的语气词（“多半”写成“可能”）的放过，标 stated 也放过。
+category: 语气和确定性
+groups:
+  - id: M01
+    kind: l4
+    source: made
+    why: 可能
+    lines: ["老韩：可能下周才能补货。"]
+    cases:
+      - {text: "老韩下周才能补货", quote: "可能下周才能补货", expect: block, by: [G5]}
+      - {text: "老韩可能下周才能补货", quote: "可能下周才能补货", expect: pass}
+  - id: M02
+    kind: l4
+    source: made
+    why: 大概率（夹在中间，去掉以后才看得出说的是同一件事）
+    lines: ["desk-bot：这班车大概率要晚点。"]
+    cases:
+      - {text: "这班车会晚点", quote: "这班车大概率要晚点", expect: block, by: [G5]}
+      - {text: "这班车大概率会晚点", quote: "这班车大概率要晚点", certainty: inferred, expect: pass}
+  - id: M03
+    kind: l4
+    source: made
+    why: 多半
+    lines: ["desk-bot：多半是路由器没插好。"]
+    cases:
+      - {text: "原因是路由器没插好", quote: "多半是路由器没插好", expect: block, by: [G5]}
+      - {text: "原因可能是路由器没插好", quote: "多半是路由器没插好", expect: pass}
+  - id: M04
+    kind: l4
+    source: made
+    why: 八成
+    lines: ["我：这次面试八成能过。"]
+    cases:
+      - {text: "这次面试能过", quote: "这次面试八成能过", expect: block, by: [G5]}
+      - {text: "主人认为这次面试可能能过", quote: "这次面试八成能过", expect: pass}
+  - id: M05
+    kind: l4
+    source: made
+    why: 恐怕
+    lines: ["我：恐怕赶不上末班地铁了。"]
+    cases:
+      - {text: "主人赶不上末班地铁", quote: "恐怕赶不上末班地铁了", expect: block, by: [G5]}
+      - {text: "主人可能赶不上末班地铁", quote: "恐怕赶不上末班地铁了", expect: pass}
+  - id: M06
+    kind: l4
+    source: made
+    why: 听说（传闻）
+    lines: ["我：听说食堂下个月要换承包商。"]
+    cases:
+      - {text: "食堂下个月要换承包商", quote: "听说食堂下个月要换承包商", expect: block, by: [G5]}
+      - {text: "主人听说食堂下个月要换承包商", quote: "听说食堂下个月要换承包商", expect: pass}
+  - id: M07
+    kind: l4
+    source: made
+    why: 没准（很短的小句，一个字一个字比）
+    lines: ["我：没准明天就修好了。"]
+    cases:
+      - {text: "电梯明天修好", quote: "没准明天就修好了", expect: block, by: [G5]}
+      - {text: "电梯也许明天就修好", quote: "没准明天就修好了", expect: pass}
+  - id: M08
+    kind: l4
+    source: made
+    why: 应该
+    lines: ["我：快递周四应该能到。"]
+    cases:
+      - {text: "快递周四能到", quote: "快递周四应该能到", expect: block, by: [G5]}
+      - {text: "快递周四应该能到", quote: "快递周四应该能到", certainty: inferred, expect: pass}
+  - id: M09
+    kind: l4
+    source: made
+    why: 语气词在别的小句里：“可能”说的是下雨，不是比赛
+    lines: ["我：明天可能会下点小雨，比赛照常进行。"]
+    cases:
+      - {text: "比赛照常进行", quote: "比赛照常进行", expect: pass}
+      - {text: "明天会下点小雨", quote: "明天可能会下点小雨", expect: block, by: [G5]}
+  - id: M10
+    kind: l4
+    source: made
+    why: 问句不是事实（照实记下“问了”的标 stated 按设计也会被 question_as_fact 拦，这里只测标 inferred 的不拦）
+    lines: ["我：周日能延迟退房吗"]
+    cases:
+      - {text: "周日能延迟退房", quote: "周日能延迟退房吗", expect: block, by: [G5]}
+      - {text: "主人问周日能不能延迟退房", quote: "周日能延迟退房吗", certainty: inferred, expect: pass}
+  - id: M11
+    kind: l4
+    source: made
+    why: 要不（建议），不是说定了
+    lines: ["我：要不周六去爬山吧。"]
+    cases:
+      - {text: "主人周六去爬山", quote: "要不周六去爬山吧", expect: block, by: [G5]}
+      - {text: "主人提议周六去爬山", quote: "要不周六去爬山吧", certainty: inferred, expect: pass}
+  - id: M12
+    kind: l4
+    source: made
+    why: 估计
+    lines: ["我：估计周四能装好。"]
+    cases:
+      - {text: "周四能装好", quote: "估计周四能装好", expect: block, by: [G5]}
+      - {text: "估计周四能装好", quote: "估计周四能装好", expect: pass}
+  - id: M13
+    kind: l4
+    source: made
+    why: 看情况再定
+    lines: ["我：看情况再定要不要续租。"]
+    cases:
+      - {text: "主人决定续租", quote: "看情况再定要不要续租", expect: block, by: [G5]}
+      - {text: "主人看情况再定要不要续租", quote: "看情况再定要不要续租", expect: pass}
+  - id: M14
+    kind: l4
+    source: made
+    why: 差不多是约数，不是语气，丢了也放过（对照）
+    lines: ["我：差不多七点开饭。"]
+    cases:
+      - {text: "约七点开饭", quote: "差不多七点开饭", expect: pass}
+      - {text: "七点开饭", quote: "差不多七点开饭", expect: pass}
+  - id: M15
+    kind: l4
+    source: made
+    why: 可能没更新
+    lines: ["desk-bot：以门口的告示为准，网上的营业时间可能没更新。"]
+    cases:
+      - {text: "网上的营业时间没更新", quote: "网上的营业时间可能没更新", expect: block, by: [G5]}
+      - {text: "网上的营业时间可能没更新，以门口的告示为准", quote: "以门口的告示为准，网上的营业时间可能没更新", expect: pass}
+  - id: M16
+    kind: l4
+    source: made
+    why: 说不定
+    lines: ["我：说不定周末就放晴了。"]
+    cases:
+      - {text: "周末会放晴", quote: "说不定周末就放晴了", expect: block, by: [G5]}
+      - {text: "主人认为周末可能放晴", quote: "说不定周末就放晴了", expect: pass}

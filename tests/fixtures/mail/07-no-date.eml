@@ -1,0 +1,12 @@
+Received: from mx.example.com (mx.example.com [192.0.2.10])
+ by mx2.example.com with ESMTP id demo1;
+ Thu, 05 Nov 2026 12:00:00 +0800
+Received: from client by mx.example.com; Thu, 05 Nov 2026 11:59:30 +0800
+Message-ID: <nodate-0001@example.com>
+From: Wang Fang <wang.fang@example.com>
+To: li.ming@example.com
+Subject: =?UTF-8?B?5rKh5pyJ5pel5pyf55qE5L+h?=
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+这封信没有 Date，用最上面一条 Received 的时间。

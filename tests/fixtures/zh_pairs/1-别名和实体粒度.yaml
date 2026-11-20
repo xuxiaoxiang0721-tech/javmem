@@ -1,0 +1,139 @@
+# J2.14 第 1 类：别名和实体粒度。句子、名字和数都是编的，从头写的，不是拿真实的句子换名字换数。
+# 两个包各提到一次，看 L5 是不是对到同一个实体。
+# same：同一个东西换了叫法（括号里外、去掉公司的法律后缀、别名表里配的）；different：不同的东西或者粒度不同
+# （分行、ADR、一篮子、同姓的人）。规则拿不准的（只有姓加称呼、只有名没有姓）按设计不该猜，算 different。
+# needs_lexicon 的组要配别名表（tests/fixtures/zh_lexicon.yaml）。
+category: 别名和实体粒度
+groups:
+  - id: A01
+    kind: entity
+    source: made
+    why: 名字带括号的别名，两种顺序都有：Corvalis（松岚）、松岚（Corvalis）
+    type: 公司或机构
+    first: {line: "我：Corvalis（松岚）的展位定在三号馆。", name: "Corvalis（松岚）"}
+    cases:
+      - {line: "desk-bot：松岚把展台效果图发过来了，灯光还要再调。", name: "松岚", expect: same}
+      - {line: "我：松岚（Corvalis）那份赞助协议拖到下周签。", name: "松岚（Corvalis）", expect: same}
+      - {line: "我：Corvalis Korea 也来问还有没有空展位。", name: "Corvalis Korea", expect: different}
+  - id: A02
+    kind: entity
+    source: made
+    why: KVLT（Kovalt）和 KVLT、拼错的 KVLT（Kovelt）；一篮子不能并进来
+    type: 资产
+    first: {line: "desk-bot：KVLT（Kovalt）盘前涨了 2%，成交比昨天少。", name: "KVLT（Kovalt）"}
+    cases:
+      - {line: "我：KVLT 等回调到 40 以下再看。", name: "KVLT", expect: same}
+      - {line: "我：KVLT（Kovelt）的季报周四出。", name: "KVLT（Kovelt）", expect: same}
+      - {line: "desk-bot：KVLT / NRDX 篮子这周回落了 3%。", name: "KVLT / NRDX 篮子", expect: different}
+  - id: A03
+    kind: entity
+    source: made
+    why: 远帆（6127 HK）和远帆是同一只股票；远帆 ADR 是另一只
+    type: 资产
+    first: {line: "desk-bot：远帆（6127 HK）午盘收在 23.4。", name: "远帆（6127 HK）"}
+    cases:
+      - {line: "我：远帆先留着，不加也不减。", name: "远帆", expect: same}
+      - {line: "我：6127 HK 跌破 20 就告诉我。", name: "6127 HK", expect: same}
+      - {line: "desk-bot：远帆 ADR 昨晚成交了 900 股。", name: "远帆 ADR", expect: different}
+  - id: A04
+    kind: entity
+    source: made
+    why: Morrow (4421 JT) 和 Morrow、带代码的全称
+    type: 公司或机构
+    first: {line: "desk-bot：Morrow (4421 JT) 发了新一季的指引。", name: "Morrow (4421 JT)"}
+    cases:
+      - {line: "我：Morrow 这次的指引比上季保守。", name: "Morrow", expect: same}
+      - {line: "desk-bot：Morrow Holdings (4421 JT / 4421.T) 早盘涨了 3%。", name: "Morrow Holdings (4421 JT / 4421.T)", expect: same}
+      - {line: "desk-bot：Morrow America 的年报还没出。", name: "Morrow America", expect: different}
+  - id: A05
+    kind: entity
+    source: made
+    why: 人名带括号的英文名
+    type: 人
+    first: {line: "desk-bot：程一舟（Yizhou）答应来读书会做分享。", name: "程一舟（Yizhou）"}
+    cases:
+      - {line: "desk-bot：Yizhou 把分享的书单发来了。", name: "Yizhou", expect: same}
+      - {line: "我：程一舟那场排在月底。", name: "程一舟", expect: same}
+      - {line: "我：程一川也想来旁听。", name: "程一川", expect: different}
+  - id: A06
+    kind: entity
+    source: made
+    why: 孩子的中文名、小名、英文名写在一起
+    type: 人
+    first: {line: "desk-bot：沈禾苗（苗苗）/ Nora 的游泳课改到周四。", name: "沈禾苗（苗苗）/ Nora"}
+    cases:
+      - {line: "我：Nora 游完泳直接去外婆家", name: "Nora", expect: same}
+      - {line: "我：苗苗今天有点咳嗽。", name: "苗苗", expect: same}
+      - {line: "desk-bot：沈禾穗（穗穗）的钢琴课照常。", name: "沈禾穗（穗穗）", expect: different}
+  - id: A07
+    kind: entity
+    source: made
+    why: 公司的法律后缀（有限公司）去掉还是同一家；换了行业字眼是另一家
+    type: 公司或机构
+    first: {line: "我：岱川实业有限公司的样品寄到了。", name: "岱川实业有限公司"}
+    cases:
+      - {line: "我：岱川实业的样品颜色偏深。", name: "岱川实业", expect: same}
+      - {line: "我：岱川物流说周五来提货。", name: "岱川物流", expect: different}
+  - id: A08
+    kind: entity
+    source: made
+    why: 英文公司的法律后缀
+    type: 公司或机构
+    first: {line: "desk-bot：Halvorsen Co. Ltd. 寄来了新的价目表。", name: "Halvorsen Co. Ltd."}
+    cases:
+      - {line: "我：Halvorsen 的价目表涨了一成。", name: "Halvorsen", expect: same}
+      - {line: "desk-bot：Halvorsen VC 想约下周喝咖啡。", name: "Halvorsen VC", expect: different}
+  - id: A09
+    kind: entity
+    source: made
+    why: 空格、全角半角、大小写不同是同一个（现在就对，对照）
+    type: 资产
+    first: {line: "desk-bot：远帆 ADR 昨晚成交了 900 股。", name: "远帆 ADR"}
+    cases:
+      - {line: "我：远帆ADR这周不动。", name: "远帆ADR", expect: same}
+      - {line: "我：远帆ａｄｒ留到年底。", name: "远帆ａｄｒ", expect: same}
+  - id: A10
+    kind: entity
+    source: made
+    why: 写法（mention）记成别名，后来只写写法的对得上；只有姓加称呼的不能猜
+    type: 人
+    first: {line: "我：老韩，就是韩东林，管车队的排班。", name: "韩东林", mention: "老韩"}
+    cases:
+      - {line: "我：老韩说周六的车排好了。", name: "老韩", expect: same}
+      - {line: "我：韩总下个月来看场地。", name: "韩总", expect: different}
+  - id: A11
+    kind: entity
+    source: made
+    why: 只有名、没有姓的，和别人的全名不能猜成一个
+    type: 人
+    first: {line: "desk-bot：Marcus 回信说周三可以来面试。", name: "Marcus"}
+    cases:
+      - {line: "desk-bot：Marcus Ong 是另一个候选人。", name: "Marcus Ong", expect: different}
+  - id: A13
+    kind: entity
+    source: made
+    why: 分行是另一个粒度
+    type: 公司或机构
+    first: {line: "desk-bot：TVK 寄来了会员卡的申请表。", name: "TVK"}
+    cases:
+      - {line: "desk-bot：TVK Partners 新加坡分行还要一份地址证明。", name: "TVK Partners 新加坡分行", expect: different}
+  - id: A14
+    kind: entity
+    source: made
+    needs_lexicon: true
+    why: 外文名和中文名两个包各写一次，只能靠配置里的别名表（RVT = 河谷）；RVT Select 是它的一个服务档，不并
+    type: 公司或机构
+    first: {line: "desk-bot：RVT 的保养顾问叫 Iris。", name: "RVT"}
+    cases:
+      - {line: "desk-bot：我照着这位顾问把河谷的保养单都找出来了。", name: "河谷", expect: same}
+      - {line: "desk-bot：RVT Select 的年费账单还没寄来。", name: "RVT Select", expect: different}
+  - id: A15
+    kind: entity
+    source: made
+    needs_lexicon: true
+    why: 小名在另一个包里单独出现，只能靠配置里的别名表（沈禾苗 = 苗苗）；同姓的姐姐不并
+    type: 人
+    first: {line: "desk-bot：沈禾苗的游泳课改到周四。", name: "沈禾苗"}
+    cases:
+      - {line: "我：苗苗今天有点咳嗽。", name: "苗苗", expect: same}
+      - {line: "desk-bot：沈禾穗的钢琴课照常。", name: "沈禾穗", expect: different}

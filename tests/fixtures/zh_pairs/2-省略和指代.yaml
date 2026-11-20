@@ -1,0 +1,115 @@
+# J2.14 第 2 类：省略和指代。句子和名字都是编的，从头写的；source: report 的是任务说明里给的例句。
+# owner：L3 给的主体（“我”“你”“本人”……）写进账本以后是不是“主人”；
+# l4：省掉的主语、宾语，回答里省掉的那半句，事实补全得对不对。
+# 对话包里的“我”是主人（规范第 5 节）；Bot 一对一跟主人说话时的“你”“您”是主人，有第三个人说话时照旧是泛称（D78）。
+# 主语换了人（甲的说成乙的）设计上归 D63 的模型复核，标 beyond：测试断言它还是错的。
+category: 省略和指代
+groups:
+  - id: R01
+    kind: owner
+    source: made
+    why: 主人自己说的“我”、Bot 自己说的“我”
+    lines: ["我：我周四去苏州看展。", "desk-bot：收到，我周三晚上再提醒一次。"]
+    cases:
+      - {entity: {name: 我, mention: 我, type: 人}, text: "我周四去苏州看展", quote: "我周四去苏州看展", expect: owner}
+      - {entity: {name: 我, mention: 我, type: 人}, text: "我周三晚上再提醒一次", quote: "我周三晚上再提醒一次", expect: not_owner}
+  - id: R02
+    kind: owner
+    source: made
+    why: Bot 一对一跟主人说的“你”是主人；Bot 自己的“我”不是
+    lines: ["desk-bot：你订的是周六上午的羽毛球场，我先把要带的东西列出来。"]
+    cases:
+      - {entity: {name: 你, mention: 你, type: 人}, text: "你订的是周六上午的羽毛球场", quote: "你订的是周六上午的羽毛球场", expect: owner}
+      - {entity: {name: 我, mention: 我, type: 人}, text: "我先把要带的东西列出来", quote: "我先把要带的东西列出来", expect: not_owner}
+  - id: R03
+    kind: owner
+    source: made
+    why: 主人说的“你”是 Bot，不是主人
+    lines: ["我：你帮我把下周的健身课都记到日历上"]
+    cases:
+      - {entity: {name: 你, mention: 你, type: 人}, text: "你帮主人把下周的健身课记到日历上", quote: "你帮我把下周的健身课都记到日历上", expect: not_owner}
+      - {entity: {name: 我, mention: 我, type: 人}, text: "我下周的健身课要记到日历上", quote: "你帮我把下周的健身课都记到日历上", expect: owner}
+  - id: R04
+    kind: owner
+    source: made
+    why: Bot 说的“您”
+    lines: ["desk-bot：您周五要去取体检报告。"]
+    cases:
+      - {entity: {name: 您, mention: 您, type: 人}, text: "您周五要去取体检报告", quote: "您周五要去取体检报告", expect: owner}
+  - id: R05
+    kind: owner
+    source: made
+    why: 群里有别人说话时，Bot 的“你”说不准是谁
+    lines: ["老韩：周五的体检报告谁去取？", "desk-bot：你周五去取体检报告。"]
+    cases:
+      - {entity: {name: 你, mention: 你, type: 人}, text: "你周五去取体检报告", quote: "你周五去取体检报告", expect: not_owner}
+  - id: R06
+    kind: owner
+    source: made
+    why: “我们”不是主人一个人；“本人”是
+    lines: ["我：我们周日去爬莫干山。", "我：本人周一在公司值班。"]
+    cases:
+      - {entity: {name: 我们, mention: 我们, type: 人}, text: "我们周日去爬莫干山", quote: "我们周日去爬莫干山", expect: not_owner}
+      - {entity: {name: 本人, mention: 本人, type: 人}, text: "本人周一在公司值班", quote: "本人周一在公司值班", expect: owner}
+  - id: R07
+    kind: owner
+    source: made
+    why: 群里别人说的“我”是他自己
+    lines: ["老韩：我周四中午到南京。"]
+    cases:
+      - {entity: {name: 我, mention: 我, type: 人}, text: "我周四中午到南京", quote: "我周四中午到南京", expect: not_owner}
+  - id: R08
+    kind: owner
+    source: made
+    why: L3 已经写成“主人”的
+    lines: ["desk-bot：主人周五要去取体检报告。"]
+    cases:
+      - {entity: {name: 主人, mention: 主人, type: 人}, text: "主人周五要去取体检报告", quote: "主人周五要去取体检报告", expect: owner}
+  - id: R09
+    kind: l4
+    source: report
+    why: 省掉的否定：明天的会我不去
+    lines: ["我：明天的会我不去了。"]
+    cases:
+      - {text: "主人明天不去开会", quote: "明天的会我不去了", expect: pass}
+      - {text: "主人明天去开会", quote: "明天的会我不去了", expect: block, by: [G3]}
+  - id: R10
+    kind: l4
+    source: made
+    why: 回答里省掉的半句：要不要提醒？不用
+    lines: ["desk-bot：要不要周末提醒你给花浇水？", "我：不用。"]
+    cases:
+      - {text: "主人不需要周末提醒浇水", quote: ["要不要周末提醒你给花浇水", "不用"], expect: pass}
+      - {text: "主人要求周末提醒浇水", quote: ["要不要周末提醒你给花浇水", "不用"], expect: block, by: [G3]}
+  - id: R11
+    kind: l4
+    source: made
+    why: 回答里省掉的半句：能修完吗？能
+    lines: ["我：周六能把车修完吗？", "老韩：能。"]
+    cases:
+      - {text: "老韩周六能把车修完", quote: ["周六能把车修完吗", "能"], expect: pass}
+      - {text: "老韩周六能把车修完", quote: ["周六能把车修完吗"], expect: block, by: [G5]}
+  - id: R12
+    kind: l4
+    source: made
+    why: 代词换成名字照放；说成是主人自己（主语换了人）要拦，设计上归 D63
+    lines: ["我：老韩说他下周二去广州。"]
+    cases:
+      - {text: "老韩说他下周二去广州", quote: "老韩说他下周二去广州", expect: pass}
+      - {text: "主人下周二去广州", quote: "老韩说他下周二去广州", expect: block, bucket: beyond}
+  - id: R13
+    kind: l4
+    source: made
+    why: 省掉的宾语：要入手吗？先不买
+    lines: ["desk-bot：那台二手相机降到 2800 了，要入手吗？", "我：先不买。"]
+    cases:
+      - {text: "主人暂不买那台二手相机", quote: ["那台二手相机降到 2800 了，要入手吗", "先不买"], expect: pass}
+      - {text: "主人决定买那台二手相机", quote: ["那台二手相机降到 2800 了，要入手吗", "先不买"], expect: block, by: [G3]}
+  - id: R14
+    kind: l4
+    source: made
+    why: 主语是别人：老韩说小林下周二到；说成老韩自己到要拦，设计上归 D63
+    lines: ["我：老韩说小林下周二到。"]
+    cases:
+      - {text: "老韩说小林下周二到", quote: "老韩说小林下周二到", expect: pass}
+      - {text: "老韩下周二到", quote: "老韩说小林下周二到", expect: block, bucket: beyond}

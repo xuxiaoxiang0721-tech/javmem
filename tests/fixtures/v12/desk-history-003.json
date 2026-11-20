@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.2",
+  "package_id": "desk-history-003",
+  "synthetic": true,
+  "packaged_at": "2026-11-12T08:00:00+08:00",
+  "source": {"source_tool": "demo_chat", "exported_by": "demo-history", "origin_environment": "cloud", "packaging_environment": "local", "session_id": "demo-session-001", "parent_session_id": null, "task_id": "demo-task"},
+  "coverage": {"description": "编的样例：补历史，三段对话，拆包用", "window_start": "2026-11-10T09:00:00+08:00", "window_end": "2026-11-11T18:00:00+08:00", "completeness": "partial", "content_types": ["conversation_excerpt"], "gaps": []},
+  "continuity": {"stream_id": "demo-stream", "previous_package_id": "desk-daily-002", "mode": "supplement", "context_summary_ref": null, "context_status": "missing", "based_on_receipt_id": null},
+  "raw_records": [
+    {"record_id": "h1", "sequence": 1, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "第一段第一句：新加坡的单子下周报价，单价先按 9.8 美元算，数量两千件。", "occurred_at": "2026-11-10T09:00:00+08:00", "observed_at": "2026-11-12T08:00:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new"},
+    {"record_id": "h2", "sequence": 2, "role": "assistant", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "第一段第二句：好的，我记下了。报价单模板用上次给示例家居公司的那份吗？", "occurred_at": "2026-11-10T09:05:00+08:00", "observed_at": "2026-11-12T08:00:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new"},
+    {"record_id": "h3", "sequence": 3, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "第二段第一句：模板用新的，抬头换成新加坡分公司，交期写四周。", "occurred_at": "2026-11-10T15:00:00+08:00", "observed_at": "2026-11-12T08:00:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new"},
+    {"record_id": "h4", "sequence": 4, "role": "assistant", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "第二段第二句：收到，新模板抬头是新加坡分公司，交期四周，我今晚发你看。", "occurred_at": "2026-11-10T15:02:00+08:00", "observed_at": "2026-11-12T08:00:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new"},
+    {"record_id": "h5", "sequence": 5, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "第三段第一句：报价单我看过了，单价改成 9.6 美元，其他不变，明早发客户。", "occurred_at": "2026-11-11T17:58:00+08:00", "observed_at": "2026-11-12T08:00:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new"},
+    {"record_id": "h6", "sequence": 6, "role": "assistant", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "第三段第二句：好，单价 9.6 美元，明早九点发客户，发完告诉你。", "occurred_at": "2026-11-11T17:57:30+08:00", "observed_at": "2026-11-12T08:00:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new"}
+  ],
+  "summaries": [],
+  "fact_candidates": [],
+  "redactions": [],
+  "attachments": []
+}

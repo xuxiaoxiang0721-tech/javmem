@@ -1,0 +1,601 @@
+{
+ "format": "javmem-l3-replies/1",
+ "note": "U2 甲 11-19 录的：sol 线 l3-v20、gpt-6.1-sol、标准价；5 个编的包，不开判断 C、认人认事",
+ "tables": {
+  "calls": {
+   "columns": [
+    "call_id",
+    "run_id",
+    "window_id",
+    "cache_key",
+    "attempt",
+    "status",
+    "detail",
+    "input_tokens",
+    "output_tokens",
+    "reasoning_tokens",
+    "cached_tokens",
+    "seconds",
+    "at"
+   ],
+   "rows": [
+    [
+     1,
+     "20261119T072351Z-46287b",
+     "2026-10-05_2300_demo-bot#w1",
+     "6eb8702233fb6cde17b198353787493dd501308d3570c536bd58d9e1650bad00",
+     1,
+     "ok",
+     "",
+     7979,
+     1803,
+     233,
+     0,
+     22.468,
+     "2026-11-19T15:24:13+08:00"
+    ],
+    [
+     2,
+     "20261119T072351Z-46287b",
+     "2026-10-12_2300_demo-bot#w1",
+     "add905a795b7364897cd3a2ac9c223da0cbbad5fe6709afb8ba3976095551d9f",
+     1,
+     "ok",
+     "",
+     7913,
+     942,
+     88,
+     7726,
+     13.219,
+     "2026-11-19T15:24:26+08:00"
+    ],
+    [
+     3,
+     "20261119T072351Z-46287b",
+     "2026-10-20_2300_demo-bot#w1",
+     "8aa186fd55af77c960eca92c8e351e25116ef1b76d8a49e691dd5dfb8399b310",
+     1,
+     "ok",
+     "",
+     7952,
+     1410,
+     216,
+     7726,
+     18.828,
+     "2026-11-19T15:24:45+08:00"
+    ],
+    [
+     4,
+     "20261119T072351Z-46287b",
+     "2026-11-02_2300_demo-bot#w1",
+     "a1d61ba4fbabcef734540f1c9d49c597d6abdb646b58f9ae51345062f780b764",
+     1,
+     "ok",
+     "",
+     7917,
+     1304,
+     255,
+     7726,
+     19.61,
+     "2026-11-19T15:25:05+08:00"
+    ],
+    [
+     5,
+     "20261119T072351Z-46287b",
+     "2026-11-09_2300_demo-bot#w1",
+     "1a09046f35306aeb9df0a277dbd70af481b1e849f8adc226e5bb77ace2df58a9",
+     1,
+     "ok",
+     "",
+     7904,
+     881,
+     256,
+     7726,
+     17.125,
+     "2026-11-19T15:25:22+08:00"
+    ]
+   ]
+  },
+  "fact_judgment_windows": {
+   "columns": [
+    "window_id",
+    "cache_key",
+    "judge_key",
+    "fact",
+    "linked_at"
+   ],
+   "rows": []
+  },
+  "judgment_calls": {
+   "columns": [
+    "call_id",
+    "run_id",
+    "window_id",
+    "cache_key",
+    "attempt",
+    "status",
+    "detail",
+    "input_tokens",
+    "output_tokens",
+    "reasoning_tokens",
+    "cached_tokens",
+    "seconds",
+    "at"
+   ],
+   "rows": []
+  },
+  "judgment_windows": {
+   "columns": [
+    "window_id",
+    "cache_key",
+    "judge_key",
+    "relation",
+    "linked_at"
+   ],
+   "rows": []
+  },
+  "judgments": {
+   "columns": [
+    "judge_key",
+    "tier",
+    "prompt_version",
+    "model",
+    "probability",
+    "answer",
+    "reason",
+    "output",
+    "response_model",
+    "input_tokens",
+    "output_tokens",
+    "reasoning_tokens",
+    "cached_tokens",
+    "seconds",
+    "created_at"
+   ],
+   "rows": []
+  },
+  "prea_notes": {
+   "columns": [
+    "window_id",
+    "window_sha",
+    "version",
+    "noted_sha",
+    "packets",
+    "sentences",
+    "notes",
+    "detail",
+    "created_at"
+   ],
+   "rows": [
+    [
+     "2026-10-05_2300_demo-bot#w1",
+     "e04bbcd055b1eb765c7e066407d52a206c8112ee89fd2bdbfb826dcc21cba2a7",
+     "a2",
+     "4f996f7be33687570d97ebef443b344c9456419aa949cad17dd19697ce55ceff",
+     "[[\"2026-10-05_2300_demo-bot\", 1]]",
+     "[\"2026-10-05_2300_demo-bot#1.1.1\", \"2026-10-05_2300_demo-bot#1.2.1\", \"2026-10-05_2300_demo-bot#1.3.1\", \"2026-10-05_2300_demo-bot#1.4.1\", \"2026-10-05_2300_demo-bot#1.5.1\", \"2026-10-05_2300_demo-bot#1.6.1\"]",
+     "{\"T4\": [[\"下个月\", \"2026-11\"]]}",
+     "{\"version\": \"a2\", \"labeled\": [{\"行\": \"T4\", \"说法\": \"下个月\", \"日子\": \"2026-11\", \"种类\": \"月\", \"抬头\": \"2026-10-05T09:20:00+08:00\"}], \"skipped\": [{\"行\": \"T1\", \"说法\": \"这周\", \"日子\": \"\", \"种类\": \"一周\", \"抬头\": \"2026-10-05T09:10:00+08:00\", \"为什么不标\": \"只说了哪一周，不是一天\"}]}",
+     "2026-11-19T15:23:51+08:00"
+    ],
+    [
+     "2026-10-12_2300_demo-bot#w1",
+     "1eb715e3f8aca74e497a168de0a165b7df0883abd8507e592325cfad7423fb7b",
+     "a2",
+     "1eb715e3f8aca74e497a168de0a165b7df0883abd8507e592325cfad7423fb7b",
+     "[[\"2026-10-12_2300_demo-bot\", 1]]",
+     "[\"2026-10-12_2300_demo-bot#1.1.1\", \"2026-10-12_2300_demo-bot#1.2.1\", \"2026-10-12_2300_demo-bot#1.3.1\", \"2026-10-12_2300_demo-bot#1.4.1\", \"2026-10-12_2300_demo-bot#1.5.1\"]",
+     "{}",
+     "{\"version\": \"a2\", \"labeled\": [], \"skipped\": [{\"行\": \"T5\", \"说法\": \"周二\", \"日子\": \"\", \"种类\": \"光写星期几\", \"抬头\": \"2026-10-12T14:30:00+08:00\", \"为什么不标\": \"每周几\"}, {\"行\": \"T5\", \"说法\": \"周五\", \"日子\": \"\", \"种类\": \"光写星期几\", \"抬头\": \"2026-10-12T14:30:00+08:00\", \"为什么不标\": \"光写星期几，分不清是哪一周\"}]}",
+     "2026-11-19T15:23:51+08:00"
+    ],
+    [
+     "2026-10-20_2300_demo-bot#w1",
+     "d501a512a33bd176f28e91e83df639003c6cd883174b1a489e4d0e2f6388c3d0",
+     "a2",
+     "bd01a3435ccb1d4b35b01974a929c26ba8b45bad2c95797ebf7e6cd1f2cf80b3",
+     "[[\"2026-10-20_2300_demo-bot\", 1]]",
+     "[\"2026-10-20_2300_demo-bot#1.1.1\", \"2026-10-20_2300_demo-bot#1.2.1\", \"2026-10-20_2300_demo-bot#1.3.1\", \"2026-10-20_2300_demo-bot#1.4.1\", \"2026-10-20_2300_demo-bot#1.5.1\"]",
+     "{\"T2\": [[\"下周三\", \"2026-10-28\"]], \"T5\": [[\"下周三\", \"2026-10-28\"]]}",
+     "{\"version\": \"a2\", \"labeled\": [{\"行\": \"T2\", \"说法\": \"下周三\", \"日子\": \"2026-10-28\", \"种类\": \"星期几\", \"抬头\": \"2026-10-20T10:12:00+08:00\"}, {\"行\": \"T5\", \"说法\": \"下周三\", \"日子\": \"2026-10-28\", \"种类\": \"星期几\", \"抬头\": \"2026-10-20T10:40:00+08:00\"}], \"skipped\": [{\"行\": \"T4\", \"说法\": \"这周\", \"日子\": \"\", \"种类\": \"一周\", \"抬头\": \"2026-10-20T10:33:00+08:00\", \"为什么不标\": \"只说了哪一周，不是一天\"}]}",
+     "2026-11-19T15:23:51+08:00"
+    ],
+    [
+     "2026-11-02_2300_demo-bot#w1",
+     "ebe3ab94f4e0f90c9fd4654b1cdff904b199532926fd370195d4609a17f9a7a9",
+     "a2",
+     "954d12b4c5a2ff7242bfb720ae2fe8654c272a3ed950b682e200363e0c637517",
+     "[[\"2026-11-02_2300_demo-bot\", 1]]",
+     "[\"2026-11-02_2300_demo-bot#1.1.1\", \"2026-11-02_2300_demo-bot#1.2.1\", \"2026-11-02_2300_demo-bot#1.3.1\", \"2026-11-02_2300_demo-bot#1.4.1\"]",
+     "{\"T4\": [[\"下个月\", \"2026-12\"]]}",
+     "{\"version\": \"a2\", \"labeled\": [{\"行\": \"T4\", \"说法\": \"下个月\", \"日子\": \"2026-12\", \"种类\": \"月\", \"抬头\": \"2026-11-02T09:45:00+08:00\"}], \"skipped\": [{\"行\": \"T1\", \"说法\": \"今天\", \"日子\": \"\", \"种类\": \"当天\", \"抬头\": \"2026-11-02T09:30:00+08:00\", \"为什么不标\": \"跟抬头同一天\"}]}",
+     "2026-11-19T15:23:51+08:00"
+    ],
+    [
+     "2026-11-09_2300_demo-bot#w1",
+     "c7b1c70027384c5d19d28db6ae7d160123cb8bc9d01a681822bd374acc7371f0",
+     "a2",
+     "c7b1c70027384c5d19d28db6ae7d160123cb8bc9d01a681822bd374acc7371f0",
+     "[[\"2026-11-09_2300_demo-bot\", 1]]",
+     "[\"2026-11-09_2300_demo-bot#1.1.1\", \"2026-11-09_2300_demo-bot#1.2.1\", \"2026-11-09_2300_demo-bot#1.3.1\", \"2026-11-09_2300_demo-bot#1.4.1\", \"2026-11-09_2300_demo-bot#1.5.1\"]",
+     "{}",
+     "{\"version\": \"a2\", \"labeled\": [], \"skipped\": [{\"行\": \"T1\", \"说法\": \"今天\", \"日子\": \"\", \"种类\": \"当天\", \"抬头\": \"2026-11-09T16:00:00+08:00\", \"为什么不标\": \"跟抬头同一天\"}, {\"行\": \"T1\", \"说法\": \"上周\", \"日子\": \"\", \"种类\": \"一周\", \"抬头\": \"2026-11-09T16:00:00+08:00\", \"为什么不标\": \"只说了哪一周，不是一天\"}, {\"行\": \"T2\", \"说法\": \"周五\", \"日子\": \"\", \"种类\": \"光写星期几\", \"抬头\": \"2026-11-09T16:08:00+08:00\", \"为什么不标\": \"光写星期几，分不清是哪一周\"}, {\"行\": \"T3\", \"说法\": \"周四\", \"日子\": \"\", \"种类\": \"光写星期几\", \"抬头\": \"2026-11-09T16:12:00+08:00\", \"为什么不标\": \"光写星期几，分不清是哪一周\"}, {\"行\": \"T4\", \"说法\": \"周四\", \"日子\": \"\", \"种类\": \"光写星期几\", \"抬头\": \"2026-11-09T16:15:00+08:00\", \"为什么不标\": \"光写星期几，分不清是哪一周\"}]}",
+     "2026-11-19T15:23:51+08:00"
+    ]
+   ]
+  },
+  "preb_aliases": {
+   "columns": [
+    "alias_id",
+    "version",
+    "target",
+    "alias",
+    "partitions",
+    "sensitive",
+    "packet_id",
+    "revision",
+    "window_id",
+    "window_sha",
+    "ref",
+    "sentence_id",
+    "sources",
+    "created_at"
+   ],
+   "rows": []
+  },
+  "preb_blocked": {
+   "columns": [
+    "window_id",
+    "window_sha",
+    "version",
+    "context",
+    "ref",
+    "mention",
+    "item",
+    "kind",
+    "mention_values",
+    "item_values",
+    "depends",
+    "stage",
+    "created_at"
+   ],
+   "rows": []
+  },
+  "preb_items": {
+   "columns": [
+    "item_id",
+    "version",
+    "name",
+    "kind",
+    "partitions",
+    "sensitive",
+    "packet_id",
+    "revision",
+    "window_id",
+    "window_sha",
+    "ref",
+    "sentence_id",
+    "sources",
+    "created_at"
+   ],
+   "rows": []
+  },
+  "preb_learned": {
+   "columns": [
+    "window_id",
+    "window_sha",
+    "version",
+    "context",
+    "packets",
+    "sentences",
+    "detail",
+    "seconds",
+    "created_at"
+   ],
+   "rows": []
+  },
+  "preb_note_items": {
+   "columns": [
+    "window_id",
+    "window_sha",
+    "version",
+    "context",
+    "item_id"
+   ],
+   "rows": []
+  },
+  "preb_notes": {
+   "columns": [
+    "window_id",
+    "window_sha",
+    "version",
+    "context",
+    "noted_sha",
+    "packets",
+    "sentences",
+    "notes",
+    "detail",
+    "seconds",
+    "created_at"
+   ],
+   "rows": []
+  },
+  "prer_notes": {
+   "columns": [
+    "window_id",
+    "window_sha",
+    "version",
+    "context",
+    "notes_sha",
+    "packets",
+    "sentences",
+    "block",
+    "relations",
+    "sources",
+    "entities",
+    "detail",
+    "created_at"
+   ],
+   "rows": []
+  },
+  "recheck_calls": {
+   "columns": [
+    "call_id",
+    "run_id",
+    "window_id",
+    "cache_key",
+    "attempt",
+    "status",
+    "detail",
+    "input_tokens",
+    "output_tokens",
+    "reasoning_tokens",
+    "cached_tokens",
+    "seconds",
+    "at"
+   ],
+   "rows": []
+  },
+  "recheck_windows": {
+   "columns": [
+    "window_id",
+    "cache_key",
+    "recheck_key",
+    "facts",
+    "linked_at"
+   ],
+   "rows": []
+  },
+  "rechecks": {
+   "columns": [
+    "recheck_key",
+    "window_sha",
+    "facts_sha",
+    "prompt_version",
+    "model",
+    "output",
+    "parsed",
+    "response_model",
+    "input_tokens",
+    "output_tokens",
+    "reasoning_tokens",
+    "cached_tokens",
+    "seconds",
+    "created_at"
+   ],
+   "rows": []
+  },
+  "results": {
+   "columns": [
+    "cache_key",
+    "window_sha",
+    "prompt_version",
+    "model",
+    "output",
+    "parsed",
+    "response_model",
+    "input_tokens",
+    "output_tokens",
+    "reasoning_tokens",
+    "cached_tokens",
+    "seconds",
+    "created_at"
+   ],
+   "rows": [
+    [
+     "6eb8702233fb6cde17b198353787493dd501308d3570c536bd58d9e1650bad00",
+     "4f996f7be33687570d97ebef443b344c9456419aa949cad17dd19697ce55ceff",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "{\n  \"entities\": [\n    {\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"},\n    {\"key\": \"e2\", \"mention\": \"梧桐路展厅项目\", \"name\": \"梧桐路展厅项目\", \"type\": \"项目\"},\n    {\"key\": \"e3\", \"mention\": \"老祝\", \"name\": \"祝明远\", \"type\": \"人\"},\n    {\"key\": \"e4\", \"mention\": \"南岭纸业\", \"name\": \"南岭纸业\", \"type\": \"公司或机构\"},\n    {\"key\": \"e5\", \"mention\": \"田甜\", \"name\": \"田甜\", \"type\": \"人\"},\n    {\"key\": \"e6\", \"mention\": \"青禾设计\", \"name\": \"青禾设计\", \"type\": \"公司或机构\"},\n    {\"key\": \"e7\", \"mention\": \"晨光一号基金\", \"name\": \"晨光一号基金\", \"type\": \"资产\"},\n    {\"key\": \"e8\", \"mention\": \"星桥银行\", \"name\": \"星桥银行\", \"type\": \"公司或机构\"}\n  ],\n  \"facts\": [\n    {\n      \"text\": \"主人安排梧桐路展厅项目从 2026-10-05 所在周起由祝明远负责，有事先找祝明远。\",\n      \"subject\": \"e2\",\n      \"attribute\": \"负责人\",\n      \"value\": \"祝明远\",\n      \"occurred_at\": \"2026-10-05\",\n      \"time_precision\": \"day\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\"key\": \"e2\", \"role\": \"subject\"},\n        {\"key\": \"e3\", \"role\": \"object\"},\n        {\"key\": \"e1\", \"role\": \"mention\"}\n      ],\n      \"evidence\": [\n        {\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从这周起由老祝负责，有事先找他。\"},\n        {\"ref\": \"T2\", \"quote\": \"好的，记下了：梧桐路展厅项目由祝明远负责。\"}\n      ]\n    },\n    {\n      \"text\": \"南岭纸业的报价是每吨 4,200 元，含运费。\",\n      \"subject\": \"e4\",\n      \"attribute\": \"报价\",\n      \"value\": \"每吨 4,200 元，含运费\",\n      \"occurred_at\": null,\n      \"time_precision\": \"unknown\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\"key\": \"e4\", \"role\": \"subject\"}\n      ],\n      \"evidence\": [\n        {\"ref\": \"T3\", \"quote\": \"南岭纸业的报价是每吨 4,200 元，含运费。\"}\n      ]\n    },\n    {\n      \"text\": \"田甜将从 2026-11 起到青禾设计上班，做项目经理。\",\n      \"subject\": \"e5\",\n      \"attribute\": \"任职安排\",\n      \"value\": \"2026-11 起到青禾设计做项目经理\",\n      \"occurred_at\": \"2026-11\",\n      \"time_precision\": \"month\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\"key\": \"e5\", \"role\": \"subject\"},\n        {\"key\": \"e6\", \"role\": \"object\"}\n      ],\n      \"evidence\": [\n        {\"ref\": \"T4\", \"quote\": \"田甜下个月起来青禾设计上班，做项目经理。\"}\n      ]\n    },\n    {\n      \"text\": \"晨光一号基金由主人自己持有，放在星桥银行的托管账户里。\",\n      \"subject\": \"e7\",\n      \"attribute\": \"持有及托管情况\",\n      \"value\": \"主人自己持有，托管于星桥银行\",\n      \"occurred_at\": null,\n      \"time_precision\": \"unknown\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\"key\": \"e7\", \"role\": \"subject\"},\n        {\"key\": \"e1\", \"role\": \"mention\"},\n        {\"key\": \"e8\", \"role\": \"object\"}\n      ],\n      \"evidence\": [\n        {\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\"}\n      ]\n    }\n  ],\n  \"relations\": [\n    {\n      \"subject\": \"e3\",\n      \"relation\": \"负责\",\n      \"object\": \"e2\",\n      \"kinship\": null,\n      \"state\": \"生效\",\n      \"valid_from\": \"2026-10-05\",\n      \"valid_to\": null,\n      \"time_precision\": \"day\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"evidence\": [\n        {\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从这周起由老祝负责，有事先找他。\"},\n        {\"ref\": \"T2\", \"quote\": \"好的，记下了：梧桐路展厅项目由祝明远负责。\"}\n      ]\n    },\n    {\n      \"subject\": \"e1\",\n      \"relation\": \"持有\",\n      \"object\": \"e7\",\n      \"kinship\": null,\n      \"state\": \"生效\",\n      \"valid_from\": null,\n      \"valid_to\": null,\n      \"time_precision\": \"unknown\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"evidence\": [\n        {\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\"}\n      ]\n    },\n    {\n      \"subject\": \"e7\",\n      \"relation\": \"托管于\",\n      \"object\": \"e8\",\n      \"kinship\": null,\n      \"state\": \"生效\",\n      \"valid_from\": null,\n      \"valid_to\": null,\n      \"time_precision\": \"unknown\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"evidence\": [\n        {\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\"}\n      ]\n    },\n    {\n      \"subject\": \"e1\",\n      \"relation\": \"客户是\",\n      \"object\": \"e8\",\n      \"kinship\": null,\n      \"state\": \"生效\",\n      \"valid_from\": null,\n      \"valid_to\": null,\n      \"time_precision\": \"unknown\",\n      \"certainty\": \"inferred\",\n      \"speaker\": \"主人\",\n      \"evidence\": [\n        {\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\"}\n      ]\n    }\n  ]\n}",
+     "{\"entities\": [{\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e2\", \"mention\": \"梧桐路展厅项目\", \"name\": \"梧桐路展厅项目\", \"type\": \"项目\"}, {\"key\": \"e3\", \"mention\": \"老祝\", \"name\": \"祝明远\", \"type\": \"人\"}, {\"key\": \"e4\", \"mention\": \"南岭纸业\", \"name\": \"南岭纸业\", \"type\": \"公司或机构\"}, {\"key\": \"e5\", \"mention\": \"田甜\", \"name\": \"田甜\", \"type\": \"人\"}, {\"key\": \"e6\", \"mention\": \"青禾设计\", \"name\": \"青禾设计\", \"type\": \"公司或机构\"}, {\"key\": \"e7\", \"mention\": \"晨光一号基金\", \"name\": \"晨光一号基金\", \"type\": \"资产\"}, {\"key\": \"e8\", \"mention\": \"星桥银行\", \"name\": \"星桥银行\", \"type\": \"公司或机构\"}], \"facts\": [{\"text\": \"主人安排梧桐路展厅项目从 2026-10-05 所在周起由祝明远负责，有事先找祝明远。\", \"subject\": \"e2\", \"attribute\": \"负责人\", \"value\": \"祝明远\", \"occurred_at\": \"2026-10-05\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}, {\"key\": \"e3\", \"role\": \"object\"}, {\"key\": \"e1\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从这周起由老祝负责，有事先找他。\"}, {\"ref\": \"T2\", \"quote\": \"好的，记下了：梧桐路展厅项目由祝明远负责。\"}]}, {\"text\": \"南岭纸业的报价是每吨 4,200 元，含运费。\", \"subject\": \"e4\", \"attribute\": \"报价\", \"value\": \"每吨 4,200 元，含运费\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e4\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T3\", \"quote\": \"南岭纸业的报价是每吨 4,200 元，含运费。\"}]}, {\"text\": \"田甜将从 2026-11 起到青禾设计上班，做项目经理。\", \"subject\": \"e5\", \"attribute\": \"任职安排\", \"value\": \"2026-11 起到青禾设计做项目经理\", \"occurred_at\": \"2026-11\", \"time_precision\": \"month\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e5\", \"role\": \"subject\"}, {\"key\": \"e6\", \"role\": \"object\"}], \"evidence\": [{\"ref\": \"T4\", \"quote\": \"田甜下个月起来青禾设计上班，做项目经理。\"}]}, {\"text\": \"晨光一号基金由主人自己持有，放在星桥银行的托管账户里。\", \"subject\": \"e7\", \"attribute\": \"持有及托管情况\", \"value\": \"主人自己持有，托管于星桥银行\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e7\", \"role\": \"subject\"}, {\"key\": \"e1\", \"role\": \"mention\"}, {\"key\": \"e8\", \"role\": \"object\"}], \"evidence\": [{\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\"}]}], \"relations\": [{\"subject\": \"e3\", \"relation\": \"负责\", \"object\": \"e2\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": \"2026-10-05\", \"valid_to\": null, \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从这周起由老祝负责，有事先找他。\"}, {\"ref\": \"T2\", \"quote\": \"好的，记下了：梧桐路展厅项目由祝明远负责。\"}]}, {\"subject\": \"e1\", \"relation\": \"持有\", \"object\": \"e7\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\"}]}, {\"subject\": \"e7\", \"relation\": \"托管于\", \"object\": \"e8\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\"}]}, {\"subject\": \"e1\", \"relation\": \"客户是\", \"object\": \"e8\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"inferred\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\"}]}]}",
+     "gpt-6.1-sol",
+     7979,
+     1803,
+     233,
+     0,
+     22.46799999999348,
+     "2026-11-19T15:24:13+08:00"
+    ],
+    [
+     "add905a795b7364897cd3a2ac9c223da0cbbad5fe6709afb8ba3976095551d9f",
+     "1eb715e3f8aca74e497a168de0a165b7df0883abd8507e592325cfad7423fb7b",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "{\n  \"entities\": [\n    {\n      \"key\": \"e1\",\n      \"mention\": \"南岭\",\n      \"name\": \"南岭纸业\",\n      \"type\": \"公司或机构\"\n    },\n    {\n      \"key\": \"e2\",\n      \"mention\": \"展厅\",\n      \"name\": \"展厅\",\n      \"type\": \"地点\"\n    },\n    {\n      \"key\": \"e3\",\n      \"mention\": \"我\",\n      \"name\": \"主人\",\n      \"type\": \"人\"\n    },\n    {\n      \"key\": \"e4\",\n      \"mention\": \"北渡物流\",\n      \"name\": \"北渡物流\",\n      \"type\": \"公司或机构\"\n    }\n  ],\n  \"facts\": [\n    {\n      \"text\": \"南岭纸业的报价已上涨至每吨 4,500 元。\",\n      \"subject\": \"e1\",\n      \"attribute\": \"报价\",\n      \"value\": \"每吨 4,500 元\",\n      \"occurred_at\": null,\n      \"time_precision\": \"unknown\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\n          \"key\": \"e1\",\n          \"role\": \"subject\"\n        }\n      ],\n      \"evidence\": [\n        {\n          \"ref\": \"T1\",\n          \"quote\": \"南岭的报价改了，每吨涨到 4,500 元。\"\n        },\n        {\n          \"ref\": \"T2\",\n          \"quote\": \"收到，南岭纸业的报价改成每吨 4,500 元。\"\n        }\n      ]\n    },\n    {\n      \"text\": \"展厅的开幕定在 2026-11-20。\",\n      \"subject\": \"e2\",\n      \"attribute\": \"开幕日期\",\n      \"value\": \"2026-11-20\",\n      \"occurred_at\": \"2026-11-20\",\n      \"time_precision\": \"day\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\n          \"key\": \"e2\",\n          \"role\": \"subject\"\n        }\n      ],\n      \"evidence\": [\n        {\n          \"ref\": \"T3\",\n          \"quote\": \"展厅的开幕定在 11 月 20 日。\"\n        }\n      ]\n    },\n    {\n      \"text\": \"主人要求今后给客户的报价单一律先发给主人看过，再对外发送。\",\n      \"subject\": \"e3\",\n      \"attribute\": \"报价单外发审核要求\",\n      \"value\": \"一律先发给主人看过再外发\",\n      \"occurred_at\": \"2026-10-12\",\n      \"time_precision\": \"day\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\n          \"key\": \"e3\",\n          \"role\": \"subject\"\n        }\n      ],\n      \"evidence\": [\n        {\n          \"ref\": \"T4\",\n          \"quote\": \"以后给客户的报价单一律先发我看过再外发。\"\n        }\n      ]\n    },\n    {\n      \"text\": \"北渡物流每周二、周五各送一次货。\",\n      \"subject\": \"e4\",\n      \"attribute\": \"送货安排\",\n      \"value\": \"每周二、周五各送一次货\",\n      \"occurred_at\": null,\n      \"time_precision\": \"unknown\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\n          \"key\": \"e4\",\n          \"role\": \"subject\"\n        }\n      ],\n      \"evidence\": [\n        {\n          \"ref\": \"T5\",\n          \"quote\": \"北渡物流每周二、周五各送一次货。\"\n        }\n      ]\n    }\n  ],\n  \"relations\": []\n}",
+     "{\"entities\": [{\"key\": \"e1\", \"mention\": \"南岭\", \"name\": \"南岭纸业\", \"type\": \"公司或机构\"}, {\"key\": \"e2\", \"mention\": \"展厅\", \"name\": \"展厅\", \"type\": \"地点\"}, {\"key\": \"e3\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e4\", \"mention\": \"北渡物流\", \"name\": \"北渡物流\", \"type\": \"公司或机构\"}], \"facts\": [{\"text\": \"南岭纸业的报价已上涨至每吨 4,500 元。\", \"subject\": \"e1\", \"attribute\": \"报价\", \"value\": \"每吨 4,500 元\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"南岭的报价改了，每吨涨到 4,500 元。\"}, {\"ref\": \"T2\", \"quote\": \"收到，南岭纸业的报价改成每吨 4,500 元。\"}]}, {\"text\": \"展厅的开幕定在 2026-11-20。\", \"subject\": \"e2\", \"attribute\": \"开幕日期\", \"value\": \"2026-11-20\", \"occurred_at\": \"2026-11-20\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T3\", \"quote\": \"展厅的开幕定在 11 月 20 日。\"}]}, {\"text\": \"主人要求今后给客户的报价单一律先发给主人看过，再对外发送。\", \"subject\": \"e3\", \"attribute\": \"报价单外发审核要求\", \"value\": \"一律先发给主人看过再外发\", \"occurred_at\": \"2026-10-12\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e3\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T4\", \"quote\": \"以后给客户的报价单一律先发我看过再外发。\"}]}, {\"text\": \"北渡物流每周二、周五各送一次货。\", \"subject\": \"e4\", \"attribute\": \"送货安排\", \"value\": \"每周二、周五各送一次货\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e4\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T5\", \"quote\": \"北渡物流每周二、周五各送一次货。\"}]}], \"relations\": []}",
+     "gpt-6.1-sol",
+     7913,
+     942,
+     88,
+     7726,
+     13.219000000040978,
+     "2026-11-19T15:24:27+08:00"
+    ],
+    [
+     "8aa186fd55af77c960eca92c8e351e25116ef1b76d8a49e691dd5dfb8399b310",
+     "bd01a3435ccb1d4b35b01974a929c26ba8b45bad2c95797ebf7e6cd1f2cf80b3",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "{\n  \"entities\": [\n    {\"key\":\"e1\",\"mention\":\"我\",\"name\":\"主人\",\"type\":\"人\"},\n    {\"key\":\"e2\",\"mention\":\"展厅\",\"name\":\"展厅\",\"type\":\"地点\"},\n    {\"key\":\"e3\",\"mention\":\"欧阳青\",\"name\":\"欧阳青\",\"type\":\"人\"},\n    {\"key\":\"e4\",\"mention\":\"晨光一号基金\",\"name\":\"晨光一号基金\",\"type\":\"资产\"},\n    {\"key\":\"e5\",\"mention\":\"星桥银行\",\"name\":\"星桥银行\",\"type\":\"公司或机构\"},\n    {\"key\":\"e6\",\"mention\":\"我\",\"name\":\"demo-bot\",\"type\":\"人\"}\n  ],\n  \"facts\": [\n    {\n      \"text\":\"展厅开幕推迟，改到 2026-11-28。\",\n      \"subject\":\"e2\",\n      \"attribute\":\"开幕日期\",\n      \"value\":\"2026-11-28\",\n      \"occurred_at\":null,\n      \"time_precision\":\"unknown\",\n      \"certainty\":\"stated\",\n      \"speaker\":\"主人\",\n      \"entities\":[{\"key\":\"e2\",\"role\":\"subject\"}],\n      \"evidence\":[{\"ref\":\"T1\",\"quote\":\"展厅开幕推迟了，改到 11 月 28 日。\"}]\n    },\n    {\n      \"text\":\"欧阳青是主人的表姐。\",\n      \"subject\":\"e3\",\n      \"attribute\":\"与主人的亲属关系\",\n      \"value\":\"表姐\",\n      \"occurred_at\":null,\n      \"time_precision\":\"unknown\",\n      \"certainty\":\"stated\",\n      \"speaker\":\"主人\",\n      \"entities\":[{\"key\":\"e3\",\"role\":\"subject\"},{\"key\":\"e1\",\"role\":\"object\"}],\n      \"evidence\":[{\"ref\":\"T2\",\"quote\":\"欧阳青是我表姐\"}]\n    },\n    {\n      \"text\":\"欧阳青计划于 2026-10-28 来公司看看。\",\n      \"subject\":\"e3\",\n      \"attribute\":\"来访安排\",\n      \"value\":\"2026-10-28 来公司看看\",\n      \"occurred_at\":\"2026-10-28\",\n      \"time_precision\":\"day\",\n      \"certainty\":\"vague\",\n      \"speaker\":\"主人\",\n      \"entities\":[{\"key\":\"e3\",\"role\":\"subject\"}],\n      \"evidence\":[{\"ref\":\"T2\",\"quote\":\"欧阳青是我表姐，下周三来公司看看。\"}]\n    },\n    {\n      \"text\":\"demo-bot 建议在展厅开幕前一周再确认一次场地和灯光。\",\n      \"subject\":\"e2\",\n      \"attribute\":null,\n      \"value\":null,\n      \"occurred_at\":null,\n      \"time_precision\":\"unknown\",\n      \"certainty\":\"inferred\",\n      \"speaker\":\"demo-bot\",\n      \"entities\":[{\"key\":\"e2\",\"role\":\"subject\"},{\"key\":\"e6\",\"role\":\"mention\"}],\n      \"evidence\":[{\"ref\":\"T3\",\"quote\":\"我建议开幕前一周再确认一次场地和灯光。\"}]\n    },\n    {\n      \"text\":\"主人称，晨光一号基金在 2026-10-20 所在周的净值是 1.032。\",\n      \"subject\":\"e4\",\n      \"attribute\":\"净值\",\n      \"value\":\"1.032\",\n      \"occurred_at\":null,\n      \"time_precision\":\"unknown\",\n      \"certainty\":\"stated\",\n      \"speaker\":\"主人\",\n      \"entities\":[{\"key\":\"e4\",\"role\":\"subject\"}],\n      \"evidence\":[{\"ref\":\"T4\",\"quote\":\"晨光一号基金这周的净值是 1.032。\"}]\n    },\n    {\n      \"text\":\"主人计划于 2026-10-28 去星桥银行，将晨光一号基金再加仓 5 万元。\",\n      \"subject\":\"e1\",\n      \"attribute\":\"加仓计划\",\n      \"value\":\"2026-10-28 去星桥银行将晨光一号基金再加仓 5 万元\",\n      \"occurred_at\":\"2026-10-28\",\n      \"time_precision\":\"day\",\n      \"certainty\":\"vague\",\n      \"speaker\":\"主人\",\n      \"entities\":[{\"key\":\"e1\",\"role\":\"subject\"},{\"key\":\"e4\",\"role\":\"object\"},{\"key\":\"e5\",\"role\":\"mention\"}],\n      \"evidence\":[{\"ref\":\"T5\",\"quote\":\"下周三我去星桥银行，把晨光一号基金再加仓 5 万元。\"}]\n    }\n  ],\n  \"relations\": [\n    {\n      \"subject\":\"e3\",\n      \"relation\":\"亲属\",\n      \"object\":\"e1\",\n      \"kinship\":\"表姐\",\n      \"state\":\"生效\",\n      \"valid_from\":null,\n      \"valid_to\":null,\n      \"time_precision\":\"unknown\",\n      \"certainty\":\"stated\",\n      \"speaker\":\"主人\",\n      \"evidence\":[{\"ref\":\"T2\",\"quote\":\"欧阳青是我表姐\"}]\n    },\n    {\n      \"subject\":\"e1\",\n      \"relation\":\"持有\",\n      \"object\":\"e4\",\n      \"kinship\":null,\n      \"state\":\"生效\",\n      \"valid_from\":null,\n      \"valid_to\":null,\n      \"time_precision\":\"unknown\",\n      \"certainty\":\"inferred\",\n      \"speaker\":\"主人\",\n      \"evidence\":[{\"ref\":\"T5\",\"quote\":\"把晨光一号基金再加仓 5 万元。\"}]\n    }\n  ]\n}",
+     "{\"entities\": [{\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e2\", \"mention\": \"展厅\", \"name\": \"展厅\", \"type\": \"地点\"}, {\"key\": \"e3\", \"mention\": \"欧阳青\", \"name\": \"欧阳青\", \"type\": \"人\"}, {\"key\": \"e4\", \"mention\": \"晨光一号基金\", \"name\": \"晨光一号基金\", \"type\": \"资产\"}, {\"key\": \"e5\", \"mention\": \"星桥银行\", \"name\": \"星桥银行\", \"type\": \"公司或机构\"}, {\"key\": \"e6\", \"mention\": \"我\", \"name\": \"demo-bot\", \"type\": \"人\"}], \"facts\": [{\"text\": \"展厅开幕推迟，改到 2026-11-28。\", \"subject\": \"e2\", \"attribute\": \"开幕日期\", \"value\": \"2026-11-28\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"展厅开幕推迟了，改到 11 月 28 日。\"}]}, {\"text\": \"欧阳青是主人的表姐。\", \"subject\": \"e3\", \"attribute\": \"与主人的亲属关系\", \"value\": \"表姐\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e3\", \"role\": \"subject\"}, {\"key\": \"e1\", \"role\": \"object\"}], \"evidence\": [{\"ref\": \"T2\", \"quote\": \"欧阳青是我表姐\"}]}, {\"text\": \"欧阳青计划于 2026-10-28 来公司看看。\", \"subject\": \"e3\", \"attribute\": \"来访安排\", \"value\": \"2026-10-28 来公司看看\", \"occurred_at\": \"2026-10-28\", \"time_precision\": \"day\", \"certainty\": \"vague\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e3\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T2\", \"quote\": \"欧阳青是我表姐，下周三来公司看看。\"}]}, {\"text\": \"demo-bot 建议在展厅开幕前一周再确认一次场地和灯光。\", \"subject\": \"e2\", \"attribute\": null, \"value\": null, \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"inferred\", \"speaker\": \"demo-bot\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}, {\"key\": \"e6\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T3\", \"quote\": \"我建议开幕前一周再确认一次场地和灯光。\"}]}, {\"text\": \"主人称，晨光一号基金在 2026-10-20 所在周的净值是 1.032。\", \"subject\": \"e4\", \"attribute\": \"净值\", \"value\": \"1.032\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e4\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T4\", \"quote\": \"晨光一号基金这周的净值是 1.032。\"}]}, {\"text\": \"主人计划于 2026-10-28 去星桥银行，将晨光一号基金再加仓 5 万元。\", \"subject\": \"e1\", \"attribute\": \"加仓计划\", \"value\": \"2026-10-28 去星桥银行将晨光一号基金再加仓 5 万元\", \"occurred_at\": \"2026-10-28\", \"time_precision\": \"day\", \"certainty\": \"vague\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}, {\"key\": \"e4\", \"role\": \"object\"}, {\"key\": \"e5\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T5\", \"quote\": \"下周三我去星桥银行，把晨光一号基金再加仓 5 万元。\"}]}], \"relations\": [{\"subject\": \"e3\", \"relation\": \"亲属\", \"object\": \"e1\", \"kinship\": \"表姐\", \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T2\", \"quote\": \"欧阳青是我表姐\"}]}, {\"subject\": \"e1\", \"relation\": \"持有\", \"object\": \"e4\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"inferred\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T5\", \"quote\": \"把晨光一号基金再加仓 5 万元。\"}]}]}",
+     "gpt-6.1-sol",
+     7952,
+     1410,
+     216,
+     7726,
+     18.82799999997951,
+     "2026-11-19T15:24:45+08:00"
+    ],
+    [
+     "a1d61ba4fbabcef734540f1c9d49c597d6abdb646b58f9ae51345062f780b764",
+     "954d12b4c5a2ff7242bfb720ae2fe8654c272a3ed950b682e200363e0c637517",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "{\n  \"entities\": [\n    {\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"},\n    {\"key\": \"e2\", \"mention\": \"梧桐路展厅项目\", \"name\": \"梧桐路展厅项目\", \"type\": \"项目\"},\n    {\"key\": \"e3\", \"mention\": \"田甜\", \"name\": \"田甜\", \"type\": \"人\"},\n    {\"key\": \"e4\", \"mention\": \"老祝\", \"name\": \"祝明远\", \"type\": \"人\"},\n    {\"key\": \"e5\", \"mention\": \"南岭纸业\", \"name\": \"南岭纸业\", \"type\": \"公司或机构\"},\n    {\"key\": \"e6\", \"mention\": \"青禾设计\", \"name\": \"青禾设计\", \"type\": \"公司或机构\"},\n    {\"key\": \"e7\", \"mention\": \"城东创意园的 B 座\", \"name\": \"城东创意园的 B 座\", \"type\": \"地点\"}\n  ],\n  \"facts\": [\n    {\n      \"text\": \"主人决定梧桐路展厅项目从 2026-11-02 起改由田甜接手。\",\n      \"subject\": \"e1\",\n      \"attribute\": null,\n      \"value\": null,\n      \"occurred_at\": \"2026-11-02\",\n      \"time_precision\": \"day\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\"key\": \"e1\", \"role\": \"subject\"},\n        {\"key\": \"e2\", \"role\": \"object\"},\n        {\"key\": \"e3\", \"role\": \"mention\"}\n      ],\n      \"evidence\": [\n        {\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从今天起改由田甜接手。\"},\n        {\"ref\": \"T3\", \"quote\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\"}\n      ]\n    },\n    {\n      \"text\": \"主人安排祝明远转去跟南岭纸业的新单子。\",\n      \"subject\": \"e1\",\n      \"attribute\": null,\n      \"value\": null,\n      \"occurred_at\": \"2026-11-02\",\n      \"time_precision\": \"day\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\"key\": \"e1\", \"role\": \"subject\"},\n        {\"key\": \"e4\", \"role\": \"object\"},\n        {\"key\": \"e5\", \"role\": \"mention\"}\n      ],\n      \"evidence\": [\n        {\"ref\": \"T2\", \"quote\": \"老祝去忙南岭纸业那边的新单子。\"},\n        {\"ref\": \"T3\", \"quote\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\"}\n      ]\n    },\n    {\n      \"text\": \"青禾设计计划于 2026-12 搬到城东创意园的 B 座。\",\n      \"subject\": \"e6\",\n      \"attribute\": \"搬迁安排\",\n      \"value\": \"2026-12 搬到城东创意园的 B 座\",\n      \"occurred_at\": \"2026-12\",\n      \"time_precision\": \"month\",\n      \"certainty\": \"vague\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\"key\": \"e6\", \"role\": \"subject\"},\n        {\"key\": \"e7\", \"role\": \"object\"}\n      ],\n      \"evidence\": [\n        {\"ref\": \"T4\", \"quote\": \"青禾设计下个月搬到城东创意园的 B 座。\"}\n      ]\n    }\n  ],\n  \"relations\": [\n    {\n      \"subject\": \"e3\",\n      \"relation\": \"负责\",\n      \"object\": \"e2\",\n      \"kinship\": null,\n      \"state\": \"生效\",\n      \"valid_from\": \"2026-11-02\",\n      \"valid_to\": null,\n      \"time_precision\": \"day\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"evidence\": [\n        {\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从今天起改由田甜接手。\"},\n        {\"ref\": \"T3\", \"quote\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\"}\n      ]\n    }\n  ]\n}",
+     "{\"entities\": [{\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e2\", \"mention\": \"梧桐路展厅项目\", \"name\": \"梧桐路展厅项目\", \"type\": \"项目\"}, {\"key\": \"e3\", \"mention\": \"田甜\", \"name\": \"田甜\", \"type\": \"人\"}, {\"key\": \"e4\", \"mention\": \"老祝\", \"name\": \"祝明远\", \"type\": \"人\"}, {\"key\": \"e5\", \"mention\": \"南岭纸业\", \"name\": \"南岭纸业\", \"type\": \"公司或机构\"}, {\"key\": \"e6\", \"mention\": \"青禾设计\", \"name\": \"青禾设计\", \"type\": \"公司或机构\"}, {\"key\": \"e7\", \"mention\": \"城东创意园的 B 座\", \"name\": \"城东创意园的 B 座\", \"type\": \"地点\"}], \"facts\": [{\"text\": \"主人决定梧桐路展厅项目从 2026-11-02 起改由田甜接手。\", \"subject\": \"e1\", \"attribute\": null, \"value\": null, \"occurred_at\": \"2026-11-02\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}, {\"key\": \"e2\", \"role\": \"object\"}, {\"key\": \"e3\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从今天起改由田甜接手。\"}, {\"ref\": \"T3\", \"quote\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\"}]}, {\"text\": \"主人安排祝明远转去跟南岭纸业的新单子。\", \"subject\": \"e1\", \"attribute\": null, \"value\": null, \"occurred_at\": \"2026-11-02\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}, {\"key\": \"e4\", \"role\": \"object\"}, {\"key\": \"e5\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T2\", \"quote\": \"老祝去忙南岭纸业那边的新单子。\"}, {\"ref\": \"T3\", \"quote\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\"}]}, {\"text\": \"青禾设计计划于 2026-12 搬到城东创意园的 B 座。\", \"subject\": \"e6\", \"attribute\": \"搬迁安排\", \"value\": \"2026-12 搬到城东创意园的 B 座\", \"occurred_at\": \"2026-12\", \"time_precision\": \"month\", \"certainty\": \"vague\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e6\", \"role\": \"subject\"}, {\"key\": \"e7\", \"role\": \"object\"}], \"evidence\": [{\"ref\": \"T4\", \"quote\": \"青禾设计下个月搬到城东创意园的 B 座。\"}]}], \"relations\": [{\"subject\": \"e3\", \"relation\": \"负责\", \"object\": \"e2\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": \"2026-11-02\", \"valid_to\": null, \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从今天起改由田甜接手。\"}, {\"ref\": \"T3\", \"quote\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\"}]}]}",
+     "gpt-6.1-sol",
+     7917,
+     1304,
+     255,
+     7726,
+     19.60999999998603,
+     "2026-11-19T15:25:05+08:00"
+    ],
+    [
+     "1a09046f35306aeb9df0a277dbd70af481b1e849f8adc226e5bb77ace2df58a9",
+     "c7b1c70027384c5d19d28db6ae7d160123cb8bc9d01a681822bd374acc7371f0",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "{\n  \"entities\": [\n    {\n      \"key\": \"e1\",\n      \"mention\": \"我\",\n      \"name\": \"主人\",\n      \"type\": \"人\"\n    },\n    {\n      \"key\": \"e2\",\n      \"mention\": \"晨光一号基金\",\n      \"name\": \"晨光一号基金\",\n      \"type\": \"资产\"\n    },\n    {\n      \"key\": \"e3\",\n      \"mention\": \"甜甜\",\n      \"name\": \"甜甜\",\n      \"type\": \"人\"\n    }\n  ],\n  \"facts\": [\n    {\n      \"text\": \"2026-11-09，晨光一号基金的净值是 1.041，比上周高一点。\",\n      \"subject\": \"e2\",\n      \"attribute\": \"净值\",\n      \"value\": \"1.041，比上周高一点\",\n      \"occurred_at\": \"2026-11-09\",\n      \"time_precision\": \"day\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\n          \"key\": \"e2\",\n          \"role\": \"subject\"\n        }\n      ],\n      \"evidence\": [\n        {\n          \"ref\": \"T1\",\n          \"quote\": \"晨光一号基金今天的净值是 1.041，比上周高一点。\"\n        }\n      ]\n    },\n    {\n      \"text\": \"据甜甜所说，展厅的灯光样品将于 2026-11-13 到。\",\n      \"subject\": null,\n      \"attribute\": \"预计到货日期\",\n      \"value\": \"2026-11-13\",\n      \"occurred_at\": \"2026-11-13\",\n      \"time_precision\": \"day\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"甜甜\",\n      \"entities\": [\n        {\n          \"key\": \"e3\",\n          \"role\": \"mention\"\n        }\n      ],\n      \"evidence\": [\n        {\n          \"ref\": \"T2\",\n          \"quote\": \"甜甜说展厅的灯光样品周五到。\"\n        }\n      ]\n    },\n    {\n      \"text\": \"主人不喜欢开会超过半小时。\",\n      \"subject\": \"e1\",\n      \"attribute\": \"会议时长偏好\",\n      \"value\": \"不喜欢超过半小时\",\n      \"occurred_at\": null,\n      \"time_precision\": \"unknown\",\n      \"certainty\": \"stated\",\n      \"speaker\": \"主人\",\n      \"entities\": [\n        {\n          \"key\": \"e1\",\n          \"role\": \"subject\"\n        }\n      ],\n      \"evidence\": [\n        {\n          \"ref\": \"T5\",\n          \"quote\": \"我不喜欢开会超过半小时\"\n        }\n      ]\n    }\n  ],\n  \"relations\": []\n}",
+     "{\"entities\": [{\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e2\", \"mention\": \"晨光一号基金\", \"name\": \"晨光一号基金\", \"type\": \"资产\"}, {\"key\": \"e3\", \"mention\": \"甜甜\", \"name\": \"甜甜\", \"type\": \"人\"}], \"facts\": [{\"text\": \"2026-11-09，晨光一号基金的净值是 1.041，比上周高一点。\", \"subject\": \"e2\", \"attribute\": \"净值\", \"value\": \"1.041，比上周高一点\", \"occurred_at\": \"2026-11-09\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"晨光一号基金今天的净值是 1.041，比上周高一点。\"}]}, {\"text\": \"据甜甜所说，展厅的灯光样品将于 2026-11-13 到。\", \"subject\": null, \"attribute\": \"预计到货日期\", \"value\": \"2026-11-13\", \"occurred_at\": \"2026-11-13\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"甜甜\", \"entities\": [{\"key\": \"e3\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T2\", \"quote\": \"甜甜说展厅的灯光样品周五到。\"}]}, {\"text\": \"主人不喜欢开会超过半小时。\", \"subject\": \"e1\", \"attribute\": \"会议时长偏好\", \"value\": \"不喜欢超过半小时\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T5\", \"quote\": \"我不喜欢开会超过半小时\"}]}], \"relations\": []}",
+     "gpt-6.1-sol",
+     7904,
+     881,
+     256,
+     7726,
+     17.125,
+     "2026-11-19T15:25:22+08:00"
+    ]
+   ]
+  },
+  "runs": {
+   "columns": [
+    "run_id",
+    "started_at",
+    "finished_at",
+    "options",
+    "summary"
+   ],
+   "rows": [
+    [
+     "20261119T072351Z-46287b",
+     "2026-11-19T15:23:51+08:00",
+     "2026-11-19T15:25:22+08:00",
+     "{\"tag\": \"u2a-record\", \"budget\": 80000, \"limit\": null, \"concurrency\": 2, \"has_deadline\": false, \"retry_failed\": false, \"model\": \"gpt-6.1-sol@auto/json_schema\", \"prompt\": \"l3-v20\", \"pre_a\": \"a2\"}",
+     "{\"stopped\": null, \"cached\": 0, \"done\": 5, \"failed\": 0, \"private\": 0, \"not_started\": 0}"
+    ]
+   ]
+  },
+  "windows": {
+   "columns": [
+    "window_id",
+    "cache_key",
+    "window_sha",
+    "prompt_version",
+    "model",
+    "source",
+    "channel",
+    "scope",
+    "packets",
+    "manifest",
+    "input_text",
+    "redactions",
+    "extraction",
+    "built_at"
+   ],
+   "rows": [
+    [
+     "2026-10-05_2300_demo-bot#w1",
+     "6eb8702233fb6cde17b198353787493dd501308d3570c536bd58d9e1650bad00",
+     "4f996f7be33687570d97ebef443b344c9456419aa949cad17dd19697ce55ceff",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "demo-bot",
+     "chat",
+     "{\"partitions\": [\"business\"], \"sensitive\": []}",
+     "[[\"2026-10-05_2300_demo-bot\", 1]]",
+     "[{\"ref\": \"T1\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"梧桐路展厅项目从这周起由老祝负责，有事先找他。\"}, {\"ref\": \"T2\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"好的，记下了：梧桐路展厅项目由祝明远负责。\"}, {\"ref\": \"T3\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"南岭纸业的报价是每吨 4,200 元，含运费。\"}, {\"ref\": \"T4\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.4.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"田甜下个月起来青禾设计上班，做项目经理。\"}, {\"ref\": \"T5\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\"}, {\"ref\": \"C1\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.6.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"restatement\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"明白，晨光一号基金托管在星桥银行。\"}]",
+     "来源 demo-bot，对话。“我”是记忆的主人，demo-bot 是这个包的 Bot，标着“别人”的是群里的人或者别的 Bot。\n\n【正文】\n[2026-10-05 09:10 +08:00] 我：\nT1 梧桐路展厅项目从这周起由老祝负责，有事先找他。\n[09:11] demo-bot：\nT2 好的，记下了：梧桐路展厅项目由祝明远负责。\n[09:15] 我：\nT3 南岭纸业的报价是每吨 4,200 元，含运费。\n[09:20] 我：\nT4 〔日子：下个月 = 2026-11〕田甜下个月起来青禾设计上班，做项目经理。\n[09:24] 我：\nT5 晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\n[09:26] demo-bot：\nC1 〔Bot 复述〕明白，晨光一号基金托管在星桥银行。\n",
+     "{}",
+     "{\"window_id\": \"2026-10-05_2300_demo-bot#w1\", \"entities\": [{\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e2\", \"mention\": \"梧桐路展厅项目\", \"name\": \"梧桐路展厅项目\", \"type\": \"项目\"}, {\"key\": \"e3\", \"mention\": \"老祝\", \"name\": \"祝明远\", \"type\": \"人\"}, {\"key\": \"e4\", \"mention\": \"南岭纸业\", \"name\": \"南岭纸业\", \"type\": \"公司或机构\"}, {\"key\": \"e5\", \"mention\": \"田甜\", \"name\": \"田甜\", \"type\": \"人\"}, {\"key\": \"e6\", \"mention\": \"青禾设计\", \"name\": \"青禾设计\", \"type\": \"公司或机构\"}, {\"key\": \"e7\", \"mention\": \"晨光一号基金\", \"name\": \"晨光一号基金\", \"type\": \"资产\"}, {\"key\": \"e8\", \"mention\": \"星桥银行\", \"name\": \"星桥银行\", \"type\": \"公司或机构\"}], \"facts\": [{\"text\": \"主人安排梧桐路展厅项目从 2026-10-05 所在周起由祝明远负责，有事先找祝明远。\", \"subject\": \"e2\", \"attribute\": \"负责人\", \"value\": \"祝明远\", \"occurred_at\": \"2026-10-05\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}, {\"key\": \"e3\", \"role\": \"object\"}, {\"key\": \"e1\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从这周起由老祝负责，有事先找他。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}, {\"ref\": \"T2\", \"quote\": \"好的，记下了：梧桐路展厅项目由祝明远负责。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"南岭纸业的报价是每吨 4,200 元，含运费。\", \"subject\": \"e4\", \"attribute\": \"报价\", \"value\": \"每吨 4,200 元，含运费\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e4\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T3\", \"quote\": \"南岭纸业的报价是每吨 4,200 元，含运费。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"田甜将从 2026-11 起到青禾设计上班，做项目经理。\", \"subject\": \"e5\", \"attribute\": \"任职安排\", \"value\": \"2026-11 起到青禾设计做项目经理\", \"occurred_at\": \"2026-11\", \"time_precision\": \"month\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e5\", \"role\": \"subject\"}, {\"key\": \"e6\", \"role\": \"object\"}], \"evidence\": [{\"ref\": \"T4\", \"quote\": \"田甜下个月起来青禾设计上班，做项目经理。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.4.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"晨光一号基金由主人自己持有，放在星桥银行的托管账户里。\", \"subject\": \"e7\", \"attribute\": \"持有及托管情况\", \"value\": \"主人自己持有，托管于星桥银行\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e7\", \"role\": \"subject\"}, {\"key\": \"e1\", \"role\": \"mention\"}, {\"key\": \"e8\", \"role\": \"object\"}], \"evidence\": [{\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}], \"relations\": [{\"subject\": \"e3\", \"relation\": \"负责\", \"object\": \"e2\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": \"2026-10-05\", \"valid_to\": null, \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从这周起由老祝负责，有事先找他。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}, {\"ref\": \"T2\", \"quote\": \"好的，记下了：梧桐路展厅项目由祝明远负责。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": [], \"notes\": []}, {\"subject\": \"e1\", \"relation\": \"持有\", \"object\": \"e7\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": [], \"notes\": []}, {\"subject\": \"e7\", \"relation\": \"托管于\", \"object\": \"e8\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": [], \"notes\": []}, {\"subject\": \"e1\", \"relation\": \"客户是\", \"object\": \"e8\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"inferred\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T5\", \"quote\": \"晨光一号基金放在星桥银行的托管账户里，是我自己持有的。\", \"sentence_id\": \"2026-10-05_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-05_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": [], \"notes\": []}]}",
+     "2026-11-19T15:23:51+08:00"
+    ],
+    [
+     "2026-10-12_2300_demo-bot#w1",
+     "add905a795b7364897cd3a2ac9c223da0cbbad5fe6709afb8ba3976095551d9f",
+     "1eb715e3f8aca74e497a168de0a165b7df0883abd8507e592325cfad7423fb7b",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "demo-bot",
+     "chat",
+     "{\"partitions\": [\"business\"], \"sensitive\": []}",
+     "[[\"2026-10-12_2300_demo-bot\", 1]]",
+     "[{\"ref\": \"T1\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"南岭的报价改了，每吨涨到 4,500 元。\"}, {\"ref\": \"T2\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"收到，南岭纸业的报价改成每吨 4,500 元。\"}, {\"ref\": \"T3\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"展厅的开幕定在 11 月 20 日。\"}, {\"ref\": \"T4\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.4.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"以后给客户的报价单一律先发我看过再外发。\"}, {\"ref\": \"T5\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"北渡物流每周二、周五各送一次货。\"}]",
+     "来源 demo-bot，对话。“我”是记忆的主人，demo-bot 是这个包的 Bot，标着“别人”的是群里的人或者别的 Bot。\n\n【正文】\n[2026-10-12 14:02 +08:00] 我：\nT1 南岭的报价改了，每吨涨到 4,500 元。\n[14:03] demo-bot：\nT2 收到，南岭纸业的报价改成每吨 4,500 元。\n[14:10] 我：\nT3 展厅的开幕定在 11 月 20 日。\n[14:21] 我：\nT4 以后给客户的报价单一律先发我看过再外发。\n[14:30] 我：\nT5 北渡物流每周二、周五各送一次货。\n",
+     "{}",
+     "{\"window_id\": \"2026-10-12_2300_demo-bot#w1\", \"entities\": [{\"key\": \"e1\", \"mention\": \"南岭\", \"name\": \"南岭纸业\", \"type\": \"公司或机构\"}, {\"key\": \"e2\", \"mention\": \"展厅\", \"name\": \"展厅\", \"type\": \"地点\"}, {\"key\": \"e3\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e4\", \"mention\": \"北渡物流\", \"name\": \"北渡物流\", \"type\": \"公司或机构\"}], \"facts\": [{\"text\": \"南岭纸业的报价已上涨至每吨 4,500 元。\", \"subject\": \"e1\", \"attribute\": \"报价\", \"value\": \"每吨 4,500 元\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"南岭的报价改了，每吨涨到 4,500 元。\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}, {\"ref\": \"T2\", \"quote\": \"收到，南岭纸业的报价改成每吨 4,500 元。\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"展厅的开幕定在 2026-11-20。\", \"subject\": \"e2\", \"attribute\": \"开幕日期\", \"value\": \"2026-11-20\", \"occurred_at\": \"2026-11-20\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T3\", \"quote\": \"展厅的开幕定在 11 月 20 日。\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"主人要求今后给客户的报价单一律先发给主人看过，再对外发送。\", \"subject\": \"e3\", \"attribute\": \"报价单外发审核要求\", \"value\": \"一律先发给主人看过再外发\", \"occurred_at\": \"2026-10-12\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e3\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T4\", \"quote\": \"以后给客户的报价单一律先发我看过再外发。\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.4.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"北渡物流每周二、周五各送一次货。\", \"subject\": \"e4\", \"attribute\": \"送货安排\", \"value\": \"每周二、周五各送一次货\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e4\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T5\", \"quote\": \"北渡物流每周二、周五各送一次货。\", \"sentence_id\": \"2026-10-12_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-12_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}], \"relations\": []}",
+     "2026-11-19T15:23:51+08:00"
+    ],
+    [
+     "2026-10-20_2300_demo-bot#w1",
+     "8aa186fd55af77c960eca92c8e351e25116ef1b76d8a49e691dd5dfb8399b310",
+     "bd01a3435ccb1d4b35b01974a929c26ba8b45bad2c95797ebf7e6cd1f2cf80b3",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "demo-bot",
+     "chat",
+     "{\"partitions\": [\"business\", \"investment\"], \"sensitive\": []}",
+     "[[\"2026-10-20_2300_demo-bot\", 1]]",
+     "[{\"ref\": \"T1\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"展厅开幕推迟了，改到 11 月 28 日。\"}, {\"ref\": \"T2\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"欧阳青是我表姐，下周三来公司看看。\"}, {\"ref\": \"T3\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"我建议开幕前一周再确认一次场地和灯光。\"}, {\"ref\": \"T4\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.4.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"晨光一号基金这周的净值是 1.032。\"}, {\"ref\": \"T5\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"下周三我去星桥银行，把晨光一号基金再加仓 5 万元。\"}]",
+     "来源 demo-bot，对话。“我”是记忆的主人，demo-bot 是这个包的 Bot，标着“别人”的是群里的人或者别的 Bot。\n\n【正文】\n[2026-10-20 10:05 +08:00] 我：\nT1 展厅开幕推迟了，改到 11 月 28 日。\n[10:12] 我：\nT2 〔日子：下周三 = 2026-10-28〕欧阳青是我表姐，下周三来公司看看。\n[10:20] demo-bot：\nT3 我建议开幕前一周再确认一次场地和灯光。\n[10:33] 我：\nT4 晨光一号基金这周的净值是 1.032。\n[10:40] 我：\nT5 〔日子：下周三 = 2026-10-28〕下周三我去星桥银行，把晨光一号基金再加仓 5 万元。\n",
+     "{}",
+     "{\"window_id\": \"2026-10-20_2300_demo-bot#w1\", \"entities\": [{\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e2\", \"mention\": \"展厅\", \"name\": \"展厅\", \"type\": \"地点\"}, {\"key\": \"e3\", \"mention\": \"欧阳青\", \"name\": \"欧阳青\", \"type\": \"人\"}, {\"key\": \"e4\", \"mention\": \"晨光一号基金\", \"name\": \"晨光一号基金\", \"type\": \"资产\"}, {\"key\": \"e5\", \"mention\": \"星桥银行\", \"name\": \"星桥银行\", \"type\": \"公司或机构\"}, {\"key\": \"e6\", \"mention\": \"我\", \"name\": \"demo-bot\", \"type\": \"人\"}], \"facts\": [{\"text\": \"展厅开幕推迟，改到 2026-11-28。\", \"subject\": \"e2\", \"attribute\": \"开幕日期\", \"value\": \"2026-11-28\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"展厅开幕推迟了，改到 11 月 28 日。\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"欧阳青是主人的表姐。\", \"subject\": \"e3\", \"attribute\": \"与主人的亲属关系\", \"value\": \"表姐\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e3\", \"role\": \"subject\"}, {\"key\": \"e1\", \"role\": \"object\"}], \"evidence\": [{\"ref\": \"T2\", \"quote\": \"欧阳青是我表姐\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"欧阳青计划于 2026-10-28 来公司看看。\", \"subject\": \"e3\", \"attribute\": \"来访安排\", \"value\": \"2026-10-28 来公司看看\", \"occurred_at\": \"2026-10-28\", \"time_precision\": \"day\", \"certainty\": \"vague\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e3\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T2\", \"quote\": \"欧阳青是我表姐，下周三来公司看看。\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"demo-bot 建议在展厅开幕前一周再确认一次场地和灯光。\", \"subject\": \"e2\", \"attribute\": null, \"value\": null, \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"inferred\", \"speaker\": \"demo-bot\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}, {\"key\": \"e6\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T3\", \"quote\": \"我建议开幕前一周再确认一次场地和灯光。\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"主人称，晨光一号基金在 2026-10-20 所在周的净值是 1.032。\", \"subject\": \"e4\", \"attribute\": \"净值\", \"value\": \"1.032\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e4\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T4\", \"quote\": \"晨光一号基金这周的净值是 1.032。\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.4.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"主人计划于 2026-10-28 去星桥银行，将晨光一号基金再加仓 5 万元。\", \"subject\": \"e1\", \"attribute\": \"加仓计划\", \"value\": \"2026-10-28 去星桥银行将晨光一号基金再加仓 5 万元\", \"occurred_at\": \"2026-10-28\", \"time_precision\": \"day\", \"certainty\": \"vague\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}, {\"key\": \"e4\", \"role\": \"object\"}, {\"key\": \"e5\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T5\", \"quote\": \"下周三我去星桥银行，把晨光一号基金再加仓 5 万元。\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}], \"relations\": [{\"subject\": \"e3\", \"relation\": \"亲属\", \"object\": \"e1\", \"kinship\": \"表姐\", \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T2\", \"quote\": \"欧阳青是我表姐\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": [], \"notes\": []}, {\"subject\": \"e1\", \"relation\": \"持有\", \"object\": \"e4\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": null, \"valid_to\": null, \"time_precision\": \"unknown\", \"certainty\": \"inferred\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T5\", \"quote\": \"把晨光一号基金再加仓 5 万元。\", \"sentence_id\": \"2026-10-20_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-10-20_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": [], \"notes\": []}]}",
+     "2026-11-19T15:23:51+08:00"
+    ],
+    [
+     "2026-11-02_2300_demo-bot#w1",
+     "a1d61ba4fbabcef734540f1c9d49c597d6abdb646b58f9ae51345062f780b764",
+     "954d12b4c5a2ff7242bfb720ae2fe8654c272a3ed950b682e200363e0c637517",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "demo-bot",
+     "chat",
+     "{\"partitions\": [\"business\"], \"sensitive\": []}",
+     "[[\"2026-11-02_2300_demo-bot\", 1]]",
+     "[{\"ref\": \"T1\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"梧桐路展厅项目从今天起改由田甜接手。\"}, {\"ref\": \"T2\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"老祝去忙南岭纸业那边的新单子。\"}, {\"ref\": \"T3\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\"}, {\"ref\": \"T4\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.4.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"青禾设计下个月搬到城东创意园的 B 座。\"}]",
+     "来源 demo-bot，对话。“我”是记忆的主人，demo-bot 是这个包的 Bot，标着“别人”的是群里的人或者别的 Bot。\n\n【正文】\n[2026-11-02 09:30 +08:00] 我：\nT1 梧桐路展厅项目从今天起改由田甜接手。\n[09:31] 我：\nT2 老祝去忙南岭纸业那边的新单子。\n[09:35] demo-bot：\nT3 好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\n[09:45] 我：\nT4 〔日子：下个月 = 2026-12〕青禾设计下个月搬到城东创意园的 B 座。\n",
+     "{}",
+     "{\"window_id\": \"2026-11-02_2300_demo-bot#w1\", \"entities\": [{\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e2\", \"mention\": \"梧桐路展厅项目\", \"name\": \"梧桐路展厅项目\", \"type\": \"项目\"}, {\"key\": \"e3\", \"mention\": \"田甜\", \"name\": \"田甜\", \"type\": \"人\"}, {\"key\": \"e4\", \"mention\": \"老祝\", \"name\": \"祝明远\", \"type\": \"人\"}, {\"key\": \"e5\", \"mention\": \"南岭纸业\", \"name\": \"南岭纸业\", \"type\": \"公司或机构\"}, {\"key\": \"e6\", \"mention\": \"青禾设计\", \"name\": \"青禾设计\", \"type\": \"公司或机构\"}, {\"key\": \"e7\", \"mention\": \"城东创意园的 B 座\", \"name\": \"城东创意园的 B 座\", \"type\": \"地点\"}], \"facts\": [{\"text\": \"主人决定梧桐路展厅项目从 2026-11-02 起改由田甜接手。\", \"subject\": \"e1\", \"attribute\": null, \"value\": null, \"occurred_at\": \"2026-11-02\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}, {\"key\": \"e2\", \"role\": \"object\"}, {\"key\": \"e3\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从今天起改由田甜接手。\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}, {\"ref\": \"T3\", \"quote\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"主人安排祝明远转去跟南岭纸业的新单子。\", \"subject\": \"e1\", \"attribute\": null, \"value\": null, \"occurred_at\": \"2026-11-02\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}, {\"key\": \"e4\", \"role\": \"object\"}, {\"key\": \"e5\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T2\", \"quote\": \"老祝去忙南岭纸业那边的新单子。\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}, {\"ref\": \"T3\", \"quote\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"青禾设计计划于 2026-12 搬到城东创意园的 B 座。\", \"subject\": \"e6\", \"attribute\": \"搬迁安排\", \"value\": \"2026-12 搬到城东创意园的 B 座\", \"occurred_at\": \"2026-12\", \"time_precision\": \"month\", \"certainty\": \"vague\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e6\", \"role\": \"subject\"}, {\"key\": \"e7\", \"role\": \"object\"}], \"evidence\": [{\"ref\": \"T4\", \"quote\": \"青禾设计下个月搬到城东创意园的 B 座。\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.4.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}], \"relations\": [{\"subject\": \"e3\", \"relation\": \"负责\", \"object\": \"e2\", \"kinship\": null, \"state\": \"生效\", \"valid_from\": \"2026-11-02\", \"valid_to\": null, \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"evidence\": [{\"ref\": \"T1\", \"quote\": \"梧桐路展厅项目从今天起改由田甜接手。\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}, {\"ref\": \"T3\", \"quote\": \"好的，梧桐路展厅项目现在由田甜负责，祝明远转去跟南岭纸业的单子。\", \"sentence_id\": \"2026-11-02_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-11-02_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": [], \"notes\": []}]}",
+     "2026-11-19T15:23:51+08:00"
+    ],
+    [
+     "2026-11-09_2300_demo-bot#w1",
+     "1a09046f35306aeb9df0a277dbd70af481b1e849f8adc226e5bb77ace2df58a9",
+     "c7b1c70027384c5d19d28db6ae7d160123cb8bc9d01a681822bd374acc7371f0",
+     "l3-v20",
+     "gpt-6.1-sol@auto/json_schema",
+     "demo-bot",
+     "chat",
+     "{\"partitions\": [\"business\", \"investment\"], \"sensitive\": []}",
+     "[[\"2026-11-09_2300_demo-bot\", 1]]",
+     "[{\"ref\": \"T1\", \"sentence_id\": \"2026-11-09_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-11-09_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"晨光一号基金今天的净值是 1.041，比上周高一点。\"}, {\"ref\": \"T2\", \"sentence_id\": \"2026-11-09_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-11-09_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"甜甜说展厅的灯光样品周五到。\"}, {\"ref\": \"T3\", \"sentence_id\": \"2026-11-09_2300_demo-bot#1.3.1\", \"packet_id\": \"2026-11-09_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"要不要我周四提醒你确认样品？\"}, {\"ref\": \"T4\", \"sentence_id\": \"2026-11-09_2300_demo-bot#1.4.1\", \"packet_id\": \"2026-11-09_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"好，周四上午提醒我。\"}, {\"ref\": \"T5\", \"sentence_id\": \"2026-11-09_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-11-09_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"field\": null, \"clipped\": false, \"redacted\": false, \"shown\": \"我不喜欢开会超过半小时，跟田甜也这么说一下。\"}]",
+     "来源 demo-bot，对话。“我”是记忆的主人，demo-bot 是这个包的 Bot，标着“别人”的是群里的人或者别的 Bot。\n\n【正文】\n[2026-11-09 16:00 +08:00] 我：\nT1 晨光一号基金今天的净值是 1.041，比上周高一点。\n[16:08] 我：\nT2 甜甜说展厅的灯光样品周五到。\n[16:12] demo-bot：\nT3 要不要我周四提醒你确认样品？\n[16:15] 我：\nT4 好，周四上午提醒我。\n[16:20] 我：\nT5 我不喜欢开会超过半小时，跟田甜也这么说一下。\n",
+     "{}",
+     "{\"window_id\": \"2026-11-09_2300_demo-bot#w1\", \"entities\": [{\"key\": \"e1\", \"mention\": \"我\", \"name\": \"主人\", \"type\": \"人\"}, {\"key\": \"e2\", \"mention\": \"晨光一号基金\", \"name\": \"晨光一号基金\", \"type\": \"资产\"}, {\"key\": \"e3\", \"mention\": \"甜甜\", \"name\": \"甜甜\", \"type\": \"人\"}], \"facts\": [{\"text\": \"2026-11-09，晨光一号基金的净值是 1.041，比上周高一点。\", \"subject\": \"e2\", \"attribute\": \"净值\", \"value\": \"1.041，比上周高一点\", \"occurred_at\": \"2026-11-09\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e2\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T1\", \"quote\": \"晨光一号基金今天的净值是 1.041，比上周高一点。\", \"sentence_id\": \"2026-11-09_2300_demo-bot#1.1.1\", \"packet_id\": \"2026-11-09_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"据甜甜所说，展厅的灯光样品将于 2026-11-13 到。\", \"subject\": null, \"attribute\": \"预计到货日期\", \"value\": \"2026-11-13\", \"occurred_at\": \"2026-11-13\", \"time_precision\": \"day\", \"certainty\": \"stated\", \"speaker\": \"甜甜\", \"entities\": [{\"key\": \"e3\", \"role\": \"mention\"}], \"evidence\": [{\"ref\": \"T2\", \"quote\": \"甜甜说展厅的灯光样品周五到。\", \"sentence_id\": \"2026-11-09_2300_demo-bot#1.2.1\", \"packet_id\": \"2026-11-09_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}, {\"text\": \"主人不喜欢开会超过半小时。\", \"subject\": \"e1\", \"attribute\": \"会议时长偏好\", \"value\": \"不喜欢超过半小时\", \"occurred_at\": null, \"time_precision\": \"unknown\", \"certainty\": \"stated\", \"speaker\": \"主人\", \"entities\": [{\"key\": \"e1\", \"role\": \"subject\"}], \"evidence\": [{\"ref\": \"T5\", \"quote\": \"我不喜欢开会超过半小时\", \"sentence_id\": \"2026-11-09_2300_demo-bot#1.5.1\", \"packet_id\": \"2026-11-09_2300_demo-bot\", \"revision\": 1, \"kind\": \"new\", \"origin\": \"said\", \"redacted\": false}], \"problems\": []}], \"relations\": []}",
+     "2026-11-19T15:23:51+08:00"
+    ]
+   ]
+  }
+ }
+}

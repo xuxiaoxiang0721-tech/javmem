@@ -1,0 +1,6 @@
+# 投毒演练用的身份：查测试库、什么都看得到（查查询结果带不带外部的标记）。
+identities:
+  poison-owner:
+    env: test
+    partitions: "*"
+    sensitive: "*"

@@ -1,0 +1,14 @@
+# 仓库里一律存 LF，取出来也是 LF，和平台、core.autocrlf 都没关系
+* text=auto eol=lf
+
+# 邮件样例按字节保留：真实邮件是 CRLF，导入工具要测得到
+*.eml -text
+*.mbox -text
+
+# 二进制
+*.png binary
+*.jpg binary
+*.pdf binary
+*.db binary
+*.sqlite binary
+*.sqlite3 binary

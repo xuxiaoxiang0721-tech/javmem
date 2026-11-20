@@ -1,0 +1,76 @@
+{
+ "schema": "javmem-gold-entities/1",
+ "entities": [
+  {
+   "name": "主人",
+   "type": "人",
+   "aliases": [
+    "林青",
+    "包里说话人“我”"
+   ],
+   "from": "编的"
+  },
+  {
+   "name": "祝明远",
+   "type": "人",
+   "aliases": [
+    "老祝"
+   ],
+   "from": "编的"
+  },
+  {
+   "name": "田甜",
+   "type": "人",
+   "aliases": [
+    "甜甜"
+   ],
+   "from": "编的"
+  },
+  {
+   "name": "欧阳青",
+   "type": "人",
+   "aliases": [],
+   "from": "编的"
+  },
+  {
+   "name": "青禾设计",
+   "type": "公司或机构",
+   "aliases": [],
+   "from": "编的"
+  },
+  {
+   "name": "南岭纸业",
+   "type": "公司或机构",
+   "aliases": [
+    "南岭"
+   ],
+   "from": "编的"
+  },
+  {
+   "name": "星桥银行",
+   "type": "公司或机构",
+   "aliases": [],
+   "from": "编的"
+  },
+  {
+   "name": "北渡物流",
+   "type": "公司或机构",
+   "aliases": [],
+   "from": "编的"
+  },
+  {
+   "name": "晨光一号基金",
+   "type": "资产",
+   "aliases": [],
+   "from": "编的"
+  },
+  {
+   "name": "梧桐路展厅项目",
+   "type": "项目",
+   "aliases": [
+    "展厅"
+   ],
+   "from": "编的"
+  }
+ ]
+}

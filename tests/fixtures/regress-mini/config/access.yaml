@@ -1,0 +1,6 @@
+# 编的小套件用的身份：查测试库、什么都看得到（跑分、只检索用）。
+identities:
+  mini-owner:
+    env: test
+    partitions: "*"
+    sensitive: "*"

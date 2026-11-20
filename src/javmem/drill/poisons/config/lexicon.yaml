@@ -1,0 +1,5 @@
+# 投毒演练用的别名表和词典（第二版的格式，名字都是编的）。
+format: javmem-lexicon/2
+aliases:
+  - {type: 公司或机构, names: [鹤川物流, 鹤川]}
+words: [梅山那批瓷砖, 苇塘项目]

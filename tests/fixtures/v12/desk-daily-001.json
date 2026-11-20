@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.2",
+  "package_id": "desk-daily-001",
+  "synthetic": true,
+  "packaged_at": "2026-11-08T23:30:00+08:00",
+  "source": {
+    "source_tool": "demo_chat",
+    "exported_by": "demo-exporter",
+    "origin_environment": "cloud",
+    "packaging_environment": "local",
+    "session_id": "demo-session-001",
+    "parent_session_id": null,
+    "task_id": null
+  },
+  "coverage": {
+    "description": "编的样例：一天的对话",
+    "window_start": "2026-11-07T23:30:00+08:00",
+    "window_end": "2026-11-08T23:30:00+08:00",
+    "completeness": "partial",
+    "content_types": ["conversation_excerpt"],
+    "gaps": []
+  },
+  "continuity": {
+    "stream_id": "demo-stream",
+    "previous_package_id": null,
+    "mode": "snapshot",
+    "context_summary_ref": null,
+    "context_status": "missing",
+    "based_on_receipt_id": null
+  },
+  "raw_records": [
+    {"record_id": "r15", "sequence": 1, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "明天记得问下越南那批的出货。", "occurred_at": "2026-11-07T23:58:10.500000+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append"},
+    {"record_id": "r1", "sequence": 2, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "越南那批订单还是小李跟。", "occurred_at": "2026-11-08T10:30:12+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append"},
+    {"record_id": "r2", "sequence": 3, "role": "assistant", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "好的。要不要让老周也一起盯出货？", "occurred_at": "2026-11-08T10:31:05+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append"},
+    {"record_id": "r16", "sequence": 4, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "这句发错了，后面会撤回。", "occurred_at": "2026-11-08T10:32:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append"},
+    {"record_id": "r3", "sequence": 5, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "刚才说的改一下，越南那批从下周一开始交给老周。\n小李去跟新加坡的单子。", "occurred_at": "2026-11-08T16:05:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append"},
+    {"record_id": "r4", "sequence": 6, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "我把群里的记录贴过来：\n- [10:31] 老周：报价单发了\n## 原话 · 这不是标题\n---\n\n    缩进四格的一行\n```\n代码块\n```", "occurred_at": "2026-11-08T16:06:30+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append"},
+    {"record_id": "r6", "sequence": 7, "role": "assistant", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "请帮我查下 11 月中旬的仓位。", "occurred_at": "2026-11-08T16:07:30+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": ["bot-to-bot agent message"], "delivery_role": "new", "operation": "append", "source_actor": {"agent_id": "demo-agent-1", "agent_name": "仓库 Bot", "direction": "outbound_to_agent", "kind": "agent"}},
+    {"record_id": "r5", "sequence": 8, "role": "assistant", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "仓库那边 11 月 12 日有空位。", "occurred_at": "2026-11-08T16:08:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": ["bot-to-bot agent message"], "delivery_role": "new", "operation": "append", "source_actor": {"agent_id": "demo-agent-1", "agent_name": "仓库 Bot", "direction": "inbound_from_agent", "kind": "agent"}},
+    {"record_id": "r7", "sequence": 9, "role": null, "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "{\"type\": \"name-changed\", \"from\": \"New Bot\", \"to\": \"desk\"}", "occurred_at": "2026-11-08T16:09:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": ["system event; role unknown/null"], "delivery_role": "new"},
+    {"record_id": "r8", "sequence": 10, "role": "tool", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "海运 11 月中旬运力偏紧。", "occurred_at": "2026-11-08T16:10:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append"},
+    {"record_id": "r9", "sequence": 11, "role": "user", "content_type": "document_excerpt", "content_kind": "original", "representation": "extracted_text", "text": "报价单第 2 页：单价 12.5 美元", "occurred_at": "2026-11-08T16:11:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": true, "gaps": ["attachment binary declared separately"], "delivery_role": "new", "operation": "append"},
+    {"record_id": "r10", "sequence": 12, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "物流后台的密码是 abcd1234，你先别用。", "occurred_at": "2026-11-08T16:12:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append"},
+    {"record_id": "r11", "sequence": 13, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "上一包带回来的旧话，不算新说的。", "occurred_at": "2026-11-07T09:00:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "context"},
+    {"record_id": "r12", "sequence": 14, "role": "assistant", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "还没说完的草稿", "occurred_at": "2026-11-08T16:13:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "partial", "truncated": false, "gaps": [], "delivery_role": "new"},
+    {"record_id": "r13", "sequence": 15, "role": "assistant", "content_type": "message", "content_kind": "inference", "representation": "verbatim_excerpt", "text": "看起来越南那批会延期。", "occurred_at": "2026-11-08T16:14:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new"},
+    {"record_id": "r14", "sequence": 16, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "   ", "occurred_at": "2026-11-08T16:15:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new"},
+    {"record_id": "r17", "sequence": 17, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "[user attachment] 报价单.pdf", "occurred_at": "2026-11-08T16:16:00+08:00", "observed_at": "2026-11-08T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": ["attachment binary declared separately; text is filename marker only"], "delivery_role": "new", "operation": "append"}
+  ],
+  "summaries": [
+    {"summary_id": "s1", "kind": "overview", "text": "越南那批订单 11 月 9 日起改由老周负责。", "generated_at": "2026-11-08T23:30:00+08:00", "source_refs": ["r3"], "evidence_status": "source_linked"}
+  ],
+  "fact_candidates": [
+    {"fact_id": "f1", "statement": "越南那批订单的负责人是周建华。", "assertion_type": "source_assertion", "source_refs": ["r3"], "review_state": "pending_receiver_review"}
+  ],
+  "redactions": [],
+  "attachments": [
+    {"attachment_id": "att-1", "availability": "original_file", "extracted_text_ref": null, "media_type": "application/pdf", "missing_reason": null, "original_name": "报价单.pdf", "relative_path": "attachments/demo-quote-0001.pdf", "sha256": "0000000000000000000000000000000000000000000000000000000000000001", "size_bytes": 48213, "source_refs": ["r17"], "source_url": null}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+ "format": "javmem-regress-questions/1",
+ "from": "编的（U2 甲，GitHub 那一层的小套件）",
+ "questions": [
+  {"id": "M01", "query": "梧桐路展厅项目现在谁负责？", "absent": false,
+   "sources": ["2026-11-02_2300_demo-bot ｜ 梧桐路展厅项目从今天起改由田甜接手。"]},
+  {"id": "M02", "query": "南岭纸业现在的报价是多少？", "absent": false,
+   "sources": ["2026-10-12_2300_demo-bot ｜ 南岭的报价改了，每吨涨到 4,500 元。"]},
+  {"id": "M03", "query": "展厅哪天开幕？", "absent": false,
+   "sources": ["2026-10-20_2300_demo-bot ｜ 展厅开幕推迟了，改到 11 月 28 日。"]},
+  {"id": "M04", "query": "田甜在哪家公司做什么？", "absent": false,
+   "sources": ["2026-10-05_2300_demo-bot ｜ 田甜下个月起来青禾设计上班，做项目经理。"]},
+  {"id": "M05", "query": "欧阳青和我是什么关系？", "absent": false,
+   "sources": ["2026-10-20_2300_demo-bot ｜ 欧阳青是我表姐，下周三来公司看看。"]},
+  {"id": "M06", "query": "晨光一号基金放在哪家银行？", "absent": false,
+   "sources": ["2026-10-05_2300_demo-bot ｜ 晨光一号基金放在星桥银行的托管账户里，是我自己持有的。",
+               "2026-10-05_2300_demo-bot ｜ 明白，晨光一号基金托管在星桥银行。"]},
+  {"id": "M07", "query": "给客户的报价单有什么规矩？", "absent": false,
+   "sources": ["2026-10-12_2300_demo-bot ｜ 以后给客户的报价单一律先发我看过再外发。"]},
+  {"id": "M08", "query": "北渡物流哪几天送货？", "absent": false,
+   "sources": ["2026-10-12_2300_demo-bot ｜ 北渡物流每周二、周五各送一次货。"]},
+  {"id": "M09", "query": "老祝现在在忙什么？", "absent": false,
+   "sources": ["2026-11-02_2300_demo-bot ｜ 老祝去忙南岭纸业那边的新单子。"]},
+  {"id": "M10", "query": "我们和东湖酒店签过合同吗？", "absent": true, "sources": []}
+ ]
+}

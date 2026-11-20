@@ -1,0 +1,37 @@
+# 测试库的图：测试库的账本投影到这里（D37：单独一个实例，测完就关）。设置和主图（deploy/graph-neo4j/compose.yaml）一样（镜像也钉着同一个指纹），
+# 只是项目名、容器名、端口、数据目录、密码不一样。说明见主图那个文件。
+#
+# 起：  JAVMEM_GRAPH_TEST_NEO4J_DATA=<仓库外的数据目录> docker compose -f deploy/graph-test-neo4j/compose.yaml up -d
+# 停：  同样的命令把 up -d 换成 stop。测完就停，不设开机自启。
+#
+# - 端口只绑 127.0.0.1：7476 网页、7689 bolt。
+# - 密码：javmem graph init --library test 改成用户级环境变量 JAVMEM_GRAPH_TEST_NEO4J_PASSWORD 里的那个。
+name: javmem-graph-test
+
+services:
+  neo4j:
+    image: public.ecr.aws/docker/library/neo4j:5.26-community@sha256:eaee4488d580749ce332bd028f5be3917edf91f562d76c5443a51c08ec347b1f
+    pull_policy: never
+    container_name: javmem-graph-test-neo4j
+    restart: "no"
+    ports:
+      - "127.0.0.1:7476:7474"
+      - "127.0.0.1:7689:7687"
+    volumes:
+      - ${JAVMEM_GRAPH_TEST_NEO4J_DATA:?要设 JAVMEM_GRAPH_TEST_NEO4J_DATA（仓库外的数据目录）}/data:/data
+      - ${JAVMEM_GRAPH_TEST_NEO4J_DATA:?要设 JAVMEM_GRAPH_TEST_NEO4J_DATA（仓库外的数据目录）}/logs:/logs
+    environment:
+      NEO4J_server_memory_heap_initial__size: "1G"
+      NEO4J_server_memory_heap_max__size: "1G"
+      NEO4J_server_memory_pagecache_size: "512M"
+      NEO4J_dbms_memory_transaction_total_max: "256M"
+      NEO4J_dbms_usage__report_enabled: "false"
+      NEO4J_client_allow__telemetry: "false"
+      NEO4J_db_index_fulltext_default__analyzer: "cjk"
+      NEO4J_db_tx__log_rotation_retention__policy: "1 files"
+      NEO4J_server_jvm_additional: "--add-modules=jdk.incubator.vector"
+      NEO4J_db_store_files_preallocate: "false"
+      NEO4J_db_tx__log_preallocate: "false"
+    mem_limit: 4g
+    memswap_limit: 4g
+    stop_grace_period: 120s

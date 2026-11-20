@@ -1,0 +1,134 @@
+# J2.14 第 6 类：否定。句子和名字都是编的，从头写的；source: report 的是任务说明里给的例句。
+# 成对：保留了否定（或者换了个否定的说法）的放过，丢了否定、凭空加了否定的拦下，要 G3 拦（by）。
+# G05 第 2 条：双重否定（“不是不能”）当肯定，事实写成否定的拦。
+# G10 第 2 条（拒绝写成接受）是反义词，不是否定，设计上归 D63 的模型复核（“相反的意思”），标 beyond。
+category: 否定
+groups:
+  - id: G01
+    kind: l4
+    source: report
+    why: “还没开”写成“未开”
+    lines: ["我：楼下那家店还没开。"]
+    cases:
+      - {text: "楼下那家店未开", quote: "楼下那家店还没开", expect: pass}
+      - {text: "楼下那家店开了", quote: "楼下那家店还没开", expect: block, by: [G3]}
+  - id: G02
+    kind: l4
+    source: made
+    why: 还没联网写成尚未联网
+    lines: ["desk-bot：新买的打印机还没联网。"]
+    cases:
+      - {text: "新买的打印机尚未联网", quote: "新买的打印机还没联网", expect: pass}
+      - {text: "新买的打印机已联网", quote: "新买的打印机还没联网", expect: block, by: [G3]}
+  - id: G03
+    kind: l4
+    source: made
+    why: 不同意
+    lines: ["我：我不同意这份排班表。"]
+    cases:
+      - {text: "主人不同意这份排班表", quote: "我不同意这份排班表", expect: pass}
+      - {text: "主人同意这份排班表", quote: "我不同意这份排班表", expect: block, by: [G3]}
+  - id: G04
+    kind: l4
+    source: made
+    why: 无需
+    lines: ["我：这类报销无需主管签字。"]
+    cases:
+      - {text: "这类报销不用主管签字", quote: "这类报销无需主管签字", expect: pass}
+      - {text: "这类报销需要主管签字", quote: "这类报销无需主管签字", expect: block, by: [G3]}
+  - id: G05
+    kind: l4
+    source: made
+    why: 双重否定
+    lines: ["我：周末加班也不是不能商量。"]
+    cases:
+      - {text: "主人认为周末加班可以商量", quote: "周末加班也不是不能商量", expect: pass}
+      - {text: "主人认为周末加班不能商量", quote: "周末加班也不是不能商量", expect: block, by: [G3]}
+  - id: G06
+    kind: l4
+    source: made
+    why: 绝不能，换成可以
+    lines: ["我：生日惊喜绝不能让小林知道。"]
+    cases:
+      - {text: "生日惊喜不能让小林知道", quote: "生日惊喜绝不能让小林知道", expect: pass}
+      - {text: "生日惊喜可以让小林知道", quote: "生日惊喜绝不能让小林知道", expect: block, by: [G3]}
+  - id: G07
+    kind: l4
+    source: made
+    why: 从未
+    lines: ["我：这台老冰箱从未坏过。"]
+    cases:
+      - {text: "这台老冰箱没坏过", quote: "这台老冰箱从未坏过", expect: pass}
+      - {text: "这台老冰箱坏过", quote: "这台老冰箱从未坏过", expect: block, by: [G3]}
+  - id: G08
+    kind: l4
+    source: made
+    why: 叫停、不收，写成停止收
+    lines: ["老韩：洗车机已叫停，不收新预约。"]
+    cases:
+      - {text: "洗车机已叫停，停止收新预约", quote: "洗车机已叫停，不收新预约", expect: pass}
+      - {text: "洗车机继续，收新预约", quote: "洗车机已叫停，不收新预约", expect: block, by: [G3]}
+  - id: G09
+    kind: l4
+    source: made
+    why: 别再
+    lines: ["我：别再提醒我续会员卡了。"]
+    cases:
+      - {text: "主人要求不再提醒续会员卡", quote: "别再提醒我续会员卡了", expect: pass}
+      - {text: "主人要求提醒续会员卡", quote: "别再提醒我续会员卡了", expect: block, by: [G3]}
+  - id: G10
+    kind: l4
+    source: made
+    why: 拒绝写成接受
+    lines: ["我：我拒绝了物业的加价方案。"]
+    cases:
+      - {text: "主人拒绝了物业的加价方案", quote: "我拒绝了物业的加价方案", expect: pass}
+      - {text: "主人接受了物业的加价方案", quote: "我拒绝了物业的加价方案", expect: block, by: [G3], bucket: beyond}
+  - id: G11
+    kind: l4
+    source: report
+    why: 否定在后一小句：会付，但不是这个月
+    lines: ["老韩：会付的，但不是这个月。"]
+    cases:
+      - {text: "老韩会付，但不在这个月", quote: "会付的，但不是这个月", expect: pass}
+      - {text: "老韩这个月会付", quote: "会付的，但不是这个月", expect: block, by: [G3]}
+  - id: G12
+    kind: l4
+    source: made
+    why: 未必
+    lines: ["我：这周未必能交稿。"]
+    cases:
+      - {text: "主人认为这周未必能交稿", quote: "这周未必能交稿", certainty: inferred, expect: pass}
+      - {text: "主人认为这周能交稿", quote: "这周未必能交稿", certainty: inferred, expect: block, by: [G3]}
+  - id: G13
+    kind: l4
+    source: made
+    why: 不仅、非常这些不是否定
+    lines: ["我：不仅要交押金，还要交保洁费，非常啰嗦。"]
+    cases:
+      - {text: "要交押金和保洁费", quote: "不仅要交押金，还要交保洁费", expect: pass}
+      - {text: "不用交保洁费", quote: "不仅要交押金，还要交保洁费", expect: block, by: [G3]}
+  - id: G14
+    kind: l4
+    source: made
+    why: 尚未确认，几样东西用顿号连着
+    lines: ["desk-bot：婚宴菜单、座位表、伴手礼数量尚未跟酒店确认。"]
+    cases:
+      - {text: "婚宴菜单、座位表、伴手礼数量还没跟酒店确认", quote: "婚宴菜单、座位表、伴手礼数量尚未跟酒店确认", expect: pass}
+      - {text: "婚宴菜单、座位表、伴手礼数量已跟酒店确认", quote: "婚宴菜单、座位表、伴手礼数量尚未跟酒店确认", expect: block, by: [G3]}
+  - id: G15
+    kind: l4
+    source: made
+    why: 不再
+    lines: ["desk-bot：8/20 那批照片已经修完，不再等客户反馈。"]
+    cases:
+      - {text: "8/20 那批照片已修完，不再等客户反馈", quote: "8/20 那批照片已经修完，不再等客户反馈", expect: pass}
+      - {text: "8/20 那批照片已修完，还在等客户反馈", quote: "8/20 那批照片已经修完，不再等客户反馈", expect: block, by: [G3]}
+  - id: G16
+    kind: l4
+    source: made
+    why: 没有一个
+    lines: ["我：没有一个人报名。"]
+    cases:
+      - {text: "没人报名", quote: "没有一个人报名", expect: pass}
+      - {text: "有人报名", quote: "没有一个人报名", expect: block, by: [G3]}

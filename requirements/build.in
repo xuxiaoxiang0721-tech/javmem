@@ -1,0 +1,2 @@
+# 装 javmem 自己的时候用的（pip install --no-build-isolation -e .）：照锁文件装上，pip 不另外去拉
+setuptools==84.2.1

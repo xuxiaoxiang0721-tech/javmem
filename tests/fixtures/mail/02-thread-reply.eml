@@ -1,0 +1,27 @@
+Message-ID: <ship-0002@example.com>
+Date: Tue, 3 Nov 2026 14:30:00 +0800
+From: =?UTF-8?B?5p2O5piO?= <li.ming@example.com>
+To: Tran Mai <tran.mai@example.org>
+Cc: =?UTF-8?Q?=E7=8E=8B=E8=8A=B3?= <wang.fang@example.com>
+Subject: Re: Shipment date for the Vietnam order
+In-Reply-To: <ship-0001@example.org>
+References: <ship-0001@example.org>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="b1"
+
+--b1
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: base64
+
+SGkgTWFpLAoKT0ssIE5vdiAxNSB3b3JrcyBmb3IgdXMuIOaKpeS7t+WNleingemZhOS7tu+8jOWN
+leS7t+S4jeWPmOOAggoKQmVzdCwKTWluZwoKPiBPbiBOb3YgMywgMjAyNiwgYXQgMTA6MTIsIFRy
+YW4gTWFpIDx0cmFuLm1haUBleGFtcGxlLm9yZz4gd3JvdGU6Cj4gQ291bGQgd2UgbW92ZSB0aGUg
+c2hpcG1lbnQgdG8gTm92IDE1PyBPdXIgd2FyZWhvdXNlIGlzIGZ1bGwgdW50aWwgdGhlbi4KPgo+
+PiDml6fnmoTlvJXnlKjvvJrku5PlupMgMTEg5pyI5ruh44CCCg==
+--b1
+Content-Type: application/pdf
+Content-Disposition: attachment; filename*=UTF-8''%E6%8A%A5%E4%BB%B7%E5%8D%95.pdf
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQKJSBmYWtlIHBkZiBmb3IgdGVzdHMKJSVFT0YK
+--b1--

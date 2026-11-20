@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+.installed.cfg
+MANIFEST
+
+# 虚拟环境
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+
+# 测试和工具缓存
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.ipynb_checkpoints/
+
+# 密钥和本机配置：只进环境变量，不进仓库
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.mcp.json
+.claude/
+CLAUDE.local.md
+
+# 数据目录：真实的包和库都放仓库外
+data/
+inbox/
+inbox-test/
+archive/
+archive-test/
+failed/
+
+# 库文件
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite3-journal
+neo4j/data/
+neo4j/logs/
+*.dump
+
+# 真实邮件导出不进仓库；编的样例放 tests/fixtures/
+*.eml
+*.mbox
+!tests/fixtures/**/*.eml
+!tests/fixtures/**/*.mbox
+
+# 日志
+logs/
+*.log
+
+# 编辑器和系统
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

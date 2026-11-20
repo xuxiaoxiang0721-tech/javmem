@@ -1,0 +1,14 @@
+# 测试用的转换配置，来源用 docs/packet-spec.md 第 11 节的登记表
+rules:
+  - match: '^desk-'
+    source: desk-bot
+    framework: demo-chat
+    domain: [business]
+  - match: '^books-'
+    source: books-bot
+    domain: [finance]
+    sensitive: [payroll]
+kinds:
+  - {match: 'history', kind: backfill}
+system_speaker: 系统
+owner_names: [李明]

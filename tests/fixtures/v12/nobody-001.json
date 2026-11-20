@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.2",
+  "package_id": "nobody-001",
+  "synthetic": true,
+  "packaged_at": "2026-11-08T23:30:00+08:00",
+  "source": {"source_tool": "demo_chat"},
+  "coverage": {"window_start": "2026-11-07T23:30:00+08:00", "window_end": "2026-11-08T23:30:00+08:00"},
+  "continuity": {"previous_package_id": null},
+  "raw_records": [
+    {"record_id": "n1", "sequence": 1, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "没有规则管的包。", "occurred_at": "2026-11-08T09:00:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new"}
+  ],
+  "summaries": [],
+  "fact_candidates": [],
+  "attachments": []
+}

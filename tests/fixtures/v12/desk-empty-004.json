@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.2",
+  "package_id": "desk-empty-004",
+  "synthetic": true,
+  "packaged_at": "2026-11-13T23:30:00+08:00",
+  "source": {"source_tool": "demo_chat", "exported_by": "demo-exporter", "origin_environment": "cloud", "packaging_environment": "local", "session_id": "demo-session-001", "parent_session_id": null, "task_id": null},
+  "coverage": {"description": "编的样例：只带回了旧话，没有新内容", "window_start": "2026-11-12T23:30:00+08:00", "window_end": "2026-11-13T23:30:00+08:00", "completeness": "partial", "content_types": ["conversation_excerpt"], "gaps": []},
+  "continuity": {"stream_id": "demo-stream", "previous_package_id": "desk-history-003", "mode": "supplement", "context_summary_ref": null, "context_status": "missing", "based_on_receipt_id": null},
+  "raw_records": [
+    {"record_id": "e1", "sequence": 1, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "越南那批订单还是小李跟。", "occurred_at": "2026-11-08T10:30:12+08:00", "observed_at": "2026-11-13T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "context"}
+  ],
+  "summaries": [],
+  "fact_candidates": [],
+  "redactions": [],
+  "attachments": []
+}

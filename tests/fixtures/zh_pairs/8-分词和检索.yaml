@@ -1,0 +1,123 @@
+# J2.14 第 8 类：分词和检索。句子和名字都是编的，从头写的。
+# search：raw_search 的关键词（query-api 5.5），只查这一组的包，hit 里的句子要查到、miss 里的不能查到。
+#   空格、全角半角不算差别，金额、日期、百分数按统一写法比，数不查到更长的数里（D77）。
+# words：一句问话，按 memory_search 回退原文层的办法查（query-api 5.1：按词典切词，丢掉不到两个字的，任一词命中就算）。
+#   词典是 tests/fixtures/zh_lexicon.yaml 的 words。两个字的词按接口文档是子串匹配（“东林”查得到“韩东林”），W03、W04 是对照。
+category: 分词和检索
+groups:
+  - id: W01
+    kind: search
+    source: made
+    why: 中文和英文之间有没有空格
+    lines:
+      - "desk-bot：远帆 ADR 昨晚成交了 900 股。"
+      - "我：远帆ADR这周不动。"
+    cases:
+      - {query: "远帆ADR", hit: [1, 2]}
+      - {query: "远帆 ADR", hit: [1, 2]}
+  - id: W02
+    kind: search
+    source: made
+    why: 全角半角
+    lines:
+      - "desk-bot：ＫＶＬＴ 收在 41.8。"
+      - "desk-bot：KVLT 收在 41.8。"
+    cases:
+      - {query: "KVLT", hit: [1, 2]}
+      - {query: "ＫＶＬＴ", hit: [1, 2]}
+  - id: W03
+    kind: search
+    source: made
+    why: 英文不分大小写（对照）
+    lines: ["我：下周的offsite在lakeside营地，报名链接发在群里。"]
+    cases:
+      - {query: "OFFSITE", hit: [1]}
+      - {query: "Lakeside", hit: [1]}
+  - id: W04
+    kind: search
+    source: made
+    why: 两个字的人名按子串查到（接口文档的规矩，对照）
+    lines:
+      - "我：韩东林明天到。"
+      - "我：东林路那家面馆搬走了。"
+    cases:
+      - {query: "东林", hit: [1, 2]}
+      - {query: "韩东林", hit: [1], miss: [2]}
+  - id: W05
+    kind: search
+    source: made
+    why: 数字和量词之间的空格
+    lines:
+      - "desk-bot：仓库还剩 900 箱。"
+      - "我：仓库剩900箱的话够发到月底"
+    cases:
+      - {query: "900箱", hit: [1, 2]}
+  - id: W06
+    kind: search
+    source: made
+    why: 加号两边的空格
+    lines:
+      - "desk-bot：宽带 + 电视 的套餐下月起涨价。"
+      - "我：宽带+电视（套餐号 TV208）先续一年"
+    cases:
+      - {query: "宽带+电视", hit: [1, 2]}
+  - id: W07
+    kind: search
+    source: made
+    why: 百分数不能查到另一个数里去
+    lines:
+      - "desk-bot：服务费加收 5%。"
+      - "desk-bot：节假日服务费加收 15%。"
+    cases:
+      - {query: "5%", hit: [1], miss: [2]}
+  - id: W08
+    kind: search
+    source: made
+    why: 中文日期里的空格
+    lines:
+      - "desk-bot：家长会 3 月 23 日改在礼堂。"
+      - "我：3月23日下午要请假"
+    cases:
+      - {query: "3月23日", hit: [1, 2]}
+  - id: W09
+    kind: words
+    source: made
+    why: 问话里的人名要切成一个词（默认词典把这个名字切成单字丢掉了，剩下的“学校”查不到这一句）
+    lines: ["desk-bot：阮绯在青桐小学读二年级。"]
+    cases:
+      - {query: "阮绯在哪个学校", hit: [1]}
+  - id: W10
+    kind: words
+    source: made
+    why: 问话里的人名、事；人名切对了才不会查到“东林路”
+    lines: ["我：韩东林报价 26 万。", "我：东林路那家面馆搬走了。"]
+    cases:
+      - {query: "韩东林的报价是多少", hit: [1], miss: [2]}
+  - id: W11
+    kind: words
+    source: made
+    why: 问话里的公司名
+    lines: ["desk-bot：Brennick 的维修报价是 S$3,280，含税 S$3,575.20。"]
+    cases:
+      - {query: "Brennick的报价多少", hit: [1]}
+  - id: W12
+    kind: words
+    source: made
+    why: 问话里的人名（三个字，默认词典只切出“一川”，会查到沈一川）
+    lines: ["我：乔一川昨天签了租约。", "我：沈一川昨天签了租约。"]
+    cases:
+      - {query: "乔一川签了吗", hit: [1], miss: [2]}
+  - id: W13
+    kind: words
+    source: made
+    why: 问话里只有一个字的词都丢掉，剩下的词没有对得上的，不该查到
+    lines: ["我：老韩去机场了。"]
+    cases:
+      - {query: "小林去哪了", miss: [1]}
+  - id: W14
+    kind: words
+    source: made
+    why: 问话里的金额切开了，靠“场地费”查到，不该查到只有“5万”的灯光费
+    lines: ["我：场地费 5万，周五前付。", "我：灯光费 5万，月底付。"]
+    cases:
+      - {query: "5万场地费什么时候付", hit: [1], miss: [2]}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.2",
+  "package_id": "desk-daily-002",
+  "synthetic": true,
+  "packaged_at": "2026-11-09T23:30:00+08:00",
+  "source": {"source_tool": "demo_chat", "exported_by": "demo-exporter", "origin_environment": "cloud", "packaging_environment": "local", "session_id": "demo-session-001", "parent_session_id": null, "task_id": null},
+  "coverage": {"description": "编的样例：第二天，有改正、撤回、晚到的和群里的人", "window_start": "2026-11-08T23:30:00+08:00", "window_end": "2026-11-09T23:30:00+08:00", "completeness": "partial", "content_types": ["conversation_excerpt"], "gaps": []},
+  "continuity": {"stream_id": "demo-stream", "previous_package_id": "desk-daily-001", "mode": "supplement", "context_summary_ref": null, "context_status": "missing", "based_on_receipt_id": null},
+  "raw_records": [
+    {"record_id": "c3", "sequence": 1, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "补一句：报价单已经发客户了。", "occurred_at": "2026-11-08T22:00:00+08:00", "observed_at": "2026-11-09T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": ["late_arrival"], "delivery_role": "new", "operation": "append"},
+    {"record_id": "c1", "sequence": 2, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "越南那批订单还是小李跟，周五前给答复。", "occurred_at": null, "observed_at": "2026-11-09T09:00:00+08:00", "finality": "final", "truncated": false, "gaps": ["revision time unknown"], "delivery_role": "revision", "operation": "correct", "supersedes": [{"package_id": "desk-daily-001", "item_id": "r1"}]},
+    {"record_id": "c2", "sequence": 3, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "", "occurred_at": "2026-11-09T09:01:00+08:00", "observed_at": "2026-11-09T09:01:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "revision", "operation": "retract", "supersedes": [{"package_id": "desk-daily-001", "item_id": "r16"}]},
+    {"record_id": "c4", "sequence": 4, "role": "assistant", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "已更正：出货日改到 11 月 15 日。", "occurred_at": "2026-11-09T09:05:00+08:00", "observed_at": "2026-11-09T09:05:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "revision", "operation": "correct", "supersedes": [{"package_id": "desk-daily-000", "item_id": "x9"}]},
+    {"record_id": "c5", "sequence": 5, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "客户同意了。", "occurred_at": "2026-11-09T10:45:00+08:00", "observed_at": "2026-11-09T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append", "source_actor": {"author_name": "王芳", "author_type": "human", "direction": "inbound"}},
+    {"record_id": "c6", "sequence": 6, "role": "user", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "好，那就这么定。", "occurred_at": "2026-11-09T10:46:00+08:00", "observed_at": "2026-11-09T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append", "source_actor": {"author_name": "李明", "author_type": "human", "direction": "inbound"}},
+    {"record_id": "c7", "sequence": 7, "role": "assistant", "content_type": "message", "content_kind": "original", "representation": "verbatim_excerpt", "text": "收到。", "occurred_at": "2026-11-09T10:44:30+08:00", "observed_at": "2026-11-09T23:30:00+08:00", "finality": "final", "truncated": false, "gaps": [], "delivery_role": "new", "operation": "append"}
+  ],
+  "summaries": [],
+  "fact_candidates": [],
+  "redactions": [],
+  "attachments": []
+}

@@ -1,0 +1,125 @@
+# J2.14 第 7 类：软性变化。句子和名字都是编的，从头写的。
+# “先放放、暂缓、先不、回头再说”是暂时的，事实写成“取消、终止、放弃”（说定了的）要拦；
+# 反过来原文是说定了的取消，事实写成暂缓也要拦。照着暂时的说法写的放过。该拦的要 G5 拦（by）。
+category: 软性变化
+groups:
+  - id: S01
+    kind: l4
+    source: made
+    why: 先放放写成取消
+    lines: ["我：学吉他的事先放放。"]
+    cases:
+      - {text: "学吉他的事暂缓", quote: "学吉他的事先放放", expect: pass}
+      - {text: "学吉他的事取消", quote: "学吉他的事先放放", expect: block, by: [G5]}
+  - id: S02
+    kind: l4
+    source: made
+    why: 先不管写成放弃
+    lines: ["我：车库漏水的事先不管吧，等物业回话"]
+    cases:
+      - {text: "主人决定暂时不管车库漏水的事", quote: "车库漏水的事先不管吧", expect: pass}
+      - {text: "主人决定放弃车库漏水的事", quote: "车库漏水的事先不管吧", expect: block, by: [G5]}
+  - id: S03
+    kind: l4
+    source: made
+    why: 暂时的说法在紧跟着的很短的小句里（先不校对，没写主语），写成取消
+    lines: ["我：样书还没寄到我手里，先不校对"]
+    cases:
+      - {text: "样书没寄到主人手里，先不校对", quote: "样书还没寄到我手里，先不校对", expect: pass}
+      - {text: "样书校对取消", quote: "样书还没寄到我手里，先不校对", expect: block, by: [G5]}
+  - id: S04
+    kind: l4
+    source: made
+    why: 先放一边写成作废
+    lines: ["desk-bot：新官网的改版继续先放一边。"]
+    cases:
+      - {text: "新官网改版继续先放一边", quote: "新官网的改版继续先放一边", expect: pass}
+      - {text: "新官网改版作废", quote: "新官网的改版继续先放一边", expect: block, by: [G5]}
+  - id: S05
+    kind: l4
+    source: made
+    why: 回头再说写成取消
+    lines: ["我：换工作的事回头再说。"]
+    cases:
+      - {text: "换工作的事暂缓", quote: "换工作的事回头再说", expect: pass}
+      - {text: "换工作的事取消了", quote: "换工作的事回头再说", expect: block, by: [G5]}
+  - id: S06
+    kind: l4
+    source: made
+    why: 推迟写成取消
+    lines: ["我：搬家推迟到下个月。"]
+    cases:
+      - {text: "搬家延后到下个月", quote: "搬家推迟到下个月", expect: pass}
+      - {text: "搬家取消", quote: "搬家推迟到下个月", expect: block, by: [G5]}
+  - id: S07
+    kind: l4
+    source: made
+    why: 先观望写成不换了
+    lines: ["我：先观望一下，不急着换手机。"]
+    cases:
+      - {text: "主人先观望，暂不换手机", quote: "先观望一下，不急着换手机", expect: pass}
+      - {text: "主人决定不换手机了", quote: "先观望一下，不急着换手机", expect: block, by: [G5]}
+  - id: S08
+    kind: l4
+    source: made
+    why: 反过来：取消写成暂缓
+    lines: ["我：周六的聚餐取消了。"]
+    cases:
+      - {text: "周六的聚餐已取消", quote: "周六的聚餐取消了", expect: pass}
+      - {text: "周六的聚餐暂缓", quote: "周六的聚餐取消了", expect: block, by: [G5]}
+  - id: S09
+    kind: l4
+    source: made
+    why: 暂停写成终止
+    lines: ["我：暂停每周的钢琴课。"]
+    cases:
+      - {text: "主人暂停每周钢琴课", quote: "暂停每周的钢琴课", expect: pass}
+      - {text: "主人终止每周钢琴课", quote: "暂停每周的钢琴课", expect: block, by: [G5]}
+  - id: S10
+    kind: l4
+    source: made
+    why: 先停一下写成终止
+    lines: ["我：先停一下每天早上的新闻推送。"]
+    cases:
+      - {text: "主人暂停每天早上的新闻推送", quote: "先停一下每天早上的新闻推送", expect: pass}
+      - {text: "主人终止每天早上的新闻推送", quote: "先停一下每天早上的新闻推送", expect: block, by: [G5]}
+  - id: S11
+    kind: l4
+    source: made
+    why: 再议写成否决
+    lines: ["我：年会的预算再议。"]
+    cases:
+      - {text: "年会预算还要再议", quote: "年会的预算再议", expect: pass}
+      - {text: "年会预算被否决", quote: "年会的预算再议", expect: block, by: [G5]}
+  - id: S12
+    kind: l4
+    source: made
+    why: 搁置写成终止
+    lines: ["我：开分店的事先搁置，等明年再看。"]
+    cases:
+      - {text: "开分店先搁置，明年再看", quote: "开分店的事先搁置，等明年再看", expect: pass}
+      - {text: "开分店终止", quote: "开分店的事先搁置，等明年再看", expect: block, by: [G5]}
+  - id: S13
+    kind: l4
+    source: made
+    why: 不急、下个月再说写成放弃
+    lines: ["我：买钢琴不急，下个月再说。"]
+    cases:
+      - {text: "买钢琴不急，下个月再说", quote: "买钢琴不急，下个月再说", expect: pass}
+      - {text: "主人放弃了买钢琴", quote: "买钢琴不急，下个月再说", expect: block, by: [G5]}
+  - id: S14
+    kind: l4
+    source: made
+    why: 暂不签约写成取消签约
+    lines: ["desk-bot：上回是 9/9 看过样板房、暂不签约。"]
+    cases:
+      - {text: "9/9 看过样板房，暂不签约", quote: "9/9 看过样板房、暂不签约", expect: pass}
+      - {text: "9/9 看过样板房，决定取消签约", quote: "9/9 看过样板房、暂不签约", expect: block, by: [G5]}
+  - id: S15
+    kind: l4
+    source: made
+    why: 缓一缓写成拒绝
+    lines: ["我：猎头的邀约缓一缓再回。"]
+    cases:
+      - {text: "猎头的邀约缓一缓再回复", quote: "猎头的邀约缓一缓再回", expect: pass}
+      - {text: "主人拒绝了猎头的邀约", quote: "猎头的邀约缓一缓再回", expect: block, by: [G5]}

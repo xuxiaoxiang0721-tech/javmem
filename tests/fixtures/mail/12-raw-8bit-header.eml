@@ -1,0 +1,9 @@
+Message-ID: <raw8-0001@example.com>
+Date: Fri, 06 Nov 2026 09:00:00 +0800
+From: "王芳" <wang.fang@example.com>
+To: li.ming@example.com
+Subject: 鎶ヤ环 8 浣嶅ご
+Content-Type: text/plain; charset=gbk
+Content-Transfer-Encoding: 8bit
+
+邮件头没按 RFC 2047 编码，直接写了 8 位字节。

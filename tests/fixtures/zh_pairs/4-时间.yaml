@@ -1,0 +1,162 @@
+# J2.14 第 4 类：时间。句子和名字都是编的，从头写的；source: report 的是任务说明里给的例句。
+# 说话那天默认 2026-11-10（星期二），写了 day 的按 day。
+# 该拦的要 G2、G6 拦（by；月日、几号、季度归 G2）。search 那几组按原文检索的统一写法（D77）。
+# 一句里两个日期（T12 第 2 条）按开发说明 L4 的“三级”，窗口里有就算有，是写明的已知漏拦，标 beyond。
+category: 时间
+groups:
+  - id: T01
+    kind: l4
+    source: report
+    why: 下周三按说话那天换成 11 月 18 日
+    lines: ["老韩：下周三交货。"]
+    cases:
+      - {text: "老韩 11 月 18 日交货", quote: "下周三交货", expect: pass}
+      - {text: "老韩 11 月 19 日交货", quote: "下周三交货", expect: block, by: [G2, G6]}
+  - id: T02
+    kind: l4
+    source: report
+    why: 相对日期换算成 11/18 这种写法
+    lines: ["老韩：下周三交货。"]
+    cases:
+      - {text: "老韩 11/18 交货", quote: "下周三交货", expect: pass}
+      - {text: "老韩 11/19 交货", quote: "下周三交货", expect: block, by: [G2, G6]}
+  - id: T03
+    kind: l4
+    source: report
+    why: 相对日期换算成“18 号”
+    lines: ["老韩：下周三交货。"]
+    cases:
+      - {text: "老韩 18 号交货", quote: "下周三交货", expect: pass}
+      - {text: "老韩 19 号交货", quote: "下周三交货", expect: block, by: [G2, G6]}
+  - id: T04
+    kind: l4
+    source: report
+    why: “三点一刻”是 15:15
+    lines: ["我：明天下午三点一刻开会。"]
+    cases:
+      - {text: "主人 11 月 11 日 15:15 开会", quote: "明天下午三点一刻开会", expect: pass}
+      - {text: "主人 11 月 11 日 15:45 开会", quote: "明天下午三点一刻开会", expect: block, by: [G2, G6]}
+  - id: T05
+    kind: l4
+    source: report
+    why: “3 点 15”是 3:15 或 15:15
+    lines: ["我：明天 3 点 15 到。"]
+    cases:
+      - {text: "主人 11 月 11 日 15:15 到", quote: "明天 3 点 15 到", expect: pass}
+      - {text: "主人 11 月 11 日 15:50 到", quote: "明天 3 点 15 到", expect: block, by: [G2, G6]}
+  - id: T06
+    kind: l4
+    source: made
+    day: 2026-09-18
+    why: PM 的时刻（任务说明里 3 pm 那一种）
+    lines: ["desk-bot：你订的那班飞机 9/20 7:29 PM PT 起飞，在 B 航站楼。"]
+    cases:
+      - {text: "那班飞机 9/20 19:29 PT 起飞", quote: "那班飞机 9/20 7:29 PM PT 起飞", expect: pass}
+      - {text: "那班飞机 9/20 17:29 PT 起飞", quote: "那班飞机 9/20 7:29 PM PT 起飞", expect: block, by: [G2, G6]}
+  - id: T07
+    kind: l4
+    source: made
+    day: 2026-08-24
+    why: “下午2:00”是 14:00
+    lines: ["我：后天下午2:00带Nora去打疫苗"]
+    cases:
+      - {text: "Nora 2026-08-26 14:00 打疫苗", quote: "后天下午2:00带Nora去打疫苗", expect: pass}
+      - {text: "Nora 2026-08-26 15:00 打疫苗", quote: "后天下午2:00带Nora去打疫苗", expect: block, by: [G2, G6]}
+  - id: T08
+    kind: l4
+    source: report
+    why: “下个月底前”写成“12-31 前”
+    lines: ["我：下个月底前把材料交了。"]
+    cases:
+      - {text: "主人要在 12-31 前交材料", quote: "下个月底前把材料交了", expect: pass}
+      - {text: "主人要在 11-30 前交材料", quote: "下个月底前把材料交了", expect: block, by: [G2, G6]}
+  - id: T09
+    kind: l4
+    source: made
+    why: 后天
+    lines: ["我：后天去宁波看仓库。"]
+    cases:
+      - {text: "主人 11 月 12 日去宁波看仓库", quote: "后天去宁波看仓库", expect: pass}
+      - {text: "主人 11 月 13 日去宁波看仓库", quote: "后天去宁波看仓库", expect: block, by: [G2, G6]}
+  - id: T10
+    kind: l4
+    source: made
+    why: 上周五
+    lines: ["我：上周五把琴房的押金交了。"]
+    cases:
+      - {text: "主人 11 月 6 日交了琴房押金", quote: "上周五把琴房的押金交了", expect: pass}
+      - {text: "主人 11 月 13 日交了琴房押金", quote: "上周五把琴房的押金交了", expect: block, by: [G2, G6]}
+  - id: T11
+    kind: l4
+    source: made
+    why: 这周末（周六、周日哪天都算对得上）
+    lines: ["我：这周末去露营。"]
+    cases:
+      - {text: "主人 11 月 14 日去露营", quote: "这周末去露营", expect: pass}
+      - {text: "主人 11 月 21 日去露营", quote: "这周末去露营", expect: block, by: [G2, G6]}
+  - id: T12
+    kind: l4
+    source: report
+    why: 一句里两个日期，事实把尾款的日子写成了首款的
+    lines: ["老韩：首款 11-20 付，尾款 12-20 付。"]
+    cases:
+      - {text: "尾款 12-20 付", quote: "尾款 12-20 付", expect: pass}
+      - {text: "尾款 11-20 付", quote: "尾款 12-20 付", expect: block, by: [G2, G6], bucket: beyond}
+  - id: T13
+    kind: l4
+    source: made
+    why: 明年 3 月
+    lines: ["我：明年 3 月带爸妈去看樱花。"]
+    cases:
+      - {text: "主人 2027 年 3 月带爸妈去看樱花", quote: "明年 3 月带爸妈去看樱花", expect: pass}
+      - {text: "主人 2026-03 带爸妈去看樱花", quote: "明年 3 月带爸妈去看樱花", expect: block, by: [G2, G6]}
+  - id: T14
+    kind: l4
+    source: made
+    why: 季度：四季度写成 Q4
+    lines: ["我：四季度的销售目标是 800 万。"]
+    cases:
+      - {text: "主人 Q4 销售目标 800 万", quote: "四季度的销售目标是 800 万", expect: pass}
+      - {text: "主人 Q3 销售目标 800 万", quote: "四季度的销售目标是 800 万", expect: block, by: [G2, G6]}
+  - id: T15
+    kind: l4
+    source: made
+    day: 2026-09-27
+    why: 下周四15:30（说话那天是星期日）
+    lines: ["我：小区通知说3号楼的热水要到下周四15:30才恢复。"]
+    cases:
+      - {text: "3号楼热水 2026-10-01 15:30 才恢复", quote: "3号楼的热水要到下周四15:30才恢复", expect: pass}
+      - {text: "3号楼热水 2026-09-24 15:30 才恢复", quote: "3号楼的热水要到下周四15:30才恢复", expect: block, by: [G2, G6]}
+  - id: T16
+    kind: merge
+    source: made
+    why: 日期值写法不同是同一条
+    subject: {name: 琴房租约, mention: 琴房租约, type: 订单或合同}
+    attribute: 到期日期
+    first: {line: "我：琴房租约的到期日期是 2026-11-18。", text: "琴房租约的到期日期是 2026-11-18", value: "2026-11-18"}
+    cases:
+      - {line: "我：琴房租约的到期日期是 11月18日。", text: "琴房租约的到期日期是 11月18日", value: "11月18日", expect: same}
+      - {line: "我：琴房租约的到期日期是 2026/11/18。", text: "琴房租约的到期日期是 2026/11/18", value: "2026/11/18", expect: same}
+      - {line: "我：琴房租约的到期日期是 11月19日。", text: "琴房租约的到期日期是 11月19日", value: "11月19日", expect: different}
+  - id: T17
+    kind: search
+    source: made
+    why: 查“10月15日”要查到 10/15、10 月 15 日、2026-10-15，不能查到 10/16
+    lines:
+      - "desk-bot：10/15 上午的体检约好了。"
+      - "我：10 月 15 日那天要空腹。"
+      - "desk-bot：体检日期改到 2026-10-15。"
+      - "desk-bot：10/16 医院不开门诊。"
+    cases:
+      - {query: "10月15日", hit: [1, 2, 3], miss: [4]}
+  - id: T18
+    kind: search
+    source: made
+    why: 查“3/17”不能查到 3/1；写成“3 月 17 日”的要查到
+    lines:
+      - "desk-bot：3/17 的音乐会票已经出了。"
+      - "我：3 月 17 日那场我要两张。"
+      - "desk-bot：3/1 那场已经售罄。"
+    cases:
+      - {query: "3/17", hit: [1, 2]}
+      - {query: "3/1", hit: [3], miss: [1]}

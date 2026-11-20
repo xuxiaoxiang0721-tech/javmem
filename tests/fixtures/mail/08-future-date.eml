@@ -1,0 +1,8 @@
+Received: from mx.example.net by mx2.example.com; Thu, 05 Nov 2026 13:00:00 +0800
+Message-ID: <future-0001@example.net>
+Date: Fri, 01 Jan 2099 00:00:00 +0000
+From: Promo <promo@example.net>
+To: li.ming@example.com
+Subject: Limited offer
+
+The Date header says 2099.

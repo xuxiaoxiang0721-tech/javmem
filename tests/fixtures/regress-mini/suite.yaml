@@ -1,0 +1,29 @@
+# U2 甲（D205 ①）：GitHub 那一层的回归套件。包、金标准、题全是编的；模型的回复是第一次用真模型抽了一遍录下来的
+# （l3-replies.json，sol 线 l3-v20），跑的时候照它建结果库，不调模型。tests/test_regress_mini.py 每次推送在 ubuntu 那一路跑，
+# 分数、命中数钉在 baseline.json：变了要改基准（javmem regress --save-baseline --note 为什么），提交说明里写为什么。
+format: javmem-regress/1
+name: 编的小套件（GitHub 那一层）
+config:
+  JAVMEM_SOURCES_FILE: config/sources.yaml
+  JAVMEM_ACCESS_FILE: config/access.yaml
+  JAVMEM_OWNER_FILE: config/owner.yaml
+  JAVMEM_LEXICON_FILE: config/lexicon.yaml
+  JAVMEM_TIMEZONE: "+08:00"
+gold:
+  - line: sol
+    env: {JAVMEM_L3_PROMPT: l3-v20, JAVMEM_LLM_MODEL: gpt-6.1-sol}
+    packets: [packets/demo-bot/*.md]
+    store: l3-replies.json
+    score: {gold: gold}
+retrieval:
+  - line: sol
+    env: {JAVMEM_L3_PROMPT: l3-v20, JAVMEM_LLM_MODEL: gpt-6.1-sol}
+    packets: [packets/demo-bot/*.md]
+    store: l3-replies.json
+    fake_embeddings: true
+    questions: questions.json
+    caller: mini-owner
+    embedding_model: fake-embedding
+graph:
+  mode: given
+baseline: baseline.json

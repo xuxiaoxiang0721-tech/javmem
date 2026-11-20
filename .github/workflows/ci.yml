@@ -1,0 +1,65 @@
+name: CI
+
+# 在两条长期分支上跑；合进 dev 之前想先看 CI 的（改了 ci.yml、锁文件、要真 Neo4j 的测试这类），
+# 把分支另推一份到 ci/ 开头的名字（比如 ci/u2-a），也跑（U2 甲）。别的分支推上去不跑，省 CI 的分钟
+on:
+  push:
+    branches: [main, dev, "ci/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    # Windows 那边 11-16 跑到 14 分 23 秒（上限原来 15 分钟），调大，免得测试一多就白白变红；
+    # 11-18 J5.4 合进来以后跑到 27 分 42 秒（上限 30 分钟），再调到 45 分钟；
+    # 11-20 机器慢的一回跑到 41 分 45 秒（同样的测试快的时候 28 分钟），公开以前调到 60 分钟
+    timeout-minutes: 60
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      # Actions 钉提交号（U2 甲，D205 ⑩）：标签能被人改（2025 年 tj-actions 那次），提交号改不了。后面的注释是哪一版
+      # （11-19 时标签 v5、v6 指的就是这两个提交）。升级：换提交号和注释，推一份到 ci/ 开头的分支看 CI
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5.1.0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.12"
+      # 照锁文件装（U2 甲，D205 ⑩）：每个包的版本、每个文件的 sha256 都钉死，带进来的也一样（--require-hashes），
+      # --no-deps：锁文件以外的一个都不装；javmem 自己最后装，--no-build-isolation：用锁文件里的 setuptools，pip 不另外去拉。
+      # 用 bash 跑（Windows 那一路默认的 pwsh 只看最后一条命令的退出码，前一条装失败了会漏过去）
+      - name: 安装
+        shell: bash
+        run: |
+          python -m pip install --require-hashes --no-deps -r requirements/dev.txt
+          python -m pip install --no-deps --no-build-isolation -e .
+      # 照 README 跑一遍不要密钥的演示（U3 戊，11-20）：两种机器都跑，空的 Windows 上 README 那一圈也走一遍；
+      # 以后 Windows 上的演示坏了也有东西拦着。输出放 runner 的临时目录；不给任何密钥（演示自己也去掉所有 JAVMEM_*）
+      - name: 演示
+        shell: bash
+        run: javmem demo --to "$RUNNER_TEMP/javmem-demo"
+      # 主图要真 Neo4j 的测试（tests/test_graph_neo4j.py）：只在 ubuntu 那一路起一个，Windows 那一路照旧跳过。
+      # 设置照 deploy/graph-neo4j/compose.yaml（往外报的关掉、全文索引默认 cjk），内存给小一点；
+      # 不给 NEO4J_AUTH，测试开头改默认密码，密码每次随机生成，日志里遮住。
+      # 镜像钉指纹（U2 甲，D205 ⑩），和三份 compose 一字不差（tests/test_pins.py 钉着）：5.26.32，10-21 的那一个，本机用的就是它。
+      # 原来写 neo4j:5.26-community 跟着标签走，11-12 起拉的是 5.26.33，和本机对不上。升级：四处一起换，主图整张重建、跑一遍回归
+      - name: 起一个 Neo4j（只 ubuntu）
+        if: runner.os == 'Linux'
+        run: |
+          docker run -d --name neo4j -p 127.0.0.1:7687:7687 -p 127.0.0.1:7474:7474 \
+            -e NEO4J_dbms_usage__report_enabled=false -e NEO4J_client_allow__telemetry=false \
+            -e NEO4J_db_index_fulltext_default__analyzer=cjk \
+            -e NEO4J_server_memory_heap_initial__size=512M -e NEO4J_server_memory_heap_max__size=512M \
+            -e NEO4J_server_memory_pagecache_size=256M \
+            public.ecr.aws/docker/library/neo4j:5.26-community@sha256:eaee4488d580749ce332bd028f5be3917edf91f562d76c5443a51c08ec347b1f
+          PASSWORD=$(python -c 'import secrets; print(secrets.token_hex(24))')
+          echo "::add-mask::$PASSWORD"
+          echo "JAVMEM_TEST_NEO4J_URI=bolt://127.0.0.1:7687" >> "$GITHUB_ENV"
+          echo "JAVMEM_TEST_NEO4J_PASSWORD=$PASSWORD" >> "$GITHUB_ENV"
+          for i in $(seq 1 90); do curl -sf http://127.0.0.1:7474 > /dev/null && break; sleep 2; done
+      - name: 测试
+        run: python -m pytest
